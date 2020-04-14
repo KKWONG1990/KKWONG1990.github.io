@@ -128,7 +128,7 @@
 <p>从上面的打印信息看出来，就算页面出栈被销毁了，但是静态变量varA和varB依然存在，并且显示的值是当前最新的值。因此静态变量只有在程序结束的时候才会被释放。</p>
 <h3 id="OC中静态函数的使用"><a href="#OC中静态函数的使用" class="headerlink" title="OC中静态函数的使用"></a>OC中静态函数的使用</h3><p>因为静态函数式不能够被外部文件访问的，所以在OC中静态函数只能在实现类定义，不能再接口类声明。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@interface StaticViewController : UIViewController</span><br><span class="line">static int getNumber(); //在接口文件申明静态函数会报错，提示This <span class="keyword">function</span> declaration is not a prototype，编译不能通过</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>###总结<br>1.静态变量保存在静态区(全局区)<br>2.静态变量的默认值为0<br>3.静态变量会一直保存在内存中，直到程序结束<br>4.静态变量与静态函数只能在当前文件使用，不能被外部文件访问，否则编译不通过</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.静态变量保存在静态区(全局区)<br>2.静态变量的默认值为0<br>3.静态变量会一直保存在内存中，直到程序结束<br>4.静态变量与静态函数只能在当前文件使用，不能被外部文件访问，否则编译不通过</p>
 
       
       <!-- reward -->
