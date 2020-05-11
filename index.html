@@ -348,6 +348,161 @@
 
 </article>
     
+    <article id="post-Learn Swift - 基本运算符" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Learn%20Swift%20-%20%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/"
+    >Learn Swift - 基本运算符</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>运算符是用于检查，更改或合并值的特殊符号或短语。例如，加法运算符（+）将两个数字相加，如让i = 1 + 2，而逻辑与运算符（&amp;&amp;）合并两个布尔值，如enterDoorCode &amp;&amp; passedRetinaScan一样。</p>
+<p>Swift支持大多数标准C运算符，并改进了一些功能来消除常见的编码错误。赋值运算符（=）不会返回值，以防止在打算使用等于运算符（==）时错误地使用了该值。算数运算符（+，-，*，/，%等）检测并禁止值溢出，以避免在处理大于或小于存储他们的类型的允许值范围的数字时出现意外结果。你可以选择使用Swift的溢出运算符来苹果溢出行为，如溢出运算符中所述。</p>
+<p>Sswift还提供了C中没有的范围运算符，例如a .. &lt;b 和 a .. b，作为表示值范围的快捷方式。</p>
+<p>本章介绍Swift中常见的运算符。高级运算符涵盖了Swfift的高级运算符，并介绍了如果定义自己的自定义运算符以及如何为自己的自定义类型实现标准运算符。</p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>赋值运算符（a = b）使用b的值初始化或更新a的值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> b = 10</span><br><span class="line">var a = 5</span><br><span class="line">a = b</span><br></pre></td></tr></table></figure>
+<p>如果赋值的右侧是具有多个值的元祖，则可以一次将其元素分解为多个常量或变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> (x, y) = (1, 2)</span><br></pre></td></tr></table></figure>
+<p>与C和Objective - C中的赋值运算符不同，Swfit中的赋值运算符本身并不返回值。以下语句无效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x = y &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此功能可防止在实际需要等于运算符（==）是偶然使用了赋值运算符（=）。通过是x=y无效，swift可帮助您避免代码中的此类错误。</p>
+<h3 id="算数运损符"><a href="#算数运损符" class="headerlink" title="算数运损符"></a>算数运损符</h3><p>Swift支持所有数字类型的四个标准算术运算符：<br>加法（+）<br>减法（-）<br>乘法（*）<br>部门（/）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 + 2       </span><br><span class="line">5 - 3       </span><br><span class="line">2 * 3       </span><br><span class="line">10.0 / 2.5</span><br></pre></td></tr></table></figure>
+<p>String拼接还支持加法运算符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"hello, "</span> + <span class="string">"world"</span>  // equals <span class="string">"hello, world"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="余数运算符"><a href="#余数运算符" class="headerlink" title="余数运算符"></a>余数运算符</h3><p>余数运算符（a%b）算出a内可以容纳b的多少个背书，并返回剩余的值（称为余数）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9 % 4  //等于1</span><br></pre></td></tr></table></figure>
+<h3 id="一元减号"><a href="#一元减号" class="headerlink" title="一元减号"></a>一元减号</h3><p>可以使用前缀-切换数字值的符号，称为一元减运算符：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> three = 3</span><br><span class="line"><span class="built_in">let</span> minusThree = -three       // minusThree 等于 -3</span><br><span class="line"><span class="built_in">let</span> plusThree = -minusThree   // plusThree 等于 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="一元加号运算符"><a href="#一元加号运算符" class="headerlink" title="一元加号运算符"></a>一元加号运算符</h3><p>一元加号运算符（+）仅仅返回对其操作的值，而没有任何更改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> minusSix = -6</span><br><span class="line"><span class="built_in">let</span> alsoMinusSix = +minusSix //alsoMinusSix 等于-6</span><br></pre></td></tr></table></figure>
+<p>尽管一元加号运算符实际上并没有做任何事情，但您也可以使用一元运算符在代码中为正数提供对称性，同时对一元数也使用一元减号运算符。</p>
+<h3 id="复合分配运算符"><a href="#复合分配运算符" class="headerlink" title="复合分配运算符"></a>复合分配运算符</h3><p>像C一样，Swift提供复合赋值运算符，将赋值（=）与另一个操作结合在一起。一个例子是加法赋值运算符（+ =）：：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1</span><br><span class="line">a += 2</span><br></pre></td></tr></table></figure>
+<p>表达式a + = 2是a = a + 2的简写。有效地，加法和赋值组合为一个运算符，该运算符可以同时执行两个任务。</p>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>等于（a==b）<br>不等于（a  != b）<br>大于（a &gt; b）<br>小于（a &lt; b）<br>大于或等于（a &gt;= b）<br>小于或等于（a &lt;= b）<br>每个比较运算符都返回一个Bool值以指示该语句是否为真：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 == 1 // <span class="literal">true</span>，因为1等于1</span><br><span class="line">2！= 1 // <span class="literal">true</span>，因为2不等于1</span><br><span class="line">2&gt; 1 //是，因为2大于1</span><br><span class="line">1 &lt;2 // <span class="literal">true</span>，因为1小于2</span><br><span class="line">1&gt; = 1 //为<span class="literal">true</span>，因为1大于或等于1</span><br><span class="line">2 &lt;= 1 //否，因为2不小于1</span><br></pre></td></tr></table></figure>
+<p>比较运算符通常用于条件语句中，例如if语句：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> name = <span class="string">"world"</span></span><br><span class="line"><span class="keyword">if</span> name == <span class="string">"world"</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello, world"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I'm sorry \(name), but I don't recognize you"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"hello, world"</span>, because name is indeed equal to <span class="string">"world"</span>.</span><br></pre></td></tr></table></figure>
+<p>在Objective - C中String是引用类型，区别于OC，在Swift中字符串是指类型，所以相等运算符（==）来判定两个字符串是否一致，而不需要使用到OC的isEqualToString方法</p>
+<p>如果两个元组具有相同的类型和相同数量的值，则可以比较它们。元组从左到右进行比较，一次比较一个值，直到比较发现两个不相等的值。将这两个值进行比较，然后比较的结果确定元组比较的整体结果。如果所有元素相等，则元组本身相等。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(1, <span class="string">"zebra"</span>) &lt; (2, <span class="string">"apple"</span>)   // <span class="literal">true</span> because 1 is less than 2; <span class="string">"zebra"</span> and <span class="string">"apple"</span> are not compared</span><br><span class="line">(3, <span class="string">"apple"</span>) &lt; (3, <span class="string">"bird"</span>)    // <span class="literal">true</span> because 3 is equal to 3, and <span class="string">"apple"</span> is less than <span class="string">"bird"</span></span><br><span class="line">(4, <span class="string">"dog"</span>) == (4, <span class="string">"dog"</span>)      // <span class="literal">true</span> because 4 is equal to 4, and <span class="string">"dog"</span> is equal to <span class="string">"dog"</span></span><br></pre></td></tr></table></figure>
+<p>在上面的示例中，您可以在第一行看到从左到右的比较行为。 因为1小于2，所以与元组中的任何其他值无关，都将（1，“斑马”）视为小于（2，“ 苹果”）。 “斑马”不小于“苹果”并不重要，因为比较已经由元组的第一个元素确定。 但是，当元组的第一个元素相同时，将比较它们的第二个元素-这就是第二行和第三行的情况。</p>
+<p>只有将运算符应用于各个元组中的每个值，才可以将其与给定的运算符进行比较。 例如，如下面的代码所示，您可以比较两个类型为String（Int）的元组，因为可以使用&lt;运算符比较String和Int值。 相反，不能将两个类型为String，Bool的元组与&lt;运算符进行比较，因为&lt;运算符不能应用于Bool值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">"blue"</span>, -1) &lt; (<span class="string">"purple"</span>, 1)        // OK, evaluates to <span class="literal">true</span></span><br><span class="line">(<span class="string">"blue"</span>, <span class="literal">false</span>) &lt; (<span class="string">"purple"</span>, <span class="literal">true</span>)  // Error because &lt; can<span class="string">'t compare Boolean values</span></span><br></pre></td></tr></table></figure>
+<h3 id="三元条件运算符"><a href="#三元条件运算符" class="headerlink" title="三元条件运算符"></a>三元条件运算符</h3><p>三元条件运算符是具有三部分的特殊运算符，其形式为 问题 ？答案1 : 答案2。这是根据问题是对还是错来评估两个表达式之一的快捷方式。如果问题为真，将得到答案1。否则，得到答案2。</p>
+<p>三元条件运算符是一下代码的简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> question &#123;</span><br><span class="line">    answer1</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个示例，该示例计算表格行的高度。如果该行具有标题，则行高度应比内容高度高50点；如果该行没有标题，则行高度应比内容高度高20点：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> contentHeight = 40</span><br><span class="line"><span class="built_in">let</span> hasHeader = <span class="literal">true</span></span><br><span class="line"><span class="built_in">let</span> rowHeight = contentHeight + (hasHeader ? 50 : 20)</span><br></pre></td></tr></table></figure>
+<p>上面的示例是以下代码的简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> contentHeight = 40</span><br><span class="line"><span class="built_in">let</span> hasHeader = <span class="literal">true</span></span><br><span class="line"><span class="built_in">let</span> rowHeight: Int</span><br><span class="line"><span class="keyword">if</span> hasHeader &#123;</span><br><span class="line">    rowHeight = contentHeight + 50</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    rowHeight = contentHeight + 20</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一个示例使用三元条件运算符意味着可以在一行代码中将rowHeight设置为正确的值，这比第二个示例中使用的代码更简洁。</p>
+<p>三元条件运算符为确定要考虑的两个表达式中的哪一个提供了有效的速记。 但是，请谨慎使用三元条件运算符。 如果使用过度，其简洁会导致难以阅读的代码。 避免将三元条件运算符的多个实例组合到一个复合语句中。</p>
+<h3 id="Nil-Coalescing运算符-三元运算的简写"><a href="#Nil-Coalescing运算符-三元运算的简写" class="headerlink" title="Nil-Coalescing运算符(三元运算的简写)"></a>Nil-Coalescing运算符(三元运算的简写)</h3><p>nil-coalescing运算符（a ?? b）如果a包含值，则解开可选的a；如果a为nil，则返回默认值b。 <strong><em>表达式a始终是可选类型</em></strong>。 表达式b必须匹配存储在a内的类型。</p>
+<p>nil-coalescing运算符是以下代码的简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a != nil ? a! : b</span><br></pre></td></tr></table></figure>
+<p>上面的代码使用三元条件运算符并强制展开（a！），以在a不为nil时访问包装在a中的值，否则返回b。 nil-coalescing运算符提供了一种更简洁的方式来以简洁易读的形式封装此条件检查和展开。</p>
+<p>下面的示例使用nil-coalescing运算符在默认颜色名称和可选的用户定义颜色名称之间进行选择：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> defaultColorName = <span class="string">"red"</span></span><br><span class="line">var userDefinedColorName: String?   // defaults to nil</span><br><span class="line"></span><br><span class="line">var colorNameToUse = userDefinedColorName ?? defaultColorName</span><br><span class="line">// userDefinedColorName is nil, so colorNameToUse is <span class="built_in">set</span> to the default of <span class="string">"red"</span></span><br></pre></td></tr></table></figure>
+<p>userDefinedColorName变量定义为可选字符串，默认值为nil。由于userDefinedColorName是可选类型，因此可以使用nil-coalescing运算符考虑其值。 在上面的示例中，运算符用于确定名为colorNameToUse的String变量的初始值。 因为userDefinedColorName为nil，所以表达式userDefinedColorName ?? defaultColorName返回defaultColorName的值，即“ red”。</p>
+<p>如果您为userDefinedColorName分配一个非nil值并再次执行nil-coalescing操作符检查，那么将使用包装在userDefinedColorName中的值代替默认值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userDefinedColorName = <span class="string">"green"</span></span><br><span class="line">colorNameToUse = userDefinedColorName ?? defaultColorName</span><br></pre></td></tr></table></figure>
+
+<h3 id="范围运算符"><a href="#范围运算符" class="headerlink" title="范围运算符"></a>范围运算符</h3><p>Swift包含多个范围运算符，他们是表示一系列值的快捷方式。</p>
+<h4 id="封闭范围运算符"><a href="#封闭范围运算符" class="headerlink" title="封闭范围运算符"></a>封闭范围运算符</h4><p>封闭范围运算符（a … b）定义了一个从a到b的范围，并包括值a和b。 a的值不能大于b。在要使用所有值的范围内进行迭代时，例如使用for-in循环，封闭范围运算符非常有用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> 1...5 &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(index) times 5 is \(index * 5)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// 1 <span class="built_in">times</span> 5 is 5</span><br><span class="line">// 2 <span class="built_in">times</span> 5 is 10</span><br><span class="line">// 3 <span class="built_in">times</span> 5 is 15</span><br><span class="line">// 4 <span class="built_in">times</span> 5 is 20</span><br><span class="line">// 5 <span class="built_in">times</span> 5 is 25</span><br></pre></td></tr></table></figure>
+<h4 id="半开范围运算符"><a href="#半开范围运算符" class="headerlink" title="半开范围运算符"></a>半开范围运算符</h4><p>半开范围运算符（a .. &lt;b）定义了一个范围，范围是从a到b，但不包括b。 据说它是半开的，因为它包含其第一个值，但不包含最终值。 与封闭范围运算符一样，a的值不得大于b。 如果a的值等于b，则结果范围将为空。</p>
+<p>半开范围在处理基于零的列表（例如数组）时特别有用，在这种情况下，计算（但不包括）列表的长度非常有用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> names = [<span class="string">"Anna"</span>, <span class="string">"Alex"</span>, <span class="string">"Brian"</span>, <span class="string">"Jack"</span>]</span><br><span class="line"><span class="built_in">let</span> count = names.count</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 0..&lt;count &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Person \(i + 1) is called \(names[i])"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Person 1 is called Anna</span><br><span class="line">// Person 2 is called Alex</span><br><span class="line">// Person 3 is called Brian</span><br><span class="line">// Person 4 is called Jack</span><br></pre></td></tr></table></figure>
+<h4 id="单面范围"><a href="#单面范围" class="headerlink" title="单面范围"></a>单面范围</h4><p>封闭范围运算符具有在一个方向上尽可能连续的范围的另一种形式，例如，范围包括从索引2到数组末尾的数组的所有元素。 在这些情况下，您可以从范围运算符的一侧省略该值。 这种范围称为单面范围，因为操作员仅在一侧具有值。 例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> names = [<span class="string">"Anna"</span>, <span class="string">"Alex"</span>, <span class="string">"Brian"</span>, <span class="string">"Jack"</span>]</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names[2...] &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br><span class="line">// Brian</span><br><span class="line">// Jack</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names[...2] &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line">// Brian</span><br></pre></td></tr></table></figure>
+<p>半开范围运算符还有一个单面形式，只写有最终值。 就像您在两端都包含一个值一样，最终值也不在范围内。 例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> names = [<span class="string">"Anna"</span>, <span class="string">"Alex"</span>, <span class="string">"Brian"</span>, <span class="string">"Jack"</span>]</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names[..&lt;2] &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br></pre></td></tr></table></figure>
+<p>单边范围可以在其他上下文中使用，而不仅仅是下标。您无法在忽略第一个值的单边范围内进行迭代，因为尚不清楚应该在哪里开始迭代。 您可以在一个单边范围内进行迭代，而忽略其最终值。 但是，由于范围会无限期地继续，因此请确保为循环添加明确的结束条件。 您还可以检查单边范围是否包含特定值，如下面的代码所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> range = ...5</span><br><span class="line">range.contains(7)   // <span class="literal">false</span></span><br><span class="line">range.contains(4)   // <span class="literal">true</span></span><br><span class="line">range.contains(-1)  // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>逻辑运算符修改或组合布尔逻辑值true和false。 Swift支持基于C语言的三种标准逻辑运算符：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">逻辑非（！a）</span><br><span class="line">逻辑与（a &amp;&amp; b）</span><br><span class="line">逻辑或（a || b）</span><br></pre></td></tr></table></figure>
+<h4 id="逻辑非运算符"><a href="#逻辑非运算符" class="headerlink" title="逻辑非运算符"></a>逻辑非运算符</h4><p>逻辑非运算符（！a）反转布尔值，以便true变为false，而false变为true。逻辑非运算符是前缀运算符，并且紧接在其运算的值之前，没有任何空格。 如以下示例所示，它可以读为“ not a”：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> allowedEntry = <span class="literal">false</span></span><br><span class="line"><span class="keyword">if</span> !allowedEntry &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"ACCESS DENIED"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"ACCESS DENIED"</span></span><br></pre></td></tr></table></figure>
+<p>如果将 !allowedEntry改为“如果不允许输入”。 仅在“不允许输入”为true时才执行下一行； 也就是说，如果allowedEntry为false。</p>
+<p>如本例所示，仔细选择布尔常量和变量名称可以帮助保持代码的可读性和简洁性，同时避免出现双重否定或使逻辑语句混乱的情况。</p>
+<h4 id="逻辑与运算符"><a href="#逻辑与运算符" class="headerlink" title="逻辑与运算符"></a>逻辑与运算符</h4><p>逻辑与运算符（a &amp;&amp; b）创建逻辑表达式，<strong><em>其中两个值都必须为true才能使整个表达式也为true。如果任何一个值为false，则整个表达式也将为false</em></strong>。实际上，如果第一个值是false，则第二个值甚至都不会被求值，因为它不可能使整个表达式等于true。 这称为短路评估。</p>
+<p>本示例考虑两个布尔值，并且仅在两个值都为true时才允许访问：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> enteredDoorCode = <span class="literal">true</span></span><br><span class="line"><span class="built_in">let</span> passedRetinaScan = <span class="literal">false</span></span><br><span class="line"><span class="keyword">if</span> enteredDoorCode &amp;&amp; passedRetinaScan &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Welcome!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"ACCESS DENIED"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"ACCESS DENIED"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="逻辑或运算符"><a href="#逻辑或运算符" class="headerlink" title="逻辑或运算符"></a>逻辑或运算符</h3><p>逻辑或运算符（a || b）是由两个相邻的管道字符组成的中缀运算符。您可以使用它来创建逻辑表达式，<strong><em>其中两个值中只有一个必须为真，整个表达式才能为真</em></strong>。与上面的逻辑与运算符类似，逻辑或运算符使用短路评估来考虑其表达式。 如果逻辑或表达式的左侧为true，则不会评估右侧，因为它不能更改整个表达式的结果。</p>
+<p>在下面的示例中，第一个Bool值（hasDoorKey）为false，但是第二个值（knowsOverridePassword）为true。 因为一个值是true，所以整个表达式的计算结果也为true，并且允许访问：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> hasDoorKey = <span class="literal">false</span></span><br><span class="line"><span class="built_in">let</span> knowsOverridePassword = <span class="literal">true</span></span><br><span class="line"><span class="keyword">if</span> hasDoorKey || knowsOverridePassword &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Welcome!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"ACCESS DENIED"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Welcome!"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="组合逻辑运算符"><a href="#组合逻辑运算符" class="headerlink" title="组合逻辑运算符"></a>组合逻辑运算符</h3><p>您可以组合多个逻辑运算符来创建更长的复合表达式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> enteredDoorCode &amp;&amp; passedRetinaScan || hasDoorKey || knowsOverridePassword &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Welcome!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"ACCESS DENIED"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Welcome!"</span></span><br></pre></td></tr></table></figure>
+<p>本示例使用多个&amp;&amp;和|| 运算符以创建更长的复合表达式。 但是，&amp;&amp;和|| 运算符仍然只对两个值进行运算，因此实际上是三个较小的表达式链接在一起。 该示例可以理解为：如果我们输入了正确的门密码并通过了视网膜扫描，或者我们具有有效的门钥匙，或者我们知道紧急情况优先密码，则允许访问。</p>
+<p><strong><em>Swift逻辑运算符&amp;&amp;和||是左关联的，这意味着具有多个逻辑运算符的复合表达式首先评估最左边的子表达式。如果碰到为真的运算，则执行第一个if语句，如果所有都为假，则执行else语句</em></strong></p>
+<h3 id="显示括号"><a href="#显示括号" class="headerlink" title="显示括号"></a>显示括号</h3><p>有时在不需要括号时将其包含在内很有用，以使复杂表达式的意图更易于阅读。在上面的门禁访问示例中，在复合表达式的第一部分周围添加括号以使其意图明确非常有用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (enteredDoorCode &amp;&amp; passedRetinaScan) || hasDoorKey || knowsOverridePassword &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Welcome!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"ACCESS DENIED"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Welcome!"</span></span><br></pre></td></tr></table></figure>
+<p>括号清楚表明，前两个值被视为整体逻辑中单独可能状态的一部分。复合表达式的输出不会改变，但总体目的是使读者更清楚。 可读性总是优先于简洁； 在有助于您明确意图的地方加上括号。</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
   </article>
   
 
