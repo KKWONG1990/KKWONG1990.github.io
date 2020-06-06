@@ -385,7 +385,6 @@
 
       
       <hr>
-<p>title:Learn Swift - Swift基础<br>date:2020-05-11<br>categories:Swift</p>
 <hr>
 <p>运算符是用于检查，更改或合并值的特殊符号或短语。例如，加法运算符（+）将两个数字相加，如让i = 1 + 2，而逻辑与运算符（&amp;&amp;）合并两个布尔值，如enterDoorCode &amp;&amp; passedRetinaScan一样。</p>
 <p>Swift支持大多数标准C运算符，并改进了一些功能来消除常见的编码错误。赋值运算符（=）不会返回值，以防止在打算使用等于运算符（==）时错误地使用了该值。算数运算符（+，-，*，/，%等）检测并禁止值溢出，以避免在处理大于或小于存储他们的类型的允许值范围的数字时出现意外结果。你可以选择使用Swift的溢出运算符来苹果溢出行为，如溢出运算符中所述。</p>
@@ -477,6 +476,1356 @@
 <h3 id="显示括号"><a href="#显示括号" class="headerlink" title="显示括号"></a>显示括号</h3><p>有时在不需要括号时将其包含在内很有用，以使复杂表达式的意图更易于阅读。在上面的门禁访问示例中，在复合表达式的第一部分周围添加括号以使其意图明确非常有用：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (enteredDoorCode &amp;&amp; passedRetinaScan) || hasDoorKey || knowsOverridePassword &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Welcome!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"ACCESS DENIED"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Welcome!"</span></span><br></pre></td></tr></table></figure>
 <p>括号清楚表明，前两个值被视为整体逻辑中单独可能状态的一部分。复合表达式的输出不会改变，但总体目的是使读者更清楚。 可读性总是优先于简洁； 在有助于您明确意图的地方加上括号。</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
+    <article id="post-Learn GPUImage - GPUImageVideoCamera " class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Learn%20GPUImage%20-%20GPUImageVideoCamera%20/"
+    >Learn GPUImage - GPUImageVideoCamera </a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20GPUImage%20-%20GPUImageVideoCamera%20/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<p><strong><em>真机调试GPUImage相机的时候，手机线连着电脑的时候，相机的初始化会很慢。但是，把手机线拔掉，相机初始化就变快了，具体是什么原因，还无从得知。</em></strong></p>
+<p>//获取是否显示的是前相机<br>@property (readonly, getter = isFrontFacingCameraPresent) BOOL frontFacingCameraPresent;<br>//获取是否显示的是后相机<br>@property (readonly, getter = isBackFacingCameraPresent) BOOL backFacingCameraPresent;</p>
+<p>/// 管理相机设计、焦点、曝光点属性<br>@property(readonly) AVCaptureDevice *inputCamera;<br>//相机代理属性<br>@property(nonatomic, assign) id<GPUImageVideoCameraDelegate> delegate;</p>
+<p>/*<br>GPUImage相机初始化方法<br>//相机输出格式参数<br>sessionPreset: AVCaptureSessionPreset<br>//相机摄像头位置<br>cameraPosition: AVCaptureDevicePositionUnspecified || AVCaptureDevicePositionBack || AVCaptureDevicePositionFront </p>
+<p>*/</p>
+<ul>
+<li>(id)initWithSessionPreset:(NSString *)sessionPreset cameraPosition:(AVCaptureDevicePosition)cameraPosition;</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
+    <article id="post-Learn GPUImage" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Learn%20GPUImage/"
+    >Learn GPUImage</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20GPUImage/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<h3 id="颜色调整"><a href="#颜色调整" class="headerlink" title="颜色调整"></a>颜色调整</h3><p><strong>GPUImageBrightnessFilter</strong>: 调整图片的亮度</p>
+<ul>
+<li><em>brightness</em>: brightness亮度范围(-1.0 - 1.0, 默认是0.0)</li>
+</ul>
+<p><strong>GPUImageExposureFilter</strong>: 调整图片的曝光度</p>
+<ul>
+<li><em>Exposure</em>: Exposure曝光度范围(-10.0 - 10.0, 默认是0.0)</li>
+</ul>
+<p><strong>GPUImageContrastFilter</strong>: 调整图片的对比度</p>
+<ul>
+<li><em>Contrast</em>: Contrast对比度范围(0.0 - 4.0, 默认是1.0)</li>
+</ul>
+<p><strong>GPUImageSaturationFilter</strong>: 调整图片的饱和度</p>
+<ul>
+<li><em>Saturation</em>: Saturation饱和度范围(0.0 - 2.0, 默认是1.0)</li>
+</ul>
+<p><strong>GPUImageGammaFilter</strong>: 调整图片的伽马值</p>
+<ul>
+<li><em>Gamma</em>: Gamma伽马值范围(0.0 - 3.0, 默认是1.0)</li>
+</ul>
+<p><strong>GPUImageLevelsFilter</strong>: 水平调整。 min、max、minOut和maxOut参数在[0,1]范围内浮动。如果你有来自Photoshop的参数在[0,255]范围内，你必须首先将它们转换成[0,1]</p>
+<p><strong>GPUImageColorMatrixFilter</strong>: 通过应用一个矩阵变换图像的颜色</p>
+<ul>
+<li><em>ColorMatrix</em>: 一个4乘4的矩阵，用于转换图像中的每一种颜色</li>
+<li><em>intensity</em>:转换后的新颜色替换每个像素的原始颜色的程度</li>
+</ul>
+<p><strong>GPUImageRGBFilter</strong>: 调整图像的单个RGB通道</p>
+<ul>
+<li><p><em>red</em>: 每个颜色通道相乘的规格化值，范围从0.0 到1.0 默认1.0</p>
+</li>
+<li><p><em>green</em>:</p>
+</li>
+<li><p><em>blue</em>:</p>
+</li>
+<li><p><strong>GPUImageHueFilter</strong>: 调整图像的色调</p>
+</li>
+<li><p><em>hue</em>: 色调角度，以度为单位。默认为90度</p>
+</li>
+<li><p><strong>GPUImageVibranceFilter</strong>: 调整图像的振动</p>
+</li>
+<li><p><em>vibrance</em>: 要应用的振动调整，使用0.0作为默认值，建议最小/最大值分别为-1.2和1.2左右。</p>
+</li>
+<li><p><strong>GPUImageWhiteBalanceFilter</strong>: 调整图像的白平衡.</p>
+</li>
+<li><p><em>temperature</em>: 温度调整图像,在ºK。4000的值是非常冷的，7000的值是非常热的。默认值是5000。请注意，4000到5000之间的刻度与5000到7000之间的刻度在视觉上几乎是一样重要的。</p>
+</li>
+<li><p><em>tint</em>:调整图像的色调。值-200是<em>非常</em>绿色，而200是<em>非常</em>粉色。默认值是0。</p>
+</li>
+<li><p><strong>GPUImageToneCurveFilter</strong>:基于样条曲线调整图像的每个颜色通道的颜色</p>
+</li>
+<li><p><em>redControlPoints</em>:</p>
+</li>
+<li><p><em>greenControlPoints</em>:</p>
+</li>
+<li><p><em>blueControlPoints</em>: </p>
+</li>
+<li><p><em>rgbCompositeControlPoints</em>: 色调曲线采用一系列控制点，这些控制点为每个颜色组件定义样条曲线，或为组合中的所有三个组件定义样条曲线。这些被存储为NSArray中的nsvalue包装的CGPoints, X和Y坐标从0 - 1规范化。默认值是(0,0)，(0.5,0.5)，(1,1)。</p>
+</li>
+<li><p><strong>GPUImageHighlightShadowFilter</strong>: 调整图像的阴影和高光</p>
+</li>
+<li><p><em>shadows</em>:增加阴影亮度，从0.0到1.0，默认为0.0。</p>
+</li>
+<li><p><em>highlights</em>: 高光从1.0降低到0.0，默认为1.0。</p>
+</li>
+<li><p><strong>GPUImageHighlightShadowTintFilter</strong>: 允许你着色的阴影和突出的图像独立使用颜色和强度</p>
+</li>
+<li><p><em>shadowTintColor</em>: 阴影着色RGB颜色(GPUVector4)。默认:’ {1.0f, 0.0f, 0.0f, 1.0f} ‘(红色)。</p>
+</li>
+<li><p><em>highlightTintColor</em>: 高亮着色RGB颜色(GPUVector4)。默认:’ {0.0f, 0.0f, 1.0f, 1.0f} ‘(蓝色)。</p>
+</li>
+<li><p><em>shadowTintIntensity</em>: 阴影着色强度，0.0到1.0。默认值:0.0</p>
+</li>
+<li><p><em>highlightTintIntensity</em>: 高亮着色强度，从0.0到1.0,0.0为默认值。</p>
+</li>
+<li><p><strong>GPUImageLookupFilter</strong>: 使用RGB颜色查找图像来重新映射图像中的颜色。首先，使用您最喜欢的照片编辑应用程序对GPUImage/framework/Resources中的look .png应用一个过滤器。为了使这个工作正常，每个像素的颜色必须不依赖于其他像素(例如，模糊将不工作)。如果需要更复杂的筛选器，可以根据需要创建任意多的查找表。准备好之后，使用新的look .png文件作为GPUImageLookupFilter的第二个输入。</p>
+</li>
+<li><p><strong>GPUImageAmatorkaFilter</strong>: 一个基于Photoshop操作的照片过滤器，Amatorka: <a href="http://amatorka.deviantart.com/art/Amatorka-Action-2-121069631。如果要使用这种效果，必须从GPUImage资源文件夹将lookup_amatorka.png添加到应用程序包中。" target="_blank" rel="noopener">http://amatorka.deviantart.com/art/Amatorka-Action-2-121069631。如果要使用这种效果，必须从GPUImage资源文件夹将lookup_amatorka.png添加到应用程序包中。</a></p>
+</li>
+<li><p><strong>GPUImageMissEtikateFilter</strong>: 一个基于阿提凯特小姐Photoshop操作的照片过滤器:<a href="http://miss-etikate.deviantart.com/art/photoshop-15-120151961。如果您想要使用这个效果，您必须从GPUImage资源文件夹中添加lookup_miss_etikat" target="_blank" rel="noopener">http://miss-etikate.deviantart.com/art/photoshop-15-120151961。如果您想要使用这个效果，您必须从GPUImage资源文件夹中添加lookup_miss_etikat</a> .png到您的应用程序包中。</p>
+</li>
+<li><p><strong>GPUImageSoftEleganceFilter</strong>: 另一个基于查找的颜色重映射过滤器。如果要使用这种效果，必须从GPUImage资源文件夹将lookup_soft_elegance_1.png和lookup_soft_elegance_2.png添加到应用程序包中。</p>
+</li>
+<li><p><strong>GPUImageSkinToneFilter</strong>: 一个皮肤色调调整过滤器，它会影响一个独特的浅肤色范围，并相应地调整粉红/绿色或粉红/橙色范围。默认值以白种人皮肤为目标，但可以根据需要进行调整。</p>
+</li>
+<li><p><em>skinToneAdjust</em>: 调节肤色的量。默认值:0.0，建议最小值/最大值:-0.3和0.3。</p>
+</li>
+<li><p><em>skinHue</em>: 要检测的肤色。默认值:0.05(白种人到红皮肤)。</p>
+</li>
+<li><p><em>skinHueThreshold</em>: 肤色的差异量。默认值:40.0。</p>
+</li>
+<li><p><em>maxHueShift</em>: 最大的色调转换量。默认值:0.25。</p>
+</li>
+<li><p><em>maxSaturationShift</em> =要移动的最大饱和度(使用橙色时)。默认值:0.4。</p>
+</li>
+<li><p><em>upperSkinToneColor</em> = <code>GPUImageSkinToneUpperColorGreen</code> or <code>GPUImageSkinToneUpperColorOrange</code></p>
+</li>
+<li><p><strong>GPUImageColorInvertFilter</strong>: 反转图像的颜色</p>
+</li>
+<li><p><strong>GPUImageGrayscaleFilter</strong>: 将图像转换为灰度(饱和度过滤器的一种稍微快一些的实现，没有改变颜色贡献的能力)</p>
+</li>
+<li><p><strong>GPUImageMonochromeFilter</strong>: 根据每个像素的亮度将图像转换为单色版本</p>
+</li>
+<li><p><em>intensity</em>:特定颜色替换正常图像颜色的程度(0.0 - 1.0，默认为1.0)</p>
+</li>
+<li><p><em>color</em>: 作为效果基础的颜色，默认值为(0.6,0.45,0.3,1.0)。</p>
+</li>
+<li><p><strong>GPUImageFalseColorFilter</strong>: 使用图像的亮度混合两个用户指定的颜色</p>
+</li>
+<li><p><em>firstColor</em>: 第一种颜色和第二种颜色分别指定了什么颜色替换了图像的暗区和亮区。默认值是(0.0,0.0,0.5)amd(1.0, 0.0, 0.0)。</p>
+</li>
+<li><p><em>secondColor</em>: </p>
+</li>
+<li><p><strong>GPUImageHazeFilter</strong>:用于添加或去除雾霾(类似于UV过滤器)</p>
+<ul>
+<li><em>distance</em>: 应用颜色的强度。默认为0。——之间的值。3和。3是最好的</li>
+<li><em>slope</em>: 颜色变化量。默认为0。——之间的值。3和。3是最好的。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageSepiaFilter</strong>: 简单的sepia色调过滤器</p>
+<ul>
+<li><em>intensity</em>: 深褐色取代正常图像颜色的程度(0.0 - 1.0，默认为1.0)</li>
+</ul>
+</li>
+<li><p><strong>GPUImageOpacityFilter</strong>: 调整传入图像的alpha通道</p>
+<ul>
+<li><em>opacity</em>: 将每个像素的传入alpha通道乘以(0.0 - 1.0，默认为1.0)</li>
+</ul>
+</li>
+<li><p><strong>GPUImageSolidColorGenerator</strong>: 它输出一个生成的纯色图像。你需要定义图像大小使用-forceProcessingAtSize:</p>
+<ul>
+<li><em>color</em>: 用于填充图像的颜色，采用四组分格式。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageLuminanceThresholdFilter</strong>:亮度高于阈值的像素将显示为白色，而亮度低于阈值的像素将显示为黑色</p>
+<ul>
+<li><em>threshold</em>: 亮度阈值，从0.0到1.0，默认值为0.5</li>
+</ul>
+</li>
+<li><p><strong>GPUImageAdaptiveThresholdFilter</strong>: 确定像素周围的局部亮度，如果像素低于该局部亮度，则将像素变为黑色，如果像素高于该局部亮度，则将像素变为白色。这对于在不同光照条件下挑选文本非常有用。</p>
+<ul>
+<li><em>blurRadiusInPixels</em>: 一个倍增器，用于背景平均模糊半径(以像素为单位)，默认值为4。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageAverageLuminanceThresholdFilter</strong>: 这是一个阈值操作，根据场景的平均亮度不断调整阈值。</p>
+<ul>
+<li><em>thresholdMultiplier</em>: 这是一个因子，平均亮度将乘，以达到最终阈值使用。默认情况下，这是1.0。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageHistogramFilter</strong>: 它分析传入的图像，并创建一个输出直方图，每个颜色值出现的频率。这个过滤器的输出是一个3像素高，256像素宽的图像，其中的中心(垂直)像素包含像素对应的频率，在不同的颜色值出现。每个颜色值占据256个宽度位置中的一个，从左边的0到右边的255。这个直方图可以生成单独的颜色通道(kgpuimage直方图red, kgpuimage直方图green, kgpuimage直方图blue)，图像的亮度(kgpuimage直方图亮度)，或者同时生成所有三个颜色通道(kgpuimage直方图rgb)。</p>
+<ul>
+<li><p><em>downsamplingFactor</em>:不是对每个像素进行采样，而是指定采样图像的比例。默认情况下，这是16，最小值为1。这样做是为了防止直方图饱和，因为每个颜色值只能记录256个像素，否则就会超载。</p>
+</li>
+<li><p><strong>GPUImageHistogramGenerator</strong>:这是一个特殊的过滤器，因为它主要用于与gpuimage直方图过滤器一起工作。它生成由gpuimage直方图过滤器生成的颜色直方图的输出表示，但是它可以被重新用于显示其他类型的值。它接收图像并查看中心(垂直)像素。然后，它在输出纹理的不同颜色的图形中绘制RGB组件的数值。您可能需要强制此筛选器的大小，以使其输出可见。</p>
+</li>
+<li><p><strong>GPUImageAverageColor</strong>: 该函数处理输入图像，并通过对图像中每个像素的RGBA组件求平均值来确定场景的平均颜色。减少过程是用来逐步下降采样的GPU上的源图像，然后在CPU上的一个简短的平均计算。这个过滤器的输出是没有意义的，但是您需要将colorAverageProcessingFinishedBlock属性设置为一个块，该块包含四个颜色组件和一个帧时间，并对它们进行处理。</p>
+</li>
+<li><p><strong>GPUImageLuminosity</strong>: 像GPUImageAverageColor一样，这将图像降低到其平均光度。您需要设置luminosityProcessingFinishedBlock来处理这个过滤器的输出，它只返回光度值和帧时间。</p>
+</li>
+<li><p><strong>GPUImageChromaKeyFilter</strong>: 对于图像中的给定颜色，将alpha通道设置为0。这类似于GPUImageChromaKeyBlendFilter，只是它没有混合第二个图像以匹配颜色，而是没有接收第二个图像，只是将给定的颜色变为透明。</p>
+<ul>
+<li><em>thresholdSensitivity</em>: 颜色匹配需要与要替换的目标颜色的距离(默认值为0.4)</li>
+<li><em>smoothing</em>: 如何平滑混合的颜色匹配(默认值为0.1)</li>
+</ul>
+</li>
+</ul>
+<h3 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h3><ul>
+<li><strong>GPUImageTransformFilter</strong>:这适用于图像的任意二维或三维变换</li>
+<li><em>affineTransform</em>:这需要一个CGAffineTransform来调整二维图像</li>
+<li><em>transform3D</em>:这需要一个CATransform3D操作的图像在3-D</li>
+</ul>
+<ul>
+<li>ignorepectratio *:默认情况下，会保持转换后的图像的纵横比，但是可以将其设置为YES，以使转换独立于纵横比</li>
+</ul>
+<p><strong>GPUImageCropFilter</strong>:将图像裁剪到特定区域，然后只将该区域传递到过滤器中的下一阶段</p>
+<ul>
+<li><em>cropRegion</em>:从图像中裁剪出的矩形区域，坐标归一化为0.0 - 1.0。(0.0, 0.0)的位置在图像的左上方。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageLanczosResamplingFilter</strong>:这让你向上或向下采样一个图像使用Lanczos重新采样，结果明显比标准的线性或三线性插值的质量更好。只需使用-forceProcessingAtSize:设置过滤器的目标输出分辨率，然后将对图像进行重新采样以获得新的大小。</p>
+<ul>
+<li><p><strong>GPUImageSharpenFilter</strong>:锐化图像</p>
+</li>
+<li><p><em>锐度</em>:应用的锐度调整(-4.0 -4.0，默认为0.0)</p>
+</li>
+<li><p><strong>GPUImageUnsharpMaskFilter</strong>:应用非锐化蒙版</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的模糊半径。默认值是4.0。</p>
+</li>
+</ul>
+<p><em>强度</em>:锐化的强度，从0.0开始，默认值为1.0</p>
+<ul>
+<li><strong>GPUImageGaussianBlurFilter</strong>:一个硬件优化，可变半径高斯模糊</li>
+<li><em>texelSpacingMultiplier</em>:为texel之间的间距设置的倍增器，范围从0.0开始，默认值为1.0。调整这个可能会稍微增加模糊的强度，但是会在结果中引入一些人为的东西。强烈建议在使用这个参数之前先使用其他参数。</li>
+<li><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为2.0。在高斯分布函数中调整变量。</li>
+<li><ul>
+<li>blurRadiusAsFractionOfImageWidth *:</li>
+</ul>
+</li>
+<li><em>blurRadiusAsFractionOfImageHeight</em>:设置这些属性将允许模糊半径随图像的大小缩放</li>
+<li><em>blurPasses</em>:顺序模糊传入图像的次数。通过的次数越多，过滤器的速度就越慢。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>GPUImageBoxBlurFilter</strong>:一个硬件优化，可变半径框模糊</p>
+</li>
+<li><p><em>texelSpacingMultiplier</em>:为texel之间的间距设置的倍增器，范围从0.0开始，默认值为1.0。调整这个可能会稍微增加模糊的强度，但是会在结果中引入一些人为的东西。强烈建议在使用这个参数之前先使用其他参数。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为2.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><ul>
+<li>blurRadiusAsFractionOfImageWidth *:</li>
+</ul>
+</li>
+<li><p><em>blurRadiusAsFractionOfImageHeight</em>:设置这些属性将允许模糊半径随图像的大小缩放</p>
+</li>
+<li><p><em>blurPasses</em>:顺序模糊传入图像的次数。通过的次数越多，过滤器的速度就越慢。</p>
+</li>
+<li><p><strong>GPUImageSingleComponentGaussianBlurFilter</strong>: GPUImageGaussianBlurFilter的一个修改，只在红色组件上运行</p>
+</li>
+<li><p><em>texelSpacingMultiplier</em>:为texel之间的间距设置的倍增器，范围从0.0开始，默认值为1.0。调整这个可能会稍微增加模糊的强度，但是会在结果中引入一些人为的东西。强烈建议在使用这个参数之前先使用其他参数。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为2.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><ul>
+<li>blurRadiusAsFractionOfImageWidth *:</li>
+</ul>
+</li>
+<li><p><em>blurRadiusAsFractionOfImageHeight</em>:设置这些属性将允许模糊半径随图像的大小缩放</p>
+</li>
+<li><p><em>blurPasses</em>:顺序模糊传入图像的次数。通过的次数越多，过滤器的速度就越慢。</p>
+</li>
+<li><p><strong>GPUImageGaussianSelectiveBlurFilter</strong>:在圆形区域内保持焦点的高斯模糊</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为5.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><p>*不包括半径的圆形区域的模糊</p>
+</li>
+<li><p><em>不包括圆心区域</em>:圆心区域不包括模糊区域</p>
+</li>
+<li><p><em>排除模糊部分</em>:模糊部分和清晰圆之间的区域大小</p>
+</li>
+<li><p><em>aspectRatio</em>:图像的宽高比，用来调整焦点区域的圆度。默认情况下，这与图像宽高比匹配，但是您可以覆盖这个值。</p>
+</li>
+<li><p><strong>GPUImageGaussianSelectiveBlurFilter</strong>:在圆形区域内保持焦点的高斯模糊</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为5.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><p>*不包括半径的圆形区域的模糊</p>
+</li>
+<li><p><em>不包括圆心区域</em>:圆心区域不包括模糊区域</p>
+</li>
+<li><p><em>排除模糊部分</em>:模糊部分和清晰圆之间的区域大小</p>
+</li>
+<li><p><em>aspectRatio</em>:图像的宽高比，用来调整焦点区域的圆度。默认情况下，这与图像宽高比匹配，但是您可以覆盖这个值。</p>
+</li>
+<li><p><strong>GPUImageGaussianBlurPositionFilter</strong>: GPUImageGaussianSelectiveBlurFilter的逆函数，只在特定的圆圈内应用模糊效果</p>
+</li>
+<li><p><em>blurSize</em>:模糊大小的倍增器，范围从0.0到1.0，默认值为0.0</p>
+</li>
+<li><p><em>blurCenter</em>:模糊中心，默认值为0.5,0.5</p>
+</li>
+<li><p><em>blurRadius</em>:模糊的半径，默认为1.0</p>
+</li>
+<li><p><strong>GPUImageiOSBlurFilter</strong>:尝试在控制中心等地方复制iOS 7中使用的背景模糊。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(像素)，默认值为12.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><p><em>饱和度</em>:饱和度范围从0.0(完全去饱和)到2.0(最大饱和度)，0.8为正常水平</p>
+</li>
+<li><p><em>向下采样</em>:向下采样，然后向上采样传入图像的程度，以最小化高斯模糊内的计算，默认值为4.0。</p>
+</li>
+<li><p><strong>GPUImageMedianFilter</strong>:取三个颜色分量在3x3区域内的中值</p>
+</li>
+<li><p><strong>GPUImageBilateralFilter</strong>:双边模糊，它试图模糊类似的颜色值，同时保留锐利的边缘</p>
+</li>
+<li><p><em>texelSpacingMultiplier</em>:用于texel读取之间的间隔的倍增器，范围从0.0开始，默认值为4.0</p>
+</li>
+<li><p><em>distanceNormalizationFactor</em>:中心颜色与样本颜色之间距离的归一化因子，默认值为8.0。</p>
+</li>
+<li><p><strong>GPUImageTiltShiftFilter</strong>:一个模拟的倾斜偏移镜头效果</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础模糊的半径，以像素为单位。默认情况下这是7.0。</p>
+</li>
+<li><p><em>topFocusLevel</em>:图像中焦点区域顶部的规范化位置，该值应该低于bottomFocusLevel，默认值0.4</p>
+</li>
+<li><p>*bottom focuslevel *:图像中焦点区域底部的规范化位置，该值应该高于topFocusLevel，默认值为0.6</p>
+</li>
+<li><p><em>focusFallOffRate</em>:图像在焦点区域以外变得模糊的速度，默认为0.2</p>
+</li>
+<li><p><strong>GPUImage3x3ConvolutionFilter</strong>:对图像运行一个3x3卷积核<br>卷积核*:卷积核是一个3 * 3矩阵的值，适用于像素和它周围的8个像素。矩阵以行为主的顺序指定，左上角的像素为1。1和右下角3,3。如果矩阵中的值加起来不等于1.0，图像可能会变亮或变暗。</p>
+</li>
+<li><p><strong>GPUImageSobelEdgeDetectionFilter</strong>: Sobel边缘检测，边缘以白色高亮显示</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p><strong>GPUImagePrewittEdgeDetectionFilter</strong>: Prewitt edge detection，其边缘用白色高亮显示</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p>** gpuimagethreshold dedgedetectionfilter **:执行Sobel边缘检测，但应用一个阈值，而不是给出渐进的强度值</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p><em>threshold</em>:该阈值之上的任何边都是黑色的，而该阈值之下的任何边都是白色的。范围从0.0到1.0，默认为0.8</p>
+</li>
+<li><p><strong>GPUImageCannyEdgeDetectionFilter</strong>:这使用了整个Canny过程来突出一个像素宽的边缘</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:高斯模糊的基础模糊半径。默认是2.0。</p>
+</li>
+<li><p><em>blurTexelSpacingMultiplier</em>:下面的blur texel间距倍增器。默认是1.0。</p>
+</li>
+<li><p><em>上阈值</em>:任何梯度幅度高于此阈值的边缘都将通过并显示在最终结果中。默认是0.4。</p>
+</li>
+<li><p><em>lowerThreshold</em>:任何梯度大小低于此阈值的边缘都将失败，并将从最终结果中删除。默认是0.1。</p>
+</li>
+<li><p><strong>GPUImageHarrisCornerDetectionFilter</strong>:在输入图像上运行Harris角点检测算法，生成的图像的角点为白色像素，其余为黑色像素。可以设置角点detectedblock，并且将向您提供角点列表(在规范化0..(1 X, Y坐标)在这个回调函数中，用于您想要执行的任何其他操作。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>灵敏度</em>:一个内部缩放因子，用于调整在过滤器中生成的转角贴图的动态范围。默认是5.0。</p>
+</li>
+<li><p><em>阈值</em>:检测到某点为拐角的阈值。这可能会根据尺寸、照明条件和iOS设备的相机类型而有很大的不同，所以可能需要做一些实验来适应你的情况。默认是0.20。</p>
+</li>
+<li><p><strong>GPUImageNobleCornerDetectionFilter</strong>:在Harris角点探测器上运行Noble变量。它的行为如上所述的哈里斯探测器。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>灵敏度</em>:一个内部缩放因子，用于调整在过滤器中生成的转角贴图的动态范围。默认是5.0。</p>
+</li>
+<li><p><em>阈值</em>:检测到某点为拐角的阈值。这可能会根据尺寸、照明条件和iOS设备的相机类型而有很大的不同，所以可能需要做一些实验来适应你的情况。默认是0.2。</p>
+</li>
+<li><p><strong>GPUImageShiTomasiCornerDetectionFilter</strong>:运行Shi-Tomasi特征检测器。它的行为如上所述的哈里斯探测器。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>灵敏度</em>:一个内部缩放因子，用于调整在过滤器中生成的转角贴图的动态范围。默认值是1.5。</p>
+</li>
+<li><p><em>阈值</em>:检测到某点为拐角的阈值。这可能会根据尺寸、照明条件和iOS设备的相机类型而有很大的不同，所以可能需要做一些实验来适应你的情况。默认是0.2。</p>
+</li>
+<li><p><strong>GPUImageNonMaximumSuppressionFilter</strong>:目前仅作为Harris角点检测过滤器的一部分使用，它将在每个像素周围采样一个1像素的框，并确定中心像素的红色通道是否在该区域最大。如果是，它就会留下来。如果不是，则将所有颜色组件设置为0。</p>
+</li>
+</ul>
+<p>  ** <em>GPUImageXYDerivativeFilter*</em>:这是Harris角点检测过滤器的内部组件，它可以计算出左边和右边像素的平方差，上面和下面像素的平方差，以及这两个差的乘积。</p>
+<ul>
+<li><p><strong>GPUImageCrosshairGenerator</strong>:在图像上绘制一系列十字准线，最常用来识别机器视觉特征。它不像其他过滤器那样接受一个标准的图像，而是在它的-renderCrosshairsFromArray:count: method中获取一系列的点，该方法执行实际的绘图。您将需要强制此筛选器以所需的特定输出大小呈现。</p>
+</li>
+<li><p><em>十字准线宽度</em>:屏幕上绘制的十字准线的宽度，以像素为单位。</p>
+</li>
+<li><p><strong>GPUImageDilationFilter</strong>:执行图像膨胀操作，其中矩形邻域内红色通道的最大强度用于此像素的强度。要采样的矩形区域的半径在初始化时指定，范围为1-4个像素。这是用于灰度图像，它扩大了明亮的区域。</p>
+</li>
+<li><p><strong>GPUImageRGBDilationFilter</strong>:这与GPUImageDilationFilter相同，不同之处是它作用于所有颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageErosionFilter</strong>:执行图像侵蚀操作，其中矩形邻域内红色通道的最小强度用于该像素的强度。要采样的矩形区域的半径在初始化时指定，范围为1-4个像素。这是打算用于灰度图像，它扩大黑暗区域。</p>
+</li>
+<li><p><strong>GPUImageRGBErosionFilter</strong>:这与GPUImageErosionFilter是一样的，除了它作用于所有的颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageOpeningFilter</strong>:对图像的红色通道进行侵蚀，然后进行相同半径的膨胀。半径在初始化时设置，范围为1-4像素。这就过滤掉了较小的明亮区域。</p>
+</li>
+<li><p><strong>GPUImageRGBOpeningFilter</strong>:这与GPUImageOpeningFilter相同，不同之处是它作用于所有颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageClosingFilter</strong>:它对图像的红色通道进行扩展，然后进行相同半径的侵蚀。半径在初始化时设置，范围为1-4像素。这就过滤掉了较小的黑暗区域。</p>
+</li>
+<li><p><strong>GPUImageRGBClosingFilter</strong>:这与GPUImageClosingFilter相同，不同之处是它作用于所有颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageLocalBinaryPatternFilter</strong>:执行8个周围像素和中心像素的红色通道强度的比较，将比较结果编码为一个比特串，该比特串成为该像素强度。最不重要的位是右上比较，逆时针方向，以最重要的位右比较结束。</p>
+</li>
+<li><p><strong>GPUImageLowPassFilter</strong>:这适用于传入的视频帧的低通滤波器。这基本上是前一帧与当前帧的加权滚动平均值的累加。这可以用来去噪视频，添加运动模糊，或用于创建一个高通滤波器。</p>
+</li>
+<li><p><em>filterStrength</em>:控制先前积累的帧与当前帧混合的程度。该值的范围从0.0到1.0，缺省值为0.5。</p>
+</li>
+<li><p><strong>GPUImageHighPassFilter</strong>:这适用于传入的视频帧的高通滤波器。这是低通滤波器的倒数，显示了当前帧与前一帧的加权滚动平均值之间的差异。这是最有用的运动检测。</p>
+</li>
+<li><p><em>filterStrength</em>:控制先前累积帧的混合程度，然后从当前帧中减去。该值的范围从0.0到1.0，缺省值为0.5。</p>
+</li>
+<li><p><strong>GPUImageMotionDetector</strong>:这是一个基于高通滤波器的运动检测器。设置motionDetectionBlock后，在每一帧输入的帧上，它都会给出场景中所有检测到的运动的质心(在标准的X、Y坐标中)以及场景的运动强度。</p>
+</li>
+<li><p><em>lowPassFilterStrength</em>:控制后台使用的低通过滤器的强度，以建立传入帧与之比较的基线。该值的范围从0.0到1.0，缺省值为0.5。</p>
+</li>
+<li><p><strong>GPUImageHoughTransformLineDetector</strong>:使用到平行坐标空间的霍夫变换检测图像中的线条。这种方法完全基于由Brno技术大学的Graph@FIT研究小组开发的PC线流程，并在他们的出版物:M. Dubska、J. Havel和A. Herout中进行了描述。使用并行坐标和OpenGL实时检测直线。《SCCG 2011会议记录》，布拉迪斯拉发，SK, p. 7 (<a href="http://medusa.fit.vutbr.cz/public/data/papers/2011-sccg" target="_blank" rel="noopener">http://medusa.fit.vutbr.cz/public/data/papers/2011-sccg</a> - dubska-datausing-pcandopengl.pdf)， M. Dubska, J. Havel, and A. Herout。PClines -使用平行坐标的线检测。2011年IEEE计算机视觉和模式识别会议(CVPR)， p. 1489- 1494 (<a href="http://medusa.fit.vutbr.cz/public/data/papers/2011-CVPR-Dubska-PClines.pdf)。" target="_blank" rel="noopener">http://medusa.fit.vutbr.cz/public/data/papers/2011-CVPR-Dubska-PClines.pdf)。</a></p>
+</li>
+<li><p><em>边缘阈值</em>:一个阈值，其中一个点被检测为属于确定线的边缘。默认是0.9。</p>
+</li>
+<li><p><em>lineDetectionThreshold</em>:检测到的局部最大值属于平行坐标空间中的一条线的阈值。默认是0.20。</p>
+</li>
+<li><p><em>linesDetectedBlock</em>:这个块在行检测时调用，通常在每个处理过的帧上调用。传入一个C数组，其中包含以m、b对(y=mx+b)为单位的标准化斜率和截距，以及检测到的行数和视频帧的当前时间戳。</p>
+</li>
+<li><p><strong>GPUImageLineGenerator</strong>:一个助手类，生成可以覆盖场景的线条。这些线的颜色可以使用-setLineColorRed:green:blue:</p>
+</li>
+<li><p><em>lineWidth</em>:线条的宽度，以像素为单位，默认为1.0。</p>
+</li>
+<li><p><strong>GPUImageMotionBlurFilter</strong>:对图像应用方向运动模糊</p>
+</li>
+<li><p><em>blurSize</em>:模糊大小的倍增器，范围从0.0到1.0，默认值为0.0</p>
+</li>
+<li><p><em>模糊角</em>:蓝光的角度方向</p>
+<h3 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h3></li>
+</ul>
+<ul>
+<li><p><strong>GPUImageChromaKeyBlendFilter</strong>:有选择地将第一个图像中的颜色替换为第二个图像中的颜色</p>
+</li>
+<li><p><em>阈值灵敏度</em>:颜色匹配需要与要替换的目标颜色的距离(默认值为0.4)</p>
+</li>
+<li><p><em>平滑</em>:如何平滑混合的颜色匹配(默认值为0.1)</p>
+</li>
+<li><p><strong>GPUImageDissolveBlendFilter</strong>:应用两个图像的溶解混合</p>
+</li>
+<li><p><em>mix</em>:第二个图像覆盖第一个图像的程度(0.0 - 1.0，默认为0.5)</p>
+</li>
+<li><p><strong>GPUImageMultiplyBlendFilter</strong>:应用两个图像的多重混合</p>
+</li>
+<li><p><strong>GPUImageAddBlendFilter</strong>:应用两个图像的相加混合</p>
+</li>
+<li><p><strong>GPUImageSubtractBlendFilter</strong>:应用两个图像的减法混合</p>
+</li>
+<li><p><strong>GPUImageDivideBlendFilter</strong>:应用两个图像的分割混合</p>
+</li>
+</ul>
+<p><strong>GPUImageOverlayBlendFilter</strong>:应用两个图像的叠加混合</p>
+<ul>
+<li><p><strong>GPUImageDarkenBlendFilter</strong>:混合两张图像，取图像之间每个颜色分量的最小值</p>
+</li>
+<li><p><strong>GPUImageLightenBlendFilter</strong>:混合两张图像，取图像之间每个颜色分量的最大值</p>
+</li>
+<li><p><strong>GPUImageColorBurnBlendFilter</strong>:应用两个图像的颜色烧伤混合</p>
+</li>
+<li><p><strong>GPUImageColorDodgeBlendFilter</strong>:应用两个图像的颜色减淡混合</p>
+</li>
+<li><p><strong>GPUImageScreenBlendFilter</strong>:应用两个图像的屏幕混合</p>
+</li>
+<li><p>** gpuimageexclusive blendfilter **:应用两个图像的排除混合</p>
+</li>
+<li><p><strong>GPUImageDifferenceBlendFilter</strong>:应用两个图像的差异混合</p>
+</li>
+<li><p><strong>GPUImageHardLightBlendFilter</strong>:应用两个图像的硬光混合</p>
+</li>
+<li><p><strong>GPUImageSoftLightBlendFilter</strong>:应用两个图像的柔光混合</p>
+</li>
+<li><p><strong>GPUImageAlphaBlendFilter</strong>:基于第二个alpha通道，在第一个图像上混合第二个图像</p>
+</li>
+<li><p><em>mix</em>:第二个映像覆盖第一个映像的程度(0.0 - 1.0，默认为1.0)</p>
+</li>
+<li><p><strong>GPUImageSourceOverBlendFilter</strong>:应用两个图像的混合源</p>
+</li>
+<li><p><strong>GPUImageColorBurnBlendFilter</strong>:应用两个图像的颜色烧伤混合</p>
+</li>
+<li><p><strong>GPUImageColorDodgeBlendFilter</strong>:应用两个图像的颜色减淡混合</p>
+</li>
+<li><p><strong>GPUImageNormalBlendFilter</strong>:应用两个图像的正常混合</p>
+</li>
+<li><p><strong>GPUImageColorBlendFilter</strong>:应用两个图像的颜色混合</p>
+</li>
+<li><p><strong>GPUImageHueBlendFilter</strong>:应用两个图像的色调混合</p>
+</li>
+<li><p><strong>GPUImageSaturationBlendFilter</strong>:应用两个图像的饱和混合</p>
+</li>
+<li><p>** gpuimagelosityblendfilter **:应用两个图像的亮度混合</p>
+</li>
+<li><p><strong>GPUImageLinearBurnBlendFilter</strong>:应用两个图像的线性烧伤混合</p>
+</li>
+<li><p><strong>GPUImagePoissonBlendFilter</strong>:应用两个图像的泊松混合</p>
+</li>
+<li><p><em>mix</em>: mix的范围从0.0(只有图像1)到1.0(只有图像2的梯度)，正常水平为1.0</p>
+</li>
+<li><ul>
+<li>num迭代*:传播梯度的次数。如果你想接近收敛，可以把这个值调到100甚至1000。是的，这将是缓慢的。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageMaskFilter</strong>:掩码一个图像使用另一个</p>
+</li>
+</ul>
+<h3 id="视觉效果"><a href="#视觉效果" class="headerlink" title="视觉效果"></a>视觉效果</h3><ul>
+<li><p><strong>GPUImagePixellateFilter</strong>:在图像或视频上应用像素效果</p>
+</li>
+<li><p><em>fractionalWidthOfAPixel</em>:像素的大小，作为图像的宽度和高度的一部分(0.0 - 1.0，默认值为0.05)</p>
+</li>
+<li><p><strong>GPUImagePolarPixellateFilter</strong>:对图像或视频应用像素化效果，基于极坐标而不是笛卡尔坐标</p>
+</li>
+<li><p><em>center</em>:应用像素的中心，默认为(0.5,0.5)</p>
+</li>
+<li><p><em>pixelSize</em>:分数像素大小，分为宽度和高度组件。默认值是(0.05,0.05)</p>
+</li>
+<li><p><strong>GPUImagePolkaDotFilter</strong>:将图像分割成规则网格中的彩色点</p>
+</li>
+<li><p><em>fractionalWidthOfAPixel</em>:点的大小，作为图像的宽度和高度的一部分(0.0 - 1.0，默认值0.05)</p>
+</li>
+<li><p><em>点标度</em>:每个网格空间被点所占的比例，从0.0到1.0，默认值为0.9。</p>
+</li>
+<li><p><strong>GPUImageHalftoneFilter</strong>:将半色调效果应用于图像，例如新闻打印</p>
+</li>
+<li><p><em>fractionalWidthOfAPixel</em>:半色调点的大小，作为图像的宽度和高度的一部分(0.0 - 1.0，默认值为0.05)</p>
+</li>
+<li><p><strong>GPUImageCrosshatchFilter</strong>:将图像转换为黑白交叉图案</p>
+</li>
+<li><p><em>交叉点间距</em>:图像的分数宽度，用作交叉点的间距。默认值是0.03。</p>
+</li>
+<li><p><em>lineWidth</em>:交叉线的相对宽度。默认值是0.003。</p>
+</li>
+<li><p><strong>GPUImageSketchFilter</strong>:转换视频看起来像一个草图。这只是倒色的Sobel边缘检测滤镜</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p>** gpuimage阈值ketchfilter **:与素描过滤器一样，只有边缘是阈值，而不是灰度</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p><em>threshold</em>:该阈值之上的任何边都是黑色的，而该阈值之下的任何边都是白色的。范围从0.0到1.0，默认为0.8</p>
+</li>
+<li><p><strong>GPUImageToonFilter</strong>:它使用Sobel边缘检测在对象周围放置一个黑色边框，然后量化图像中出现的颜色，使图像具有卡通效果。</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>阈值</em>:边缘检测的灵敏度，越低的值越敏感。范围从0.0到1.0，默认为0.2</p>
+</li>
+<li><p><em>quantizationLevels</em>:最终图像中表示的颜色级别的数量。默认是10.0</p>
+</li>
+<li><p><strong>GPUImageSmoothToonFilter</strong>:这使用了与GPUImageToonFilter类似的过程，只是它之前的toon效果与高斯模糊，以消除噪声。</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>阈值</em>:边缘检测的灵敏度，越低的值越敏感。范围从0.0到1.0，默认为0.2</p>
+</li>
+<li><p><em>quantizationLevels</em>:最终图像中表示的颜色级别的数量。默认是10.0</p>
+</li>
+<li><p><strong>GPUImageEmbossFilter</strong>:在图像上应用浮雕效果</p>
+</li>
+</ul>
+<p><em>强度</em>:压纹的强度，从0.0到4.0,1.0为正常水平</p>
+<ul>
+<li><p><strong>GPUImagePosterizeFilter</strong>:这将颜色动态范围缩减为指定的步骤数，从而生成类似于卡通的简单图像阴影。</p>
+</li>
+<li><p><em>色阶</em>:将图像空间缩小到的色阶数。该值的范围从1到256，默认值为10。</p>
+</li>
+<li><p><strong>GPUImageSwirlFilter</strong>:在图像上创建一个漩涡畸变</p>
+</li>
+<li><p><em>radius</em>:从中心开始应用扭曲的半径，默认值为0.5</p>
+</li>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>角度</em>:应用于图像的扭曲量，默认为1.0</p>
+</li>
+<li><p>** gpuimagebulge畸变过滤器**:创建一个胀形失真的图像</p>
+</li>
+<li><p><em>半径</em>:从中心到施加扭曲的半径，默认为0.25</p>
+</li>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>scale</em>:应用的失真量，从-1.0到1.0，默认值为0.5</p>
+</li>
+<li><p>** gpuimagepinch畸变过滤器**:创建一个缩放失真的图像</p>
+</li>
+<li><p><em>半径</em>:从中心到应用扭曲的半径，默认为1.0</p>
+</li>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>scale</em>:应用的失真量，从-2.0到2.0，默认为1.0</p>
+</li>
+</ul>
+<p>** gpuimagestretchtionfilter **:创建图像的拉伸失真</p>
+<ul>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><strong>GPUImageSphereRefractionFilter</strong>:模拟通过玻璃球的折射</p>
+</li>
+<li><p><em>center</em>:应用失真的中心，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>radius</em>:失真的半径，范围从0.0到1.0，默认值为0.25</p>
+</li>
+<li><p><em>折射指数</em>:球面的折射率，默认值为0.71</p>
+</li>
+<li><p><strong>GPUImageGlassSphereFilter</strong>:与GPUImageSphereRefractionFilter相同，只是图像没有倒转，并且在玻璃边缘有一些糖霜</p>
+</li>
+<li><p><em>center</em>:应用失真的中心，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>radius</em>:失真的半径，范围从0.0到1.0，默认值为0.25</p>
+</li>
+<li><p><em>折射指数</em>:球面的折射率，默认值为0.71</p>
+</li>
+<li><p><strong>GPUImageVignetteFilter</strong>:执行渐晕效果，淡出图像的边缘</p>
+</li>
+<li><p><em>vignetteCenter</em>: tex coords (CGPoint)中vignette的中心，默认值为0.5,0.5</p>
+</li>
+<li><p><em>vignetteColor</em>:用于vignette的颜色(GPUVector3)，默认为黑色</p>
+</li>
+<li><p><em>vignetteStart</em>:从vignette效果开始的中心开始的规范化距离，默认值为0.5</p>
+</li>
+<li><p><em>vignetteEnd</em>:到vignette效果结束的中心的规范化距离，默认值为0.75</p>
+</li>
+<li><p><strong>GPUImageKuwaharaFilter</strong>: Kuwahara图像抽象，摘自Kyprianidis等人发表的《GPU上的Kuwahara滤波的各向异性》中的GPU Pro集合。这就产生了一幅类似油画的图像，但它的计算成本非常高，因此在iPad 2上渲染一个帧可能需要几秒钟的时间。这可能最适合用于静态图像。</p>
+</li>
+<li><p><em>radius</em>:整数，指定应用过滤器时要测试的中心像素点以外的像素点的个数，默认值为4。更高的值会创建更抽象的图像，但会以更长的处理时间为代价。</p>
+</li>
+<li><p><strong>GPUImageKuwaharaRadius3Filter</strong>:一个修改版的Kuwahara过滤器，优化工作半径只有3个像素</p>
+</li>
+<li><p>** gpuimageperlinnoise efilter **:生成一个充满Perlin噪声的图像</p>
+</li>
+<li><ul>
+<li>colorStart *:</li>
+</ul>
+</li>
+<li><p><em>colorFinish</em>:产生噪音的颜色范围</p>
+</li>
+<li><p><em>scale</em>:正在生成的噪声的比例</p>
+</li>
+<li><p><strong>GPUImageCGAColorspaceFilter</strong>:模拟CGA监视器的颜色空间</p>
+</li>
+<li><p><strong>GPUImageMosaicFilter</strong>:该过滤器接受一个输入tileset，瓷砖必须在亮度提升。它查看输入图像，并根据每个显示块的亮度将其替换为一个输入块。这个想法是复制在其他应用程序中看到的ASCII视频过滤器，但tileset可以是任何东西。</p>
+</li>
+<li><ul>
+<li>inputTileSize *:</li>
+</ul>
+</li>
+<li><ul>
+<li>numTiles *:</li>
+</ul>
+</li>
+<li><ul>
+<li>displayTileSize *:</li>
+</ul>
+</li>
+<li><ul>
+<li>colorOn *:</li>
+</ul>
+</li>
+<li><p><strong>GPUImageJFAVoronoiFilter</strong>:生成一个Voronoi映射，供以后使用。</p>
+</li>
+<li><p><em>sizeInPixels</em>:单个元素的大小</p>
+</li>
+<li><p><strong>GPUImageVoronoiConsumerFilter</strong>:接受Voronoi映射，并使用它来过滤传入的图像。</p>
+</li>
+<li><p><em>sizeInPixels</em>:单个元素的大小</p>
+</li>
+</ul>
+<p>您还可以使用类似于c的OpenGL着色语言轻松地编写自己的自定义过滤器，如上所述。</p>
+<h3 id="示例应用程序"><a href="#示例应用程序" class="headerlink" title="示例应用程序"></a>示例应用程序</h3><p>几个示例应用程序与框架源代码绑定在一起。大多数都能同时兼容iPhone和ipad。它们试图展示框架的各个方面，并且应该在开发框架时作为API的最佳示例使用。这些包括:</p>
+<h3 id="SimpleImageFilter"><a href="#SimpleImageFilter" class="headerlink" title="SimpleImageFilter"></a>SimpleImageFilter</h3><p>在启动时将绑定的JPEG图像加载到应用程序中，对其应用过滤器，并将结果呈现到屏幕上。此外，本示例展示了获取图像、过滤图像和将其保存到磁盘的两种方法。</p>
+<h3 id="SimpleVideoFilter"><a href="#SimpleVideoFilter" class="headerlink" title="SimpleVideoFilter"></a>SimpleVideoFilter</h3><p>pixellate过滤器应用于一个实时视频流，与UISlider控件，让你调整像素大小的实时视频。</p>
+<h3 id="SimpleVideoFileFilter"><a href="#SimpleVideoFileFilter" class="headerlink" title="SimpleVideoFileFilter"></a>SimpleVideoFileFilter</h3><p>从磁盘加载电影文件，对其应用非锐化掩码过滤器，并将过滤后的结果重新编码为另一个电影。</p>
+<h3 id="MultiViewFilterExample"><a href="#MultiViewFilterExample" class="headerlink" title="MultiViewFilterExample"></a>MultiViewFilterExample</h3><p>从单个摄像机提要中，四个视图使用应用于摄像机的实时过滤器填充。一个是简单的摄像机视频，一个是预先编程的深褐色调，两个是基于着色程序的自定义过滤器。</p>
+<h3 id="FilterShowcase"><a href="#FilterShowcase" class="headerlink" title="FilterShowcase"></a>FilterShowcase</h3><p>这演示了GPUImage提供的每个过滤器。</p>
+<h3 id="BenchmarkSuite"><a href="#BenchmarkSuite" class="headerlink" title="BenchmarkSuite"></a>BenchmarkSuite</h3><p>这是用来测试整个框架的性能，方法是针对cpu绑定的例程和核心映像进行测试。涉及静态图像和视频的基准测试在这三种情况下运行，结果显示在应用程序中。</p>
+<h3 id="CubeExample"><a href="#CubeExample" class="headerlink" title="CubeExample"></a>CubeExample</h3><p>这展示了GPUImage与OpenGL ES渲染交互的能力。帧从相机上捕捉下来，用一个深褐色的滤光片过滤它们，然后将它们输入一个纹理，应用到一个你可以用手指旋转的立方体的表面上。然后，这个多维数据集被呈现到一个纹理支持的framebuffer对象中，这个纹理被反馈回GPUImage，以便在呈现到屏幕之前应用一个像素筛选器。</p>
+<p>换句话说，这个应用程序的路径是camera -&gt; sepia tone filter -&gt; cube -&gt; pixfilter -&gt; display。</p>
+<h3 id="ColorObjectTracking"><a href="#ColorObjectTracking" class="headerlink" title="ColorObjectTracking"></a>ColorObjectTracking</h3><p>从<a href="http://www.sunsetlakesoftware.com/2010/10/22/gpu-acceleratvideo" target="_blank" rel="noopener">http://www.sunsetlakesoftware.com/2010/10/22/gpu-acceleratvideo</a> -processing-mac-and-ios移植过来使用GPUImage，这个应用程序使用场景中的颜色来跟踪来自实时摄像机feed的对象。四个视图之间切换可以包括原始相机饲料,相机饲料白色像素匹配颜色阈值,处理视频编码的位置在哪里的颜色在像素通过阈值测试,最后点的视频实时跟踪选定的颜色。轻击屏幕可以改变跟踪的颜色，以匹配您的手指下像素的颜色。在屏幕上轻击和拖动使颜色阈值或多或少可以接受。这是最明显的第二，颜色阈值的看法。</p>
+<p>目前，在最后一步中对颜色平均的所有处理都是在CPU上完成的，所以这一部分非常慢。</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
+    <article id="post-Learn Swift - 字符串和字符" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Learn%20Swift%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AD%97%E7%AC%A6/"
+    >Learn Swift - 字符串和字符</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AD%97%E7%AC%A6/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<p>字符串是一系列字符，如“hello, world”或“albatross”。Swift字符串由字符串类型表示。可以以各种方式访问字符串的内容，包括作为字符值的集合。</p>
+<p>Swift的字符串和字符类型提供了一种快速的、与unicode兼容的方式来处理代码中的文本。字符串的语法创建和操纵轻便,可读性强,与字符串的语法类似于c字符串连接非常简单,只需将两个字符串+操作符,和字符串可变性由常量或变量之间选择,就像Swift其他值一样。还可以使用字符串将常量、变量、文字和表达式插入到更长的字符串中，这个过程称为字符串插值。这使得创建用于显示、存储和打印的自定义字符串值变得很容易。</p>
+<p>尽管语法如此简单，Swift的字符串类型是一种快速、现代的字符串实现。每个字符串都由独立于编码的Unicode字符组成，并支持以各种Unicode表示方式访问这些字符。</p>
+<h3 id="字符串字面值"><a href="#字符串字面值" class="headerlink" title="字符串字面值"></a>字符串字面值</h3><p>你可以在代码中将预定义的字符串值作为字符串文字包含在内，字符串文字是有双引号（“”）保卫的字符序列。使用字符串文字作为常量或变量的初始值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> someString = <span class="string">"some string literal value"</span></span><br></pre></td></tr></table></figure>
+<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><p>如果你需要一个跨越多行的字符串，请使用多行字符串 - 一个有三个双引号引起来的字符序列：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> quotation = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">The White Rabbit put on his spectacles. "</span>Where shall i begin,please your Majesty?<span class="string">" he asked.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span>Begin at the beginning,<span class="string">" the King said gravely, "</span>and go on till you come to the end;<span class="string">" then stop"</span></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>多行字符串文字包括其开始和结束引号之间的所有行。字符串开始于开始引号（”””）后面的第一行，结束语结束引号之前的那一行，这意味着下面的字符串都没有换行符：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> singleLineString = <span class="string">"These are the same."</span></span><br><span class="line"><span class="built_in">let</span> multilineString = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">These are the same.</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>当源代码包含多行字符串文本中的换行时，该换行符也会出现在字符串的值中。如果你想使用换行符是你的源代码更容易阅读，但你不希望换行符称为字符串值的一部分，在这些行的末尾写一个反斜杠（\）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> softWrappedQuotation = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">The White Rabbit put on his spectacles.  "</span>Where shall I begin, \</span><br><span class="line">please your Majesty?<span class="string">" he asked.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span>Begin at the beginning,<span class="string">" the King said gravely, "</span>and go on \</span><br><span class="line">till you come to the end; <span class="keyword">then</span> stop.<span class="string">"</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>若要使以换行开头或结尾的多行字符串字面值，请将空行作为第一行或最后一行。例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> lineBreaks = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This string starts with a line break.</span></span><br><span class="line"><span class="string">It also ends with a line break.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串字面量中的特殊字符"><a href="#字符串字面量中的特殊字符" class="headerlink" title="字符串字面量中的特殊字符"></a>字符串字面量中的特殊字符</h3><p>转义的特殊字符\0(空字符)、\(反斜杠)、\t(水平制表符)、\n(换行)、\r(回车)、&quot;(双引号)和&#39;(单引号)<br>一个任意的Unicode标量值，写成\u{n}，其中n是一个1-8位的十六进制数(Unicode将在下面的Unicode中讨论)<br>下面的代码显示了这些特殊字符的四个示例。wiseWords常量包含两个转义的双引号。美元符号、blackHeart和sparklingHeart常量演示了Unicode标量格式:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> wiseWords = <span class="string">"\"Imagination is more important than knowledge\" - Einstein"</span></span><br><span class="line">// <span class="string">"Imagination is more important than knowledge"</span> - Einstein</span><br><span class="line"><span class="built_in">let</span> dollarSign = <span class="string">"\u&#123;24&#125;"</span>        // $,  Unicode scalar U+0024</span><br><span class="line"><span class="built_in">let</span> blackHeart = <span class="string">"\u&#123;2665&#125;"</span>      // ♥,  Unicode scalar U+2665</span><br><span class="line"><span class="built_in">let</span> sparklingHeart = <span class="string">"\u&#123;1F496&#125;"</span> // 💖, Unicode scalar U+1F496</span><br></pre></td></tr></table></figure>
+<p>因为多行字符串文本使用三个双引号而不是一个，所以可以在多行字符串文本中包含一个双引号(“)，而不需要转义它。若要在多行字符串中包含文本“”，请至少转义其中一个引号。例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> threeDoubleQuotationMarks = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">Escaping the first quotation mark \""</span><span class="string">"</span></span><br><span class="line"><span class="string">Escaping all three quotation marks \"\"\"</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="初始化字符串"><a href="#初始化字符串" class="headerlink" title="初始化字符串"></a>初始化字符串</h3><p>要创建一个空字符串值作为构建更长的字符串的起点，可以将一个空字符串文字赋给一个变量，或者使用初始化器语法初始化一个新的字符串实例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//当前文件的静态全局变量var emptyString = <span class="string">""</span>               // empty string literal</span><br><span class="line">var anotherEmptyString = String()  // initializer syntax</span><br><span class="line">// these two strings are both empty, and are equivalent to each other</span><br></pre></td></tr></table></figure>
+<p>通过检查一个字符串值的布尔isEmpty属性来判断它是否为空:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> emptyString.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Nothing to see here"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Nothing to see here"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串可变性"><a href="#字符串可变性" class="headerlink" title="字符串可变性"></a>字符串可变性</h3><p>你指定一个特定的字符串是否可以被修改(或改变)，将它赋值给一个变量(在这种情况下它可以被修改)，或者赋值给一个常量(在这种情况下它不能被修改):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var variableString = <span class="string">"Horse"</span></span><br><span class="line">variableString += <span class="string">" and carriage"</span></span><br><span class="line">// variableString is now <span class="string">"Horse and carriage"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> constantString = <span class="string">"Highlander"</span></span><br><span class="line">constantString += <span class="string">" and another Highlander"</span></span><br><span class="line">// this reports a compile-time error - a constant string cannot be modified</span><br></pre></td></tr></table></figure>
+
+<h3 id="String是值类型"><a href="#String是值类型" class="headerlink" title="String是值类型"></a>String是值类型</h3><p>Swift的字符串类型是值类型。如果您创建一个新的字符串值，当它被传递给一个函数或方法时，或者当它被分配给一个常量或变量时，<strong><em>该字符串值将被复制。在每种情况下，都会创建现有字符串值的新副本，并传递或分配新的副本，而不是初始版本</em></strong>。值类型在结构中描述，枚举是值类型。</p>
+<p>Swift的默认字符串复制行为确保当一个函数或方法传递给你一个字符串值时，很明显你拥有那个确切的字符串值，不管它来自哪里。您可以确信传递的字符串不会被修改，除非您自己修改它。</p>
+<p>在幕后，Swift的编译器优化了字符串的使用，因此只有在绝对必要时才会进行实际的复制。这意味着当使用字符串作为值类型时，总是可以获得很好的性能。</p>
+<h3 id="使用字符"><a href="#使用字符" class="headerlink" title="使用字符"></a>使用字符</h3><p>你可以通过一个for-in循环遍历一个字符串来访问单个字符的值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> character <span class="keyword">in</span> <span class="string">"Dog!🐶"</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(character)</span><br><span class="line">&#125;</span><br><span class="line">// D</span><br><span class="line">// o</span><br><span class="line">// g</span><br><span class="line">// !</span><br><span class="line">// 🐶</span><br></pre></td></tr></table></figure>
+<p>你也可以创建单个字符类型变量或常量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> exclamationMark: Character = <span class="string">"!"</span></span><br></pre></td></tr></table></figure>
+<p>字符串值可以通过传递一个字符值数组作为其初始化器的参数来构造:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> catCharacters: [Character] = [<span class="string">"C"</span>, <span class="string">"a"</span>, <span class="string">"t"</span>, <span class="string">"!"</span>, <span class="string">"🐱"</span>]</span><br><span class="line"><span class="built_in">let</span> catString = String(catCharacters)</span><br><span class="line"><span class="built_in">print</span>(catString)</span><br><span class="line">// Prints <span class="string">"Cat!🐱"</span></span><br></pre></td></tr></table></figure>
+<h3 id="连接字符串和字符"><a href="#连接字符串和字符" class="headerlink" title="连接字符串和字符"></a>连接字符串和字符</h3><p>可以将字符串值与加法运算符(+)一起添加(或连接)来创建一个新的字符串值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> string1 = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">let</span> string2 = <span class="string">" there"</span></span><br><span class="line">var welcome = string1 + string2</span><br><span class="line">// welcome now equals <span class="string">"hello there"</span></span><br></pre></td></tr></table></figure>
+<p>您还可以使用加法赋值运算符(+=)向现有的字符串变量追加一个字符串值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var instruction = <span class="string">"look over"</span></span><br><span class="line">instruction += string2</span><br><span class="line">// instruction now equals <span class="string">"look over there"</span></span><br></pre></td></tr></table></figure>
+<p>可以使用字符串类型的append()方法将字符值追加到字符串变量:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> exclamationMark: Character = <span class="string">"!"</span></span><br><span class="line">welcome.append(exclamationMark)</span><br><span class="line">// welcome now equals <span class="string">"hello there!"</span></span><br></pre></td></tr></table></figure>
+<p>如果使用多行字符串字面值来构建更长的字符串的行，则希望字符串中的每一行都以换行符结束，包括最后一行。例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> badStart = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">one</span></span><br><span class="line"><span class="string">two</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line"><span class="built_in">let</span> end = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">three</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line"><span class="built_in">print</span>(badStart + end)</span><br><span class="line">// Prints two lines:</span><br><span class="line">// one</span><br><span class="line">// twothree</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> goodStart = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">one</span></span><br><span class="line"><span class="string">two</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line"><span class="built_in">print</span>(goodStart + end)</span><br><span class="line">// Prints three lines:</span><br><span class="line">// one</span><br><span class="line">// two</span><br><span class="line">// three</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，连接badStart和end会产生一个两行字符串，这不是期望的结果。因为badStart的最后一行没有以换行结束，所以这一行与end的第一行结合在一起。相反，goodStart的两行都以换行结束，因此当它与end结合时，结果如预期的那样有三行。</p>
+<h3 id="字符串插值"><a href="#字符串插值" class="headerlink" title="字符串插值"></a>字符串插值</h3><p>字符串插值是一种通过将常量、变量、文字和表达式的值包含在字符串文字中来构造新字符串值的方法。您可以在单行和多行字符串文字中使用字符串插值。您插入到字符串文字中的每一项都被包装在一对括号中，以反斜杠()作为前缀:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> multiplier = 3</span><br><span class="line"><span class="built_in">let</span> message = <span class="string">"\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"</span></span><br><span class="line">// message is <span class="string">"3 times 2.5 is 7.5"</span></span><br></pre></td></tr></table></figure>
+<p>在上面的示例中，乘数的值作为(multiplier)插入到字符串文字中。当计算字符串插值以创建实际字符串时，这个占位符将被乘数的实际值所取代。</p>
+<p>倍增器的值也是字符串中稍后更大的表达式的一部分。这个表达式计算Double(multiplier) * 2.5的值，并将结果(7.5)插入到字符串中。在本例中，当表达式包含在字符串文本中时，它被写成(Double(multiplier) * 2.5)。</p>
+<p>可以使用扩展字符串分隔符创建包含字符的字符串，否则这些字符将被视为字符串插值表达式。例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//在扩展字符串中，multiplier插值将会被当做是字符串</span><br><span class="line"><span class="built_in">let</span> multiplier = 3</span><br><span class="line"><span class="built_in">print</span>(<span class="comment">#"Write an interpolated string in Swift using \(multiplier)."#)</span></span><br><span class="line">// Prints <span class="string">"Write an interpolated string in Swift using \(multiplier)."</span></span><br></pre></td></tr></table></figure>
+<p>若要在使用扩展分隔符的字符串内使用字符串插值表达式，请将反斜杠后的数字符号的数量与字符串开头和结尾的数字符号的数量相匹配。例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="comment">#"6 times 7 is \#(6 * 7)."#)</span></span><br><span class="line">// Prints <span class="string">"6 times 7 is 42."</span></span><br></pre></td></tr></table></figure>
+<h3 id="访问和修改字符串"><a href="#访问和修改字符串" class="headerlink" title="访问和修改字符串"></a>访问和修改字符串</h3><p>您可以通过字符串的方法和属性，或者使用下标语法来访问和修改字符串。</p>
+<h4 id="字符串索引"><a href="#字符串索引" class="headerlink" title="字符串索引"></a>字符串索引</h4><p>每个字符串值都有一个关联的索引类型String。索引，它对应于字符串中每个字符的位置。</p>
+<p>如上所述，不同的字符可能需要不同数量的内存来存储，因此为了确定哪个字符位于特定的位置，必须从字符串的开始或结束遍历每个Unicode标量。由于这个原因，Swift字符串不能被整数值索引。</p>
+<p>使用startIndex属性访问字符串的第一个字符的位置。<strong><em>endIndex属性是字符串中最后一个字符之后的位置</em></strong>。因此，endIndex属性不是字符串下标的有效参数。如果字符串为空，startIndex和endIndex是相等的。</p>
+<p>使用String的index(before:)和index(after:)方法访问给定索引之前和之后的索引。要访问离给定索引更远的索引，可以使用index(_:offsetBy:)方法，而不是多次调用这些方法中的一个。</p>
+<p>可以使用下标语法在特定字符串索引处访问字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> greeting = <span class="string">"Guten Tag!"</span></span><br><span class="line">greeting[greeting.startIndex]</span><br><span class="line">// G</span><br><span class="line">greeting[greeting.index(before: greeting.endIndex)]</span><br><span class="line">// !</span><br><span class="line">greeting[greeting.index(after: greeting.startIndex)]</span><br><span class="line">// u</span><br><span class="line"><span class="built_in">let</span> index = greeting.index(greeting.startIndex, offsetBy: 7)</span><br><span class="line">greeting[index]</span><br><span class="line">// a</span><br></pre></td></tr></table></figure>
+<p>试图访问字符串范围之外的索引或字符串范围之外的索引中的字符将触发运行时错误。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">greeting[greeting.endIndex] // Error</span><br><span class="line">greeting.index(after: greeting.endIndex) // Error</span><br></pre></td></tr></table></figure>
+<p>使用indices属性访问字符串中单个字符的所有索引。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> greeting.indices &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(greeting[index]) "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"G u t e n   T a g ! "</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串的插入和删除"><a href="#字符串的插入和删除" class="headerlink" title="字符串的插入和删除"></a>字符串的插入和删除</h3><p>若要在指定索引处将单个字符插入到字符串中，请使用insert(_:at:)方法，若要在指定索引处插入另一个字符串的内容，请使用insert(contentsOf:at:)方法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var welcome = <span class="string">"hello"</span></span><br><span class="line">welcome.insert(<span class="string">"!"</span>, at: welcome.endIndex)</span><br><span class="line">// welcome now equals <span class="string">"hello!"</span></span><br><span class="line"></span><br><span class="line">welcome.insert(contentsOf: <span class="string">" there"</span>, at: welcome.index(before: welcome.endIndex))</span><br><span class="line">// welcome now equals <span class="string">"hello there!"</span></span><br></pre></td></tr></table></figure>
+<p>要从指定索引处的字符串中删除单个字符，请使用remove(at:)方法，要在指定范围内删除子字符串，请使用removeSubrange(_:)方法:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">welcome.remove(at: welcome.index(before: welcome.endIndex))</span><br><span class="line">// welcome now equals <span class="string">"hello there"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> range = welcome.index(welcome.endIndex, offsetBy: -6)..&lt;welcome.endIndex</span><br><span class="line">welcome.removeSubrange(range)</span><br><span class="line">// welcome now equals <span class="string">"hello"</span></span><br></pre></td></tr></table></figure>
+<h3 id="子字符串"><a href="#子字符串" class="headerlink" title="子字符串"></a>子字符串</h3><p>当您从字符串中获取子字符串时(例如，使用下标或类似prefix(_:)的方法)，结果是子字符串的实例，而不是另一个字符串。Swift中的子字符串具有与字符串相同的大部分方法，这意味着可以像处理字符串一样处理子字符串。但是，与字符串不同的是，在对字符串执行操作时，子字符串只能使用很短的时间。当您准备将结果存储更长的时间时，可以将子字符串转换为String的实例。例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> greeting = <span class="string">"Hello, world!"</span></span><br><span class="line"><span class="built_in">let</span> index = greeting.firstIndex(of: <span class="string">","</span>) ?? greeting.endIndex</span><br><span class="line"><span class="built_in">let</span> beginning = greeting[..&lt;index]</span><br><span class="line">// beginning is <span class="string">"Hello"</span></span><br><span class="line"></span><br><span class="line">// Convert the result to a String <span class="keyword">for</span> long-term storage.</span><br><span class="line"><span class="built_in">let</span> newString = String(beginning)</span><br></pre></td></tr></table></figure>
+<p>与字符串一样，每个子字符串都有一个存储区域，其中存储组成子字符串的字符。字符串和子字符串之间的区别在于，作为性能优化，子字符串可以重用用于存储原始字符串的部分内存，或者用于存储另一个子字符串的部分内存。(字符串有类似的优化，但如果两个字符串共享内存，它们是相等的。)这种性能优化意味着在修改字符串或子字符串之前，不必为复制内存付出性能代价。如上所述，子字符串不适合长期存储——因为它们重用了原始字符串的存储，只要使用它的任何子字符串，就必须将整个原始字符串保存在内存中。</p>
+<p><strong><em>在上面的例子中，greeting是一个字符串，这意味着它有一个存储组成字符串的字符的内存区域。因为开头是问候语的子字符串，所以它重用问候语使用的内存。相反，newString是字符串——当它从子字符串创建时，它有自己的存储</em></strong>。</p>
+<h3 id="比较字符串"><a href="#比较字符串" class="headerlink" title="比较字符串"></a>比较字符串</h3><p>Swift提供了三种比较文本值的方法:字符串和字符相等、前缀相等和后缀相等。</p>
+<h4 id="字符串和字符相等"><a href="#字符串和字符相等" class="headerlink" title="字符串和字符相等"></a>字符串和字符相等</h4><p>字符串和字符的相等性由“等于”运算符(==)和“不等于”运算符(!=)进行检查，如比较运算符中所述:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> quotation = <span class="string">"We're a lot alike, you and I."</span></span><br><span class="line"><span class="built_in">let</span> sameQuotation = <span class="string">"We're a lot alike, you and I."</span></span><br><span class="line"><span class="keyword">if</span> quotation == sameQuotation &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"These two strings are considered equal"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"These two strings are considered equal"</span></span><br></pre></td></tr></table></figure>
+<p>如果两个字符串值(或两个字符值)的扩展字符簇在标准上是等价的，则认为它们是相等的。如果扩展的字符集群具有相同的语言含义和外观，那么它们在标准上是等价的，即使它们是由不同的Unicode标量在幕后组成的。</p>
+<h3 id="前缀和后缀相等"><a href="#前缀和后缀相等" class="headerlink" title="前缀和后缀相等"></a>前缀和后缀相等</h3><p>要检查一个字符串是否具有特定的字符串前缀或后缀，请调用该字符串的hasPrefix(<em>:)和hasSuffix(</em>:)方法，这两个方法都接受一个string类型的参数并返回一个布尔值。</p>
+<p>下面的例子考虑一个字符串数组，表示莎士比亚的《罗密欧与朱丽叶》前两幕的场景位置:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> romeoAndJuliet = [</span><br><span class="line">    <span class="string">"Act 1 Scene 1: Verona, A public place"</span>,</span><br><span class="line">    <span class="string">"Act 1 Scene 2: Capulet's mansion"</span>,</span><br><span class="line">    <span class="string">"Act 1 Scene 3: A room in Capulet's mansion"</span>,</span><br><span class="line">    <span class="string">"Act 1 Scene 4: A street outside Capulet's mansion"</span>,</span><br><span class="line">    <span class="string">"Act 1 Scene 5: The Great Hall in Capulet's mansion"</span>,</span><br><span class="line">    <span class="string">"Act 2 Scene 1: Outside Capulet's mansion"</span>,</span><br><span class="line">    <span class="string">"Act 2 Scene 2: Capulet's orchard"</span>,</span><br><span class="line">    <span class="string">"Act 2 Scene 3: Outside Friar Lawrence's cell"</span>,</span><br><span class="line">    <span class="string">"Act 2 Scene 4: A street in Verona"</span>,</span><br><span class="line">    <span class="string">"Act 2 Scene 5: Capulet's mansion"</span>,</span><br><span class="line">    <span class="string">"Act 2 Scene 6: Friar Lawrence's cell"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>你可以使用hasPrefix(_:)方法与romeoAndJuliet数组一起计算戏剧场景1的数量:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var act1SceneCount = 0</span><br><span class="line"><span class="keyword">for</span> scene <span class="keyword">in</span> romeoAndJuliet &#123;</span><br><span class="line">    <span class="keyword">if</span> scene.hasPrefix(<span class="string">"Act 1 "</span>) &#123;</span><br><span class="line">        act1SceneCount += 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"There are \(act1SceneCount) scenes in Act 1"</span>)</span><br><span class="line">// Prints <span class="string">"There are 5 scenes in Act 1"</span></span><br></pre></td></tr></table></figure>
+<p>类似地，使用hasSuffix(_:)方法来计算发生在Capulet的豪宅和Friar Lawrence的牢房内或周围的场景的数量:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var mansionCount = 0</span><br><span class="line">var cellCount = 0</span><br><span class="line"><span class="keyword">for</span> scene <span class="keyword">in</span> romeoAndJuliet &#123;</span><br><span class="line">    <span class="keyword">if</span> scene.hasSuffix(<span class="string">"Capulet's mansion"</span>) &#123;</span><br><span class="line">        mansionCount += 1</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> scene.hasSuffix(<span class="string">"Friar Lawrence's cell"</span>) &#123;</span><br><span class="line">        cellCount += 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(mansionCount) mansion scenes; \(cellCount) cell scenes"</span>)</span><br><span class="line">// Prints <span class="string">"6 mansion scenes; 2 cell scenes"</span></span><br></pre></td></tr></table></figure>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
+    <article id="post-Learn Swift - 控制流" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Learn%20Swift%20-%20%E6%8E%A7%E5%88%B6%E6%B5%81/"
+    >Learn Swift - 控制流</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E6%8E%A7%E5%88%B6%E6%B5%81/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h2><p>Swift提供了各种控制流语句。其中包括while多次执行任务的循环。if，guard和switch语句可根据特定条件执行不同的代码分支和语句，如break和continue对执行流在你的代码转移到另一个点。</p>
+<p>Swift还提供了for- in循环，使您可以轻松地遍历数组，字典，范围，字符串和其他序列。</p>
+<p>Swift的switch语句比许多类似C的语言中的语句要强大得多。案例可以匹配许多不同的模式，包括间隔匹配，元组和强制转换为特定类型。switch案例中的匹配值可以绑定到在案例主体中使用的临时常量或变量，并且复杂的匹配条件可以用where每种案例的子句来表示。</p>
+<h3 id="内循环"><a href="#内循环" class="headerlink" title="内循环"></a>内循环</h3><p>您可以使用for- in循环遍历一个序列，例如数组中的项目，数字范围或字符串中的字符。</p>
+<p>本示例使用for- in循环遍历数组中的项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> names = [<span class="string">"Anna"</span>, <span class="string">"Alex"</span>, <span class="string">"Brian"</span>, <span class="string">"Jack"</span>]</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello, \(name)!"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Hello, Anna!</span><br><span class="line">// Hello, Alex!</span><br><span class="line">// Hello, Brian!</span><br><span class="line">// Hello, Jack!</span><br></pre></td></tr></table></figure>
+<p>您还可以遍历字典以访问其键值对。迭代字典时，字典中的每个项目都会作为一个元组返回，并且您可以将元组的成员分解为显式命名的常量，以在- 循环的主体中使用。在下面的代码示例中，字典的键被分解为常量，而字典的值被分解为常量。(key, value)(key, value)forinanimalNamelegCount</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> numberOfLegs = [<span class="string">"spider"</span>: 8, <span class="string">"ant"</span>: 6, <span class="string">"cat"</span>: 4]</span><br><span class="line"><span class="keyword">for</span> (animalName, legCount) <span class="keyword">in</span> numberOfLegs &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(animalName)s have \(legCount) legs"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// cats have 4 legs</span><br><span class="line">// ants have 6 legs</span><br><span class="line">// spiders have 8 legs</span><br></pre></td></tr></table></figure>
+<p>您还可以使用for- in具有数字范围的循环。本示例在五倍表中打印前几个条目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> 1...5 &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(index) times 5 is \(index * 5)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// 1 <span class="built_in">times</span> 5 is 5</span><br><span class="line">// 2 <span class="built_in">times</span> 5 is 10</span><br><span class="line">// 3 <span class="built_in">times</span> 5 is 15</span><br><span class="line">// 4 <span class="built_in">times</span> 5 is 20</span><br><span class="line">// 5 <span class="built_in">times</span> 5 is 25</span><br></pre></td></tr></table></figure>
+<p>如使用封闭范围运算符（）所示，要迭代的序列的范围是从1到的一个数字5范围（含…）。的值index设置为范围（1）中的第一个数字，并执行循环内的语句。在这种情况下，循环仅包含一个语句，该语句从5倍表中打印出的当前值index。执行该语句后，的值将index更新为包含范围（2）中的第二个值，然后print(_:separator:terminator:)再次调用该函数。这个过程一直持续到到达范围的尽头。</p>
+<p>在上面的示例中，index是一个常数，其值在循环的每次迭代开始时自动设置。因此，index在使用前不必先声明它。只需将其包含在循环声明中即可隐式声明它，而无需let声明关键字。</p>
+<p>如果不需要序列中的每个值，则可以使用下划线代替变量名来忽略这些值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> base = 3</span><br><span class="line"><span class="built_in">let</span> power = 10</span><br><span class="line">var answer = 1</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> 1...power &#123;</span><br><span class="line">    answer *= base</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(base) to the power of \(power) is \(answer)"</span>)</span><br><span class="line">// Prints <span class="string">"3 to the power of 10 is 59049"</span></span><br></pre></td></tr></table></figure>
+<p>上面的示例将一个数字的值计算为另一个数字的幂（在这种情况下，3为的幂10）。它将起始值1（即3的幂0）乘以3十倍，使用以1和开头的封闭范围10。对于此计算，不需要每次通过循环都使用单独的计数器值-代码只需按正确的次数执行循环即可。下划线字符（_）代替循环变量会导致各个值被忽略，并且在每次循环迭代期间都无法访问当前值。</p>
+<p>在某些情况下，您可能不希望使用封闭范围，包括两个端点。考虑在表盘上每分钟绘制刻度线。您60要从0分钟开始绘制刻度线。使用半开范围运算符（..&lt;）包括下限，但不包括上限。有关范围的更多信息，请参见范围运算符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> minutes = 60</span><br><span class="line"><span class="keyword">for</span> tickMark <span class="keyword">in</span> 0..&lt;minutes &#123;</span><br><span class="line">    // render the tick mark each minute (60 <span class="built_in">times</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有些用户可能希望其UI中的刻度线更少。他们可能更喜欢每5分钟得分。使用此stride(from:to:by:)功能可以跳过不需要的标记。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> minuteInterval = 5</span><br><span class="line"><span class="keyword">for</span> tickMark <span class="keyword">in</span> stride(from: 0, to: minutes, by: minuteInterval) &#123;</span><br><span class="line">    // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以使用以下范围来提供封闭范围stride(from:through:by:)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> hours = 12</span><br><span class="line"><span class="built_in">let</span> hourInterval = 3</span><br><span class="line"><span class="keyword">for</span> tickMark <span class="keyword">in</span> stride(from: 3, through: hours, by: hourInterval) &#123;</span><br><span class="line">    // render the tick mark every 3 hours (3, 6, 9, 12)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
+    <article id="post-Learn Swift - 集合类型" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Learn%20Swift%20-%20%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/"
+    >Learn Swift - 集合类型</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<p>Swift提供了三种主要的集合类型，分别是数组，集合和字典，用于存储值的集合。数组是值的有序集合，集是唯一值的无序集合。字典是键值关联的无序集合。<br>Swift中的数组，集合和字典始终清楚他们可以存储的值和键的类型。者意味着你不能将错误的类型的值错误地插入到集合中。同时也意味着你可以确定从集合中检索的值的类型。</p>
+<h3 id="集合的可变性"><a href="#集合的可变性" class="headerlink" title="集合的可变性"></a>集合的可变性</h3><p>如果创建数组，集合或字典，并将其分配给变量，则创建的集合将是可变的。这意味着你可以在创建集合后通过添加、删除或更改集合中的项目来更改集合。如果将数组，集合或字典分配给常量，则该集合是不可变的，并且其大小和内容也是无法改变的。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组将相同类型的值存储在有序的列表中，同一值可以在数组中的不同位置多次出现。</p>
+<h3 id="数组类型简写语法"><a href="#数组类型简写语法" class="headerlink" title="数组类型简写语法"></a>数组类型简写语法</h3><p>Swift数组的类型完整写法为Array<Element>，其中Element是允许存储到数组的值的类型。你还可以简写数组类型为速记形式[Element]。尽管这两种形式在功能上是相同的，但速记形式是首选，在指代数组类型是，本指南通篇使用速记形式。</p>
+<h3 id="创建一个空数组"><a href="#创建一个空数组" class="headerlink" title="创建一个空数组"></a>创建一个空数组</h3><p>你可以使用初始化语法创建某种类型的空数组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var someInts = [Int]()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"someInts is of type [Int] with \(someInts.count) items."</span>)</span><br><span class="line">// Prints <span class="string">"someInts is of type [Int] with 0 items."</span></span><br></pre></td></tr></table></figure>
+<p>注意，someInts变量的类型从初始化程序的的类型推断为[Int]</p>
+<p>或者，如果上下文已经提供了类型信息，例如函数参数后已经键入的变量或常量，则可以一个空数组，其中包含一个空数组文字，该文字表示为[]：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">someInts.append(3) //追加一个3的元素到数组中</span><br><span class="line">someInts = []      //把数组置空</span><br></pre></td></tr></table></figure>
+<h3 id="创建具有默认值的数组"><a href="#创建具有默认值的数组" class="headerlink" title="创建具有默认值的数组"></a>创建具有默认值的数组</h3><p>Swift的Array类型还提供了一个初始化程序，用于创建一个特定大小的数组，并将其所有值设置为相同的默认值。您想初始化程序传递适当类型的默认值(repeating参数)以及该值在新数组中重复的次数(count参数)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var threeDoubles = Array(repeating: 0.0, count:3) //创建一个有3个0.0默认值元素的数组</span><br></pre></td></tr></table></figure>
+<h3 id="通过将两个数组相加创建数组"><a href="#通过将两个数组相加创建数组" class="headerlink" title="通过将两个数组相加创建数组"></a>通过将两个数组相加创建数组</h3><p>你可以使用加法运算符+将两个具有兼容类型的现有数组加在一起，从而得到一个新的数组。新数组的类型是根据你添加在一起得两个数组的类型推断出来的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var anotherThreeDoubles = Array(repeating: 2.5, count: 3) </span><br><span class="line">// anotherThreeDoubles is of <span class="built_in">type</span> [Double], and equals [2.5, 2.5, 2.5]</span><br><span class="line"></span><br><span class="line">var sixDoubles = threeDoubles + anotherThreeDoubles</span><br><span class="line">//sixDoubles = [0.0, 0.0, 0.0, 2.5, 2.5, 2.5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用数组字面值创建一个数组"><a href="#使用数组字面值创建一个数组" class="headerlink" title="使用数组字面值创建一个数组"></a>使用数组字面值创建一个数组</h3><p>你可以使用数组字面值来初始化一个数组，就是将一个或多个值写为数组集合的一种简便方法。数组文字被写为值列表，以逗号分隔，并用一对方括号包围:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var shoppinglist: [String] = [<span class="string">"Eggs"</span>, <span class="string">"Milk"</span>]</span><br><span class="line">//创建一个字符串类型且包含两个元素的数组</span><br></pre></td></tr></table></figure>
+<p>shoppingList变量被声明为“字符串值的数组”，写为[String]。 因为此特定数组指定了String的值类型，所以只允许存储String值。 在这里，shoppingList数组是用两个String值（“ Eggs”和“ Milk”）初始化的，这些值写在数组文字中。</p>
+<p>借助Swift的类型推断，如果使用包含相同类型值的数组字面值进行初始化，则不必编写数组的类型。 shoppingList的初始化本来可以写成较短的形式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var shoppingList = [<span class="string">"Eggs"</span>, <span class="string">"Mils"</span>]</span><br><span class="line">//因为数组元素都是String类型，所以swift该数组类型为[String]</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问和修改数组"><a href="#访问和修改数组" class="headerlink" title="访问和修改数组"></a>访问和修改数组</h3><p>你可以通过数组的方法和属性或使用下标来访问和修改数组。要想知道数组中的项目个数，可以使用count属性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var shoppingList = [<span class="string">"Eggs"</span>, <span class="string">"Mils"</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"The shopping list contains \(shoppingList.count) items."</span>)</span><br></pre></td></tr></table></figure>
+<p>使用布尔值isEmpty布尔值作为检查count属性是否等于0的快捷方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> shoppingList.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The shopping list is empty."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The shopping list is not empty."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"The shopping list is not empty."</span></span><br></pre></td></tr></table></figure>
+<p>您可以通过调用数组的append（_ :)方法将新项目添加到数组的末尾：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shoppingList.append(<span class="string">"Flour"</span>)</span><br><span class="line">// shoppingList now contains 3 items, and someone is making pancakes</span><br></pre></td></tr></table></figure>
+<p>或者，使用附加赋值运算符（+ =）附加一个或多个兼容项的数组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">shoppingList += [<span class="string">"Baking Powder"</span>]</span><br><span class="line">// shoppingList now contains 4 items</span><br><span class="line">shoppingList += [<span class="string">"Chocolate Spread"</span>, <span class="string">"Cheese"</span>, <span class="string">"Butter"</span>]</span><br><span class="line">// shoppingList now contains 7 items</span><br></pre></td></tr></table></figure>
+<p>通过使用下标语法从数组中检索一个值，在数组名称后紧接着在方括号内传递要检索的值的索引：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var firstItem = shoppingList[0]</span><br><span class="line">// firstItem is equal to <span class="string">"Eggs"</span></span><br></pre></td></tr></table></figure>
+<p>您可以使用下标语法来更改给定索引处的现有值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shoppingList[0] = <span class="string">"Six eggs"</span></span><br><span class="line">// the first item <span class="keyword">in</span> the list is now equal to <span class="string">"Six eggs"</span> rather than <span class="string">"Eggs"</span></span><br></pre></td></tr></table></figure>
+<p>您也可以使用下标语法立即更改值的范围，即使替换值集的长度与要替换的范围的长度不同。 以下示例将“Chocolate Spread”，“CHeese”和“Butter”替换为“bananas”和“Apple”：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shoppingList[4...6] = [<span class="string">"Bananas"</span>, <span class="string">"Apple"</span>]</span><br><span class="line">//将数组下标是4-6范围的元素赋值为[<span class="string">"Bananas"</span>, <span class="string">"Apple"</span>]</span><br></pre></td></tr></table></figure>
+<p>要将项目按指定的索引插入数组，请调用数组的insert（_：at :)方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shoppingList.insert(<span class="string">"Maple Syrup"</span>, at: 0)</span><br><span class="line">// shoppingList now contains 7 items</span><br><span class="line">// <span class="string">"Maple Syrup"</span> is now the first item <span class="keyword">in</span> the list</span><br></pre></td></tr></table></figure>
+<p>同样，您可以使用remove（at :)方法从数组中删除一项。 此方法将删除指定索引处的项目并返回已删除的项目（尽管如果不需要，您可以忽略返回的值）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleSyrup = shoppingList.remove(at: 0)</span><br><span class="line">// the item that was at index 0 has just been removed</span><br><span class="line">// shoppingList now contains 6 items, and no Maple Syrup</span><br><span class="line">// the mapleSyrup constant is now equal to the removed <span class="string">"Maple Syrup"</span> string</span><br></pre></td></tr></table></figure>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p>您可以使用for-in循环遍历数组中的整个值集：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoppingList &#123;</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line">&#125;</span><br><span class="line">// Six eggs</span><br><span class="line">// Milk</span><br><span class="line">// Flour</span><br><span class="line">// Baking Powder</span><br><span class="line">// Bananas</span><br></pre></td></tr></table></figure>
+<p>如果您需要每个项目的整数索引及其值，请使用enumerated（）方法遍历数组。 对于数组中的每个项目，enumerated（）方法都返回一个由整数和项目组成的元组。 整数从零开始，每一项加一。 如果您对整个数组进行枚举，则这些整数与项的索引匹配。 您可以在迭代过程中将元组分解为临时常量或变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (index, value) <span class="keyword">in</span> shoppingList.<span class="function"><span class="title">enumerated</span></span>() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Item \(index + 1): \(value)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Item 1: Six eggs</span><br><span class="line">// Item 2: Milk</span><br><span class="line">// Item 3: Flour</span><br><span class="line">// Item 4: Baking Powder</span><br><span class="line">// Item 5: Bananas</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>字典在没有定义顺序的集合中存储相同类型的键和相同类型的值之间的关联。每个值都与一个惟一的键相关联，该键在字典中充当该值的标识符。与数组中的项不同，字典中的项没有指定的顺序。当需要根据标识符查找值时，可以使用字典，这与使用实际字典查找特定单词的定义非常类似。</p>
+<h4 id="字典类型简写语法"><a href="#字典类型简写语法" class="headerlink" title="字典类型简写语法"></a>字典类型简写语法</h4><p>Swift字典的类型被完整地写成dictionary ，其中Key是用作字典键的值的类型，Value是字典为这些键存储的值的类型。您还可以将字典的类型以简写形式编写为[Key: Value]。虽然这两种形式在功能上是相同的，但是在本指南中引用字典的类型时，首选使用简写形式。</p>
+<h4 id="创建一个空字典"><a href="#创建一个空字典" class="headerlink" title="创建一个空字典"></a>创建一个空字典</h4><p>和数组一样，你可以通过使用初始化语法来创建一个特定类型的空字典:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var namesOfIntegers = [Int : String]()</span><br></pre></td></tr></table></figure>
+<p>这个例子创建了一个类型为[Int: String]的空字典来存储人类可读的整数值名。它的键是Int类型的，它的值是String类型的。</p>
+<p>如果上下文已经提供了类型信息，你可以用一个空字典的字面量来创建一个空字典，它被写成<a href="一对方括号中的冒号">:</a>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">namesOfIntegers[16] = <span class="string">"sixteen"</span> </span><br><span class="line">namesOfIntegers[:]</span><br></pre></td></tr></table></figure>
+<h3 id="使用字典字面量创建字典"><a href="#使用字典字面量创建字典" class="headerlink" title="使用字典字面量创建字典"></a>使用字典字面量创建字典</h3><p>您还可以使用字典字面量初始化字典，字典字面量的语法与前面看到的数组字面量类似。字典字面量是将一个或多个键-值对编写为字典集合的一种简写方式。键-值对是键和值的组合。在字典文本中，每个键-值对中的键和值用冒号分隔。键-值对以列表形式编写，以逗号分隔，用一对方括号括起来:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[key1 : value1, key2 : value2, key3 : value3]</span><br></pre></td></tr></table></figure>
+<p>下面的示例创建一个字典来存储国际机场的名称。在本词典中，键为三个字母的国际航空运输协会代码，值为机场名称:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var airports: [Stirng : String] = [<span class="string">"YYZ"</span> : <span class="string">"Toronto Pearson"</span>, <span class="string">"DUB"</span> : <span class="string">"Dublin"</span>]</span><br></pre></td></tr></table></figure>
+<p>机场字典被声明为具有[String: String]类型，这意味着“一个字典，它的键是String类型的，它的值也是String类型的”。</p>
+<p>机场字典由一个包含两个键-值对的字典文本初始化。第一对的键是“YYZ”，值是“Toronto Pearson”。第二组的键值为“DUB”，值为“Dublin”。</p>
+<p>这个字典文本包含两个字符串:字符串对。这个键-值类型与机场变量声明的类型(只有字符串键和字符串值的字典)相匹配，因此允许对字典字面值进行赋值，以便使用两个初始项初始化机场字典。</p>
+<p>与数组一样，如果使用一个字典字面值初始化字典，而字典字面值的键和值具有一致的类型，则不必编写字典的类型。机场的初始化可以写成更短的形式:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var airports = [<span class="string">"YYZ"</span> : <span class="string">"Toronto Pearson"</span>, <span class="string">"DUB"</span> : <span class="string">"Dublin"</span>]</span><br></pre></td></tr></table></figure>
+<p>因为字面量中的所有键都是彼此相同的类型，同样，所有值都是彼此相同的类型，所以Swift可以推断[String: String]是机场字典使用的正确类型。</p>
+<h4 id="访问和修改字典"><a href="#访问和修改字典" class="headerlink" title="访问和修改字典"></a>访问和修改字典</h4><p>您可以通过字典的方法和属性，或者使用下标语法来访问和修改字典。和数组一样，你可以通过检查它的只读计数属性来查找字典中的条目数:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"The airpots dictionary contains \(airports.count) items"</span>)</span><br><span class="line">// The airpots dictionary contains 2 items</span><br></pre></td></tr></table></figure>
+<p>使用布尔isEmpty属性作为快捷方式，检查计数属性是否等于0:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> airports.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The airports dictionary is empty"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The airports dictionary is not empty"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以使用下标语法将新项添加到字典中。使用适当类型的新键作为下标索引，并分配适当类型的新值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airports[<span class="string">"LHR"</span>] = <span class="string">"London"</span></span><br></pre></td></tr></table></figure>
+<p>您还可以使用下标语法来更改与特定键关联的值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airports[<span class="string">"LHR"</span>] = <span class="string">"London Heathrow"</span></span><br></pre></td></tr></table></figure>
+<p>作为下标的替代方法，可以使用字典的updateValue(<em>:forKey:)方法来设置或更新特定键的值。像上面的下标示例一样，updateValue(</em>:forKey:)方法为一个键设置一个值(如果该键不存在)，或者更新该值(如果该键已经存在)。但是，与下标不同，updateValue(_:forKey:)方法在执行更新后返回旧值。这使您能够检查是否发生了更新。</p>
+<p>updateValue(_:forKey:)方法返回一个字典值类型的可选值。例如，对于存储字符串值的字典，该方法返回一个String类型的值?，或“可选字符串”。这个可选值包含该键的旧值(如果在更新之前存在)，或者空值(如果不存在值):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> oldValue = airports.updateValue(<span class="string">"Dublin Airport"</span>, forKey:<span class="string">"DUB"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The old value for DUB was \(oldValue)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以使用下标语法从字典中检索特定键的值。因为可以请求不存在值的键，所以字典的下标返回字典值类型的可选值。如果字典包含所请求键的值，下标返回一个可选值，该值包含该键的现有值。否则，下标返回nil:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> airportName = airports[<span class="string">"DUB"</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The name of the airport is \(airportName)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"That airport is not in the airports dictionary"</span>)</span><br><span class="line">&#125;</span><br><span class="line">//prints <span class="string">"The name of the airport is Dublin Airport"</span></span><br></pre></td></tr></table></figure>
+<p>你可以使用下标语法从字典中删除一个键值对，为该键赋一个nil值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">airports[<span class="string">"APL"</span>] = <span class="string">"Apple International"</span></span><br><span class="line">airports[<span class="string">"APL"</span>] = nil</span><br></pre></td></tr></table></figure>
+<p>或者，使用removeValue(forKey:)方法从字典中删除键-值对。该方法删除键值对(如果存在)并返回删除的值，或者返回nil(如果不存在值):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> removedValue = airports.removeValue(forKey:<span class="string">"DUB"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The removed airports name is \(removedValue)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The airports dictionary does not contain a value for DUB."</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"The airports dictionary does not contain a value for DUB."</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h4><p>可以使用for-in循环遍历字典中的键-值对。字典中的每一项都作为元组(key, value)返回，你可以将元组的成员分解为临时常量或变量，作为迭代的一部分:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (airportCode, airportName) <span class="keyword">in</span> airports &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(airportCode): \(airportName)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// LHR: London Heathrow</span><br><span class="line">// YYZ: Toronto Pearson</span><br></pre></td></tr></table></figure>
+<p>你也可以通过访问字典的键和值属性来检索字典的键或值的可迭代集合:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> airportCode <span class="keyword">in</span> airports.keys &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Airport code: \(airportCode)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Airport code: LHR</span><br><span class="line">// Airport code: YYZ</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> airportName <span class="keyword">in</span> airports.values &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Airport name: \(airportName)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Airport name: London Heathrow</span><br><span class="line">// Airport name: Toronto Pearson</span><br></pre></td></tr></table></figure>
+<p>如果你需要使用字典的键或值与一个API的数组实例，初始化一个新的数组与键或值的属性:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> airportCodes = [String](airports.keys)</span><br><span class="line">// airportCodes is [<span class="string">"LHR"</span>, <span class="string">"YYZ"</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> airportNames = [String](airports.values)</span><br><span class="line">// airportNames is [<span class="string">"London Heathrow"</span>, <span class="string">"Toronto Pearson"</span>]</span><br></pre></td></tr></table></figure>
+<p>Swift的字典类型没有定义顺序。若要按特定顺序迭代字典的键或值，请在其键或值属性上使用sort()方法。</p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合在集合中存储相同类型的不同值，没有定义的顺序。当项目的顺序不重要时，或者需要确保某个项目仅出现一次时，可以使用集合而不是数组。</p>
+<h4 id="集合类型的哈希值"><a href="#集合类型的哈希值" class="headerlink" title="集合类型的哈希值"></a>集合类型的哈希值</h4><p>类型必须是可哈希的才能存储在集合中，也就是说，该类型必须提供一种为其自身计算哈希值的方法。哈希值是Int对于相等比较的所有对象都相同的值，例如，如果，则跟随在后面。a == ba.hashValue == b.hashValue</p>
+<p>所有swift的基本类型（例如String，Int，Double，和Bool）默认情况下可哈希，并可以作为设定值类型或字典密钥类型。默认情况下，没有关联值的枚举案例值（如Enumerations中所述）也是可哈希的。</p>
+<h4 id="集合类型语法"><a href="#集合类型语法" class="headerlink" title="集合类型语法"></a>集合类型语法</h4><p>Swift集的类型写为Set<Element>，其中Element是允许存储集的类型。与数组不同，集合没有等效的速记形式。</p>
+<h4 id="创建和初始化一个空集合"><a href="#创建和初始化一个空集合" class="headerlink" title="创建和初始化一个空集合"></a>创建和初始化一个空集合</h4><p>您可以使用初始化语法创建一个特定类型的空集：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var letters = Set&lt;Character&gt;()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"letters is of type Set&lt;Character&gt; with \(letters.count) items."</span>)</span><br><span class="line">// Prints <span class="string">"letters is of type Set&lt;Character&gt; with 0 items."</span></span><br></pre></td></tr></table></figure>
+<p>或者，如果上下文已经提供了类型信息，例如函数参数或已经键入的变量或常量，则可以使用空数组文字创建一个空集：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">letters.insert(<span class="string">"a"</span>)</span><br><span class="line">// letters now contains 1 value of <span class="built_in">type</span> Character</span><br><span class="line">letters = []</span><br><span class="line">// letters is now an empty <span class="built_in">set</span>, but is still of <span class="built_in">type</span> Set&lt;Character&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="使用数组文字创建集合"><a href="#使用数组文字创建集合" class="headerlink" title="使用数组文字创建集合"></a>使用数组文字创建集合</h4><p>您还可以使用数组文字初始化集合，这是将一个或多个值写为集合的快捷方式。</p>
+<p>下面的示例创建一个名为favoriteGenres存储String值的集合：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var favoriteGenres: Set&lt;String&gt; = [<span class="string">"Rock"</span>, <span class="string">"Classical"</span>, <span class="string">"Hip hop"</span>]</span><br><span class="line">// favoriteGenres has been initialized with three initial items</span><br></pre></td></tr></table></figure>
+<p>将该favoriteGenres变量声明为“一组String值”，写为Set<String>。由于此特定集合将值类型指定为String，因此仅允许存储String值。在此，favoriteGenres集合被初始化具有三个String值（”Rock”，”Classical”，和），阵列字面内写入。”Hip hop”</p>
+<p>不能仅从数组文字中推断出集合类型，因此Set必须显式声明该类型。但是，由于Swift的类型推断，如果使用仅包含一种类型值的数组文字进行初始化，则无需编写集合元素的类型。的初始化favoriteGenres本来可以写成较短的形式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var favoriteGenres: Set = [<span class="string">"Rock"</span>, <span class="string">"Classical"</span>, <span class="string">"Hip hop"</span>]</span><br></pre></td></tr></table></figure>
+<p>因为数组文字中的所有值都是同一类型，所以Swift可以推断出Set<String>该favoriteGenres变量是正确的类型。</p>
+<h4 id="访问和修改集合"><a href="#访问和修改集合" class="headerlink" title="访问和修改集合"></a>访问和修改集合</h4><p>您可以通过其方法和属性访问和修改集合。</p>
+<p>要找出集合中的项目数，请检查其只读count属性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"I have \(favoriteGenres.count) favorite music genres."</span>)</span><br><span class="line">// Prints <span class="string">"I have 3 favorite music genres."</span></span><br></pre></td></tr></table></figure>
+<p>使用Boolean isEmpty属性作为检查该count属性是否等于的快捷方式0：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> favoriteGenres.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"As far as music goes, I'm not picky."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I have particular music preferences."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"I have particular music preferences."</span></span><br></pre></td></tr></table></figure>
+<p>您可以通过调用集合的insert(_:)方法将新项目添加到集合中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">favoriteGenres.insert(<span class="string">"Jazz"</span>)</span><br><span class="line">// favoriteGenres now contains 4 items</span><br></pre></td></tr></table></figure>
+<p>您可以通过调用集合的remove(_:)方法从集合中删除项目，该方法将删除该项目（如果它是集合的成员），并返回删除的值，或者nil如果集合中不包含该值，则返回该值。或者，可以使用其removeAll()方法删除集合中的所有项目。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> removedGenre = favoriteGenres.remove(<span class="string">"Rock"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(removedGenre)? I'm over it."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I never much cared for that."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Rock? I'm over it."</span></span><br></pre></td></tr></table></figure>
+<p>若要检查集合是否包含特定项目，请使用contains(_:)方法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> favoriteGenres.contains(<span class="string">"Funk"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I get up on the good foot."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"It's too funky in here."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"It's too funky in here."</span></span><br></pre></td></tr></table></figure>
+<p>Swift的Set类型没有定义的顺序。要按特定顺序迭代集合的值，请使用sorted()方法，该方法将集合的元素作为使用&lt;操作符排序的数组返回。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> genre <span class="keyword">in</span> favoriteGenres.<span class="function"><span class="title">sorted</span></span>() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(genre)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Classical</span><br><span class="line">// Hip hop</span><br><span class="line">// Jazz</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行集合操作"><a href="#执行集合操作" class="headerlink" title="执行集合操作"></a>执行集合操作</h4><p>您可以有效地执行基本的集合操作，例如将两个集合组合在一起，确定两个集合具有哪些共同值，或者确定两个集合是否包含全部，部分或不包含相同的值。<br>使用该intersection(<em>:)方法创建仅具有两个集合共有的值的新集合。<br>使用该symmetricDifference(</em>:)方法创建一个新集合，其中两个集合中都有一个值，但不能同时包含两个集合中的值。<br>使用该union(<em>:)方法创建一个包含两个集合中所有值的新集合。<br>使用该subtracting(</em>:)方法创建一个新集合，其值不在指定集合中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> oddDigits: Set = [1, 3, 5, 7, 9]</span><br><span class="line"><span class="built_in">let</span> evenDigits: Set = [0, 2, 4, 6, 8]</span><br><span class="line"><span class="built_in">let</span> singleDigitPrimeNumbers: Set = [2, 3, 5, 7]</span><br><span class="line"></span><br><span class="line">oddDigits.union(evenDigits).sorted()</span><br><span class="line">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">oddDigits.intersection(evenDigits).sorted()</span><br><span class="line">// []</span><br><span class="line">oddDigits.subtracting(singleDigitPrimeNumbers).sorted()</span><br><span class="line">// [1, 9]</span><br><span class="line">oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()</span><br><span class="line">// [1, 2, 9]</span><br></pre></td></tr></table></figure>
+<p>使用“等于”运算符（==）确定两组是否包含所有相同的值。<br>使用该isSubset(of:)方法确定集合中的所有值是否都包含在指定集合中。<br>使用该isSuperset(of:)方法确定集合是否包含指定集合中的所有值。<br>使用isStrictSubset(of:)或isStrictSuperset(of:)方法确定集合是子集还是超集，但不等于指定集合。<br>使用该isDisjoint(with:)方法确定两个集合是否没有共同的值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> houseAnimals: Set = [<span class="string">"🐶"</span>, <span class="string">"🐱"</span>]</span><br><span class="line"><span class="built_in">let</span> farmAnimals: Set = [<span class="string">"🐮"</span>, <span class="string">"🐔"</span>, <span class="string">"🐑"</span>, <span class="string">"🐶"</span>, <span class="string">"🐱"</span>]</span><br><span class="line"><span class="built_in">let</span> cityAnimals: Set = [<span class="string">"🐦"</span>, <span class="string">"🐭"</span>]</span><br><span class="line"></span><br><span class="line">houseAnimals.isSubset(of: farmAnimals)</span><br><span class="line">// <span class="literal">true</span></span><br><span class="line">farmAnimals.isSuperset(of: houseAnimals)</span><br><span class="line">// <span class="literal">true</span></span><br><span class="line">farmAnimals.isDisjoint(with: cityAnimals)</span><br><span class="line">// <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
+    <article id="post-Mac下安装Flutter环境" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Mac%E4%B8%8B%E5%AE%89%E8%A3%85Flutter%E7%8E%AF%E5%A2%83/"
+    >Mac下安装Flutter环境</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Mac%E4%B8%8B%E5%AE%89%E8%A3%85Flutter%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>跳转到该<a href="https://flutter.dev/docs/get-started/install网址上，选择MacOs平台的Flutter进行下载" target="_blank" rel="noopener">https://flutter.dev/docs/get-started/install网址上，选择MacOs平台的Flutter进行下载</a></li>
+<li>如果没有xcode，下载xcode</li>
+<li>如果没有Android Studio，下载Android Studio。<br>当以上准备工作都完成之后，那么就可以开始搭建Flutter环境了</li>
+</ol>
+<h3 id="搭建Flutter环境"><a href="#搭建Flutter环境" class="headerlink" title="搭建Flutter环境"></a>搭建Flutter环境</h3><ol>
+<li><p>在终端工具输入 sudo vi ~/.bash_profile , 添加一下环境变量并保存退出<br> export ANDROID_HOME=”/Users/kkwong/Library/Android/sdk” ////android sdk目录，替换为你自己的即可，可以通过Android Studio查看<br> export PATH=${PATH}:${ANDROID_HOME}/tools:$ANDROID_HOME/platform-tools<br> export PUB_HOSTED_URL=<a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a><br> export FLUTTER_STORAGE_BASE_URL=<a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a><br> export PATH=/Users/kkwong/Desktop/flutter/bin:$PATH  //你flutter文件路径的根目录</p>
+</li>
+<li><p>在终端输入source ~/.bash_profile，让刚刚配置的环境变量生效。</p>
+</li>
+<li><p>在终端执行flutter doctor检测flutter环境是否搭建完好，如果有遇到感叹号的信息，那么说明环境搭建存在问题。</p>
+</li>
+<li><p>如果flutter doctor后得到以下信息会出现以下信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">[!] Android toolchain - develop <span class="keyword">for</span> Android devices</span><br><span class="line">   ✗ Unable to locate Android SDK.</span><br><span class="line">     Install Android Studio from: https://developer.android.com/studio/index.html</span><br><span class="line">     On first launch it will assist you <span class="keyword">in</span> installing the Android SDK components.</span><br><span class="line">     (or visit https://flutter.dev/docs/get-started/install/macos<span class="comment">#android-setup for detailed instructions).</span></span><br><span class="line">     If the Android SDK has been installed to a custom location, <span class="built_in">set</span> ANDROID_HOME to that location.</span><br><span class="line">     You may also want to add it to your PATH environment variable.</span><br><span class="line">     </span><br><span class="line">     [!] Android Studio (not installed)</span><br><span class="line">   //如果出现以上信息，应该是没有安装Android Studio，可以Android Studio后在执行flutter doctor</span><br><span class="line">   </span><br><span class="line">   [!] Android toolchain - develop <span class="keyword">for</span> Android devices (Android SDK version 29.0.3)</span><br><span class="line">      ✗ Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses</span><br><span class="line">    //如果出现上面信息，执行flutter doctor --android-licenses</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    [!] Android Studio (version 3.5)</span><br><span class="line">        ✗ Flutter plugin not installed; this adds Flutter specific functionality.</span><br><span class="line">        ✗ Dart plugin not installed; this adds Dart specific functionality.</span><br><span class="line">    //出现上面信息可以打开Android Studio - plugin里安装flutter，然后重启</span><br><span class="line">   </span><br><span class="line">   [!] Connected device                          </span><br><span class="line">   ! No devices available</span><br><span class="line">   //在终端执行以下open -a Simulator</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   [✓] Flutter (Channel stable, v1.17.1, on Mac OS X 10.15.3 19D76, locale zh-Hans-CN)</span><br><span class="line">    </span><br><span class="line">   [✓] Android toolchain - develop <span class="keyword">for</span> Android devices (Android SDK version 29.0.3)</span><br><span class="line">   [✓] Xcode - develop <span class="keyword">for</span> iOS and macOS (Xcode 11.4.1)</span><br><span class="line">   [✓] Android Studio (version 3.5)</span><br><span class="line">    </span><br><span class="line">   [✓] Connected device (1 available)            </span><br><span class="line"></span><br><span class="line">   • No issues found!</span><br><span class="line">   //如果出现以上没有感叹号信息，则表明环境搭建OK</span><br><span class="line">   </span><br><span class="line">   Waiting <span class="keyword">for</span> another flutter <span class="built_in">command</span> to release the startup lock...</span><br><span class="line">   //如果出现以上问题，到flutter sdk文件夹下的bin文件夹删除lockfile文件</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+</li>
+</ol>
 
       
       <!-- reward -->

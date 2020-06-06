@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Learn GPUImage |  Hexo
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="post-Learn GPUImage" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Learn GPUImage
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20GPUImage/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">9.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">33 min</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<h3 id="颜色调整"><a href="#颜色调整" class="headerlink" title="颜色调整"></a>颜色调整</h3><p><strong>GPUImageBrightnessFilter</strong>: 调整图片的亮度</p>
+<ul>
+<li><em>brightness</em>: brightness亮度范围(-1.0 - 1.0, 默认是0.0)</li>
+</ul>
+<p><strong>GPUImageExposureFilter</strong>: 调整图片的曝光度</p>
+<ul>
+<li><em>Exposure</em>: Exposure曝光度范围(-10.0 - 10.0, 默认是0.0)</li>
+</ul>
+<p><strong>GPUImageContrastFilter</strong>: 调整图片的对比度</p>
+<ul>
+<li><em>Contrast</em>: Contrast对比度范围(0.0 - 4.0, 默认是1.0)</li>
+</ul>
+<p><strong>GPUImageSaturationFilter</strong>: 调整图片的饱和度</p>
+<ul>
+<li><em>Saturation</em>: Saturation饱和度范围(0.0 - 2.0, 默认是1.0)</li>
+</ul>
+<p><strong>GPUImageGammaFilter</strong>: 调整图片的伽马值</p>
+<ul>
+<li><em>Gamma</em>: Gamma伽马值范围(0.0 - 3.0, 默认是1.0)</li>
+</ul>
+<p><strong>GPUImageLevelsFilter</strong>: 水平调整。 min、max、minOut和maxOut参数在[0,1]范围内浮动。如果你有来自Photoshop的参数在[0,255]范围内，你必须首先将它们转换成[0,1]</p>
+<p><strong>GPUImageColorMatrixFilter</strong>: 通过应用一个矩阵变换图像的颜色</p>
+<ul>
+<li><em>ColorMatrix</em>: 一个4乘4的矩阵，用于转换图像中的每一种颜色</li>
+<li><em>intensity</em>:转换后的新颜色替换每个像素的原始颜色的程度</li>
+</ul>
+<p><strong>GPUImageRGBFilter</strong>: 调整图像的单个RGB通道</p>
+<ul>
+<li><p><em>red</em>: 每个颜色通道相乘的规格化值，范围从0.0 到1.0 默认1.0</p>
+</li>
+<li><p><em>green</em>:</p>
+</li>
+<li><p><em>blue</em>:</p>
+</li>
+<li><p><strong>GPUImageHueFilter</strong>: 调整图像的色调</p>
+</li>
+<li><p><em>hue</em>: 色调角度，以度为单位。默认为90度</p>
+</li>
+<li><p><strong>GPUImageVibranceFilter</strong>: 调整图像的振动</p>
+</li>
+<li><p><em>vibrance</em>: 要应用的振动调整，使用0.0作为默认值，建议最小/最大值分别为-1.2和1.2左右。</p>
+</li>
+<li><p><strong>GPUImageWhiteBalanceFilter</strong>: 调整图像的白平衡.</p>
+</li>
+<li><p><em>temperature</em>: 温度调整图像,在ºK。4000的值是非常冷的，7000的值是非常热的。默认值是5000。请注意，4000到5000之间的刻度与5000到7000之间的刻度在视觉上几乎是一样重要的。</p>
+</li>
+<li><p><em>tint</em>:调整图像的色调。值-200是<em>非常</em>绿色，而200是<em>非常</em>粉色。默认值是0。</p>
+</li>
+<li><p><strong>GPUImageToneCurveFilter</strong>:基于样条曲线调整图像的每个颜色通道的颜色</p>
+</li>
+<li><p><em>redControlPoints</em>:</p>
+</li>
+<li><p><em>greenControlPoints</em>:</p>
+</li>
+<li><p><em>blueControlPoints</em>: </p>
+</li>
+<li><p><em>rgbCompositeControlPoints</em>: 色调曲线采用一系列控制点，这些控制点为每个颜色组件定义样条曲线，或为组合中的所有三个组件定义样条曲线。这些被存储为NSArray中的nsvalue包装的CGPoints, X和Y坐标从0 - 1规范化。默认值是(0,0)，(0.5,0.5)，(1,1)。</p>
+</li>
+<li><p><strong>GPUImageHighlightShadowFilter</strong>: 调整图像的阴影和高光</p>
+</li>
+<li><p><em>shadows</em>:增加阴影亮度，从0.0到1.0，默认为0.0。</p>
+</li>
+<li><p><em>highlights</em>: 高光从1.0降低到0.0，默认为1.0。</p>
+</li>
+<li><p><strong>GPUImageHighlightShadowTintFilter</strong>: 允许你着色的阴影和突出的图像独立使用颜色和强度</p>
+</li>
+<li><p><em>shadowTintColor</em>: 阴影着色RGB颜色(GPUVector4)。默认:’ {1.0f, 0.0f, 0.0f, 1.0f} ‘(红色)。</p>
+</li>
+<li><p><em>highlightTintColor</em>: 高亮着色RGB颜色(GPUVector4)。默认:’ {0.0f, 0.0f, 1.0f, 1.0f} ‘(蓝色)。</p>
+</li>
+<li><p><em>shadowTintIntensity</em>: 阴影着色强度，0.0到1.0。默认值:0.0</p>
+</li>
+<li><p><em>highlightTintIntensity</em>: 高亮着色强度，从0.0到1.0,0.0为默认值。</p>
+</li>
+<li><p><strong>GPUImageLookupFilter</strong>: 使用RGB颜色查找图像来重新映射图像中的颜色。首先，使用您最喜欢的照片编辑应用程序对GPUImage/framework/Resources中的look .png应用一个过滤器。为了使这个工作正常，每个像素的颜色必须不依赖于其他像素(例如，模糊将不工作)。如果需要更复杂的筛选器，可以根据需要创建任意多的查找表。准备好之后，使用新的look .png文件作为GPUImageLookupFilter的第二个输入。</p>
+</li>
+<li><p><strong>GPUImageAmatorkaFilter</strong>: 一个基于Photoshop操作的照片过滤器，Amatorka: <a href="http://amatorka.deviantart.com/art/Amatorka-Action-2-121069631。如果要使用这种效果，必须从GPUImage资源文件夹将lookup_amatorka.png添加到应用程序包中。" target="_blank" rel="noopener">http://amatorka.deviantart.com/art/Amatorka-Action-2-121069631。如果要使用这种效果，必须从GPUImage资源文件夹将lookup_amatorka.png添加到应用程序包中。</a></p>
+</li>
+<li><p><strong>GPUImageMissEtikateFilter</strong>: 一个基于阿提凯特小姐Photoshop操作的照片过滤器:<a href="http://miss-etikate.deviantart.com/art/photoshop-15-120151961。如果您想要使用这个效果，您必须从GPUImage资源文件夹中添加lookup_miss_etikat" target="_blank" rel="noopener">http://miss-etikate.deviantart.com/art/photoshop-15-120151961。如果您想要使用这个效果，您必须从GPUImage资源文件夹中添加lookup_miss_etikat</a> .png到您的应用程序包中。</p>
+</li>
+<li><p><strong>GPUImageSoftEleganceFilter</strong>: 另一个基于查找的颜色重映射过滤器。如果要使用这种效果，必须从GPUImage资源文件夹将lookup_soft_elegance_1.png和lookup_soft_elegance_2.png添加到应用程序包中。</p>
+</li>
+<li><p><strong>GPUImageSkinToneFilter</strong>: 一个皮肤色调调整过滤器，它会影响一个独特的浅肤色范围，并相应地调整粉红/绿色或粉红/橙色范围。默认值以白种人皮肤为目标，但可以根据需要进行调整。</p>
+</li>
+<li><p><em>skinToneAdjust</em>: 调节肤色的量。默认值:0.0，建议最小值/最大值:-0.3和0.3。</p>
+</li>
+<li><p><em>skinHue</em>: 要检测的肤色。默认值:0.05(白种人到红皮肤)。</p>
+</li>
+<li><p><em>skinHueThreshold</em>: 肤色的差异量。默认值:40.0。</p>
+</li>
+<li><p><em>maxHueShift</em>: 最大的色调转换量。默认值:0.25。</p>
+</li>
+<li><p><em>maxSaturationShift</em> =要移动的最大饱和度(使用橙色时)。默认值:0.4。</p>
+</li>
+<li><p><em>upperSkinToneColor</em> = <code>GPUImageSkinToneUpperColorGreen</code> or <code>GPUImageSkinToneUpperColorOrange</code></p>
+</li>
+<li><p><strong>GPUImageColorInvertFilter</strong>: 反转图像的颜色</p>
+</li>
+<li><p><strong>GPUImageGrayscaleFilter</strong>: 将图像转换为灰度(饱和度过滤器的一种稍微快一些的实现，没有改变颜色贡献的能力)</p>
+</li>
+<li><p><strong>GPUImageMonochromeFilter</strong>: 根据每个像素的亮度将图像转换为单色版本</p>
+</li>
+<li><p><em>intensity</em>:特定颜色替换正常图像颜色的程度(0.0 - 1.0，默认为1.0)</p>
+</li>
+<li><p><em>color</em>: 作为效果基础的颜色，默认值为(0.6,0.45,0.3,1.0)。</p>
+</li>
+<li><p><strong>GPUImageFalseColorFilter</strong>: 使用图像的亮度混合两个用户指定的颜色</p>
+</li>
+<li><p><em>firstColor</em>: 第一种颜色和第二种颜色分别指定了什么颜色替换了图像的暗区和亮区。默认值是(0.0,0.0,0.5)amd(1.0, 0.0, 0.0)。</p>
+</li>
+<li><p><em>secondColor</em>: </p>
+</li>
+<li><p><strong>GPUImageHazeFilter</strong>:用于添加或去除雾霾(类似于UV过滤器)</p>
+<ul>
+<li><em>distance</em>: 应用颜色的强度。默认为0。——之间的值。3和。3是最好的</li>
+<li><em>slope</em>: 颜色变化量。默认为0。——之间的值。3和。3是最好的。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageSepiaFilter</strong>: 简单的sepia色调过滤器</p>
+<ul>
+<li><em>intensity</em>: 深褐色取代正常图像颜色的程度(0.0 - 1.0，默认为1.0)</li>
+</ul>
+</li>
+<li><p><strong>GPUImageOpacityFilter</strong>: 调整传入图像的alpha通道</p>
+<ul>
+<li><em>opacity</em>: 将每个像素的传入alpha通道乘以(0.0 - 1.0，默认为1.0)</li>
+</ul>
+</li>
+<li><p><strong>GPUImageSolidColorGenerator</strong>: 它输出一个生成的纯色图像。你需要定义图像大小使用-forceProcessingAtSize:</p>
+<ul>
+<li><em>color</em>: 用于填充图像的颜色，采用四组分格式。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageLuminanceThresholdFilter</strong>:亮度高于阈值的像素将显示为白色，而亮度低于阈值的像素将显示为黑色</p>
+<ul>
+<li><em>threshold</em>: 亮度阈值，从0.0到1.0，默认值为0.5</li>
+</ul>
+</li>
+<li><p><strong>GPUImageAdaptiveThresholdFilter</strong>: 确定像素周围的局部亮度，如果像素低于该局部亮度，则将像素变为黑色，如果像素高于该局部亮度，则将像素变为白色。这对于在不同光照条件下挑选文本非常有用。</p>
+<ul>
+<li><em>blurRadiusInPixels</em>: 一个倍增器，用于背景平均模糊半径(以像素为单位)，默认值为4。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageAverageLuminanceThresholdFilter</strong>: 这是一个阈值操作，根据场景的平均亮度不断调整阈值。</p>
+<ul>
+<li><em>thresholdMultiplier</em>: 这是一个因子，平均亮度将乘，以达到最终阈值使用。默认情况下，这是1.0。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageHistogramFilter</strong>: 它分析传入的图像，并创建一个输出直方图，每个颜色值出现的频率。这个过滤器的输出是一个3像素高，256像素宽的图像，其中的中心(垂直)像素包含像素对应的频率，在不同的颜色值出现。每个颜色值占据256个宽度位置中的一个，从左边的0到右边的255。这个直方图可以生成单独的颜色通道(kgpuimage直方图red, kgpuimage直方图green, kgpuimage直方图blue)，图像的亮度(kgpuimage直方图亮度)，或者同时生成所有三个颜色通道(kgpuimage直方图rgb)。</p>
+<ul>
+<li><p><em>downsamplingFactor</em>:不是对每个像素进行采样，而是指定采样图像的比例。默认情况下，这是16，最小值为1。这样做是为了防止直方图饱和，因为每个颜色值只能记录256个像素，否则就会超载。</p>
+</li>
+<li><p><strong>GPUImageHistogramGenerator</strong>:这是一个特殊的过滤器，因为它主要用于与gpuimage直方图过滤器一起工作。它生成由gpuimage直方图过滤器生成的颜色直方图的输出表示，但是它可以被重新用于显示其他类型的值。它接收图像并查看中心(垂直)像素。然后，它在输出纹理的不同颜色的图形中绘制RGB组件的数值。您可能需要强制此筛选器的大小，以使其输出可见。</p>
+</li>
+<li><p><strong>GPUImageAverageColor</strong>: 该函数处理输入图像，并通过对图像中每个像素的RGBA组件求平均值来确定场景的平均颜色。减少过程是用来逐步下降采样的GPU上的源图像，然后在CPU上的一个简短的平均计算。这个过滤器的输出是没有意义的，但是您需要将colorAverageProcessingFinishedBlock属性设置为一个块，该块包含四个颜色组件和一个帧时间，并对它们进行处理。</p>
+</li>
+<li><p><strong>GPUImageLuminosity</strong>: 像GPUImageAverageColor一样，这将图像降低到其平均光度。您需要设置luminosityProcessingFinishedBlock来处理这个过滤器的输出，它只返回光度值和帧时间。</p>
+</li>
+<li><p><strong>GPUImageChromaKeyFilter</strong>: 对于图像中的给定颜色，将alpha通道设置为0。这类似于GPUImageChromaKeyBlendFilter，只是它没有混合第二个图像以匹配颜色，而是没有接收第二个图像，只是将给定的颜色变为透明。</p>
+<ul>
+<li><em>thresholdSensitivity</em>: 颜色匹配需要与要替换的目标颜色的距离(默认值为0.4)</li>
+<li><em>smoothing</em>: 如何平滑混合的颜色匹配(默认值为0.1)</li>
+</ul>
+</li>
+</ul>
+<h3 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h3><ul>
+<li><strong>GPUImageTransformFilter</strong>:这适用于图像的任意二维或三维变换</li>
+<li><em>affineTransform</em>:这需要一个CGAffineTransform来调整二维图像</li>
+<li><em>transform3D</em>:这需要一个CATransform3D操作的图像在3-D</li>
+</ul>
+<ul>
+<li>ignorepectratio *:默认情况下，会保持转换后的图像的纵横比，但是可以将其设置为YES，以使转换独立于纵横比</li>
+</ul>
+<p><strong>GPUImageCropFilter</strong>:将图像裁剪到特定区域，然后只将该区域传递到过滤器中的下一阶段</p>
+<ul>
+<li><em>cropRegion</em>:从图像中裁剪出的矩形区域，坐标归一化为0.0 - 1.0。(0.0, 0.0)的位置在图像的左上方。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageLanczosResamplingFilter</strong>:这让你向上或向下采样一个图像使用Lanczos重新采样，结果明显比标准的线性或三线性插值的质量更好。只需使用-forceProcessingAtSize:设置过滤器的目标输出分辨率，然后将对图像进行重新采样以获得新的大小。</p>
+<ul>
+<li><p><strong>GPUImageSharpenFilter</strong>:锐化图像</p>
+</li>
+<li><p><em>锐度</em>:应用的锐度调整(-4.0 -4.0，默认为0.0)</p>
+</li>
+<li><p><strong>GPUImageUnsharpMaskFilter</strong>:应用非锐化蒙版</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的模糊半径。默认值是4.0。</p>
+</li>
+</ul>
+<p><em>强度</em>:锐化的强度，从0.0开始，默认值为1.0</p>
+<ul>
+<li><strong>GPUImageGaussianBlurFilter</strong>:一个硬件优化，可变半径高斯模糊</li>
+<li><em>texelSpacingMultiplier</em>:为texel之间的间距设置的倍增器，范围从0.0开始，默认值为1.0。调整这个可能会稍微增加模糊的强度，但是会在结果中引入一些人为的东西。强烈建议在使用这个参数之前先使用其他参数。</li>
+<li><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为2.0。在高斯分布函数中调整变量。</li>
+<li><ul>
+<li>blurRadiusAsFractionOfImageWidth *:</li>
+</ul>
+</li>
+<li><em>blurRadiusAsFractionOfImageHeight</em>:设置这些属性将允许模糊半径随图像的大小缩放</li>
+<li><em>blurPasses</em>:顺序模糊传入图像的次数。通过的次数越多，过滤器的速度就越慢。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>GPUImageBoxBlurFilter</strong>:一个硬件优化，可变半径框模糊</p>
+</li>
+<li><p><em>texelSpacingMultiplier</em>:为texel之间的间距设置的倍增器，范围从0.0开始，默认值为1.0。调整这个可能会稍微增加模糊的强度，但是会在结果中引入一些人为的东西。强烈建议在使用这个参数之前先使用其他参数。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为2.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><ul>
+<li>blurRadiusAsFractionOfImageWidth *:</li>
+</ul>
+</li>
+<li><p><em>blurRadiusAsFractionOfImageHeight</em>:设置这些属性将允许模糊半径随图像的大小缩放</p>
+</li>
+<li><p><em>blurPasses</em>:顺序模糊传入图像的次数。通过的次数越多，过滤器的速度就越慢。</p>
+</li>
+<li><p><strong>GPUImageSingleComponentGaussianBlurFilter</strong>: GPUImageGaussianBlurFilter的一个修改，只在红色组件上运行</p>
+</li>
+<li><p><em>texelSpacingMultiplier</em>:为texel之间的间距设置的倍增器，范围从0.0开始，默认值为1.0。调整这个可能会稍微增加模糊的强度，但是会在结果中引入一些人为的东西。强烈建议在使用这个参数之前先使用其他参数。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为2.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><ul>
+<li>blurRadiusAsFractionOfImageWidth *:</li>
+</ul>
+</li>
+<li><p><em>blurRadiusAsFractionOfImageHeight</em>:设置这些属性将允许模糊半径随图像的大小缩放</p>
+</li>
+<li><p><em>blurPasses</em>:顺序模糊传入图像的次数。通过的次数越多，过滤器的速度就越慢。</p>
+</li>
+<li><p><strong>GPUImageGaussianSelectiveBlurFilter</strong>:在圆形区域内保持焦点的高斯模糊</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为5.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><p>*不包括半径的圆形区域的模糊</p>
+</li>
+<li><p><em>不包括圆心区域</em>:圆心区域不包括模糊区域</p>
+</li>
+<li><p><em>排除模糊部分</em>:模糊部分和清晰圆之间的区域大小</p>
+</li>
+<li><p><em>aspectRatio</em>:图像的宽高比，用来调整焦点区域的圆度。默认情况下，这与图像宽高比匹配，但是您可以覆盖这个值。</p>
+</li>
+<li><p><strong>GPUImageGaussianSelectiveBlurFilter</strong>:在圆形区域内保持焦点的高斯模糊</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(以像素为单位)，默认为5.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><p>*不包括半径的圆形区域的模糊</p>
+</li>
+<li><p><em>不包括圆心区域</em>:圆心区域不包括模糊区域</p>
+</li>
+<li><p><em>排除模糊部分</em>:模糊部分和清晰圆之间的区域大小</p>
+</li>
+<li><p><em>aspectRatio</em>:图像的宽高比，用来调整焦点区域的圆度。默认情况下，这与图像宽高比匹配，但是您可以覆盖这个值。</p>
+</li>
+<li><p><strong>GPUImageGaussianBlurPositionFilter</strong>: GPUImageGaussianSelectiveBlurFilter的逆函数，只在特定的圆圈内应用模糊效果</p>
+</li>
+<li><p><em>blurSize</em>:模糊大小的倍增器，范围从0.0到1.0，默认值为0.0</p>
+</li>
+<li><p><em>blurCenter</em>:模糊中心，默认值为0.5,0.5</p>
+</li>
+<li><p><em>blurRadius</em>:模糊的半径，默认为1.0</p>
+</li>
+<li><p><strong>GPUImageiOSBlurFilter</strong>:尝试在控制中心等地方复制iOS 7中使用的背景模糊。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:用于模糊的半径(像素)，默认值为12.0。在高斯分布函数中调整变量。</p>
+</li>
+<li><p><em>饱和度</em>:饱和度范围从0.0(完全去饱和)到2.0(最大饱和度)，0.8为正常水平</p>
+</li>
+<li><p><em>向下采样</em>:向下采样，然后向上采样传入图像的程度，以最小化高斯模糊内的计算，默认值为4.0。</p>
+</li>
+<li><p><strong>GPUImageMedianFilter</strong>:取三个颜色分量在3x3区域内的中值</p>
+</li>
+<li><p><strong>GPUImageBilateralFilter</strong>:双边模糊，它试图模糊类似的颜色值，同时保留锐利的边缘</p>
+</li>
+<li><p><em>texelSpacingMultiplier</em>:用于texel读取之间的间隔的倍增器，范围从0.0开始，默认值为4.0</p>
+</li>
+<li><p><em>distanceNormalizationFactor</em>:中心颜色与样本颜色之间距离的归一化因子，默认值为8.0。</p>
+</li>
+<li><p><strong>GPUImageTiltShiftFilter</strong>:一个模拟的倾斜偏移镜头效果</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础模糊的半径，以像素为单位。默认情况下这是7.0。</p>
+</li>
+<li><p><em>topFocusLevel</em>:图像中焦点区域顶部的规范化位置，该值应该低于bottomFocusLevel，默认值0.4</p>
+</li>
+<li><p>*bottom focuslevel *:图像中焦点区域底部的规范化位置，该值应该高于topFocusLevel，默认值为0.6</p>
+</li>
+<li><p><em>focusFallOffRate</em>:图像在焦点区域以外变得模糊的速度，默认为0.2</p>
+</li>
+<li><p><strong>GPUImage3x3ConvolutionFilter</strong>:对图像运行一个3x3卷积核<br>卷积核*:卷积核是一个3 * 3矩阵的值，适用于像素和它周围的8个像素。矩阵以行为主的顺序指定，左上角的像素为1。1和右下角3,3。如果矩阵中的值加起来不等于1.0，图像可能会变亮或变暗。</p>
+</li>
+<li><p><strong>GPUImageSobelEdgeDetectionFilter</strong>: Sobel边缘检测，边缘以白色高亮显示</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p><strong>GPUImagePrewittEdgeDetectionFilter</strong>: Prewitt edge detection，其边缘用白色高亮显示</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p>** gpuimagethreshold dedgedetectionfilter **:执行Sobel边缘检测，但应用一个阈值，而不是给出渐进的强度值</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p><em>threshold</em>:该阈值之上的任何边都是黑色的，而该阈值之下的任何边都是白色的。范围从0.0到1.0，默认为0.8</p>
+</li>
+<li><p><strong>GPUImageCannyEdgeDetectionFilter</strong>:这使用了整个Canny过程来突出一个像素宽的边缘</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:高斯模糊的基础模糊半径。默认是2.0。</p>
+</li>
+<li><p><em>blurTexelSpacingMultiplier</em>:下面的blur texel间距倍增器。默认是1.0。</p>
+</li>
+<li><p><em>上阈值</em>:任何梯度幅度高于此阈值的边缘都将通过并显示在最终结果中。默认是0.4。</p>
+</li>
+<li><p><em>lowerThreshold</em>:任何梯度大小低于此阈值的边缘都将失败，并将从最终结果中删除。默认是0.1。</p>
+</li>
+<li><p><strong>GPUImageHarrisCornerDetectionFilter</strong>:在输入图像上运行Harris角点检测算法，生成的图像的角点为白色像素，其余为黑色像素。可以设置角点detectedblock，并且将向您提供角点列表(在规范化0..(1 X, Y坐标)在这个回调函数中，用于您想要执行的任何其他操作。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>灵敏度</em>:一个内部缩放因子，用于调整在过滤器中生成的转角贴图的动态范围。默认是5.0。</p>
+</li>
+<li><p><em>阈值</em>:检测到某点为拐角的阈值。这可能会根据尺寸、照明条件和iOS设备的相机类型而有很大的不同，所以可能需要做一些实验来适应你的情况。默认是0.20。</p>
+</li>
+<li><p><strong>GPUImageNobleCornerDetectionFilter</strong>:在Harris角点探测器上运行Noble变量。它的行为如上所述的哈里斯探测器。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>灵敏度</em>:一个内部缩放因子，用于调整在过滤器中生成的转角贴图的动态范围。默认是5.0。</p>
+</li>
+<li><p><em>阈值</em>:检测到某点为拐角的阈值。这可能会根据尺寸、照明条件和iOS设备的相机类型而有很大的不同，所以可能需要做一些实验来适应你的情况。默认是0.2。</p>
+</li>
+<li><p><strong>GPUImageShiTomasiCornerDetectionFilter</strong>:运行Shi-Tomasi特征检测器。它的行为如上所述的哈里斯探测器。</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>灵敏度</em>:一个内部缩放因子，用于调整在过滤器中生成的转角贴图的动态范围。默认值是1.5。</p>
+</li>
+<li><p><em>阈值</em>:检测到某点为拐角的阈值。这可能会根据尺寸、照明条件和iOS设备的相机类型而有很大的不同，所以可能需要做一些实验来适应你的情况。默认是0.2。</p>
+</li>
+<li><p><strong>GPUImageNonMaximumSuppressionFilter</strong>:目前仅作为Harris角点检测过滤器的一部分使用，它将在每个像素周围采样一个1像素的框，并确定中心像素的红色通道是否在该区域最大。如果是，它就会留下来。如果不是，则将所有颜色组件设置为0。</p>
+</li>
+</ul>
+<p>  ** <em>GPUImageXYDerivativeFilter*</em>:这是Harris角点检测过滤器的内部组件，它可以计算出左边和右边像素的平方差，上面和下面像素的平方差，以及这两个差的乘积。</p>
+<ul>
+<li><p><strong>GPUImageCrosshairGenerator</strong>:在图像上绘制一系列十字准线，最常用来识别机器视觉特征。它不像其他过滤器那样接受一个标准的图像，而是在它的-renderCrosshairsFromArray:count: method中获取一系列的点，该方法执行实际的绘图。您将需要强制此筛选器以所需的特定输出大小呈现。</p>
+</li>
+<li><p><em>十字准线宽度</em>:屏幕上绘制的十字准线的宽度，以像素为单位。</p>
+</li>
+<li><p><strong>GPUImageDilationFilter</strong>:执行图像膨胀操作，其中矩形邻域内红色通道的最大强度用于此像素的强度。要采样的矩形区域的半径在初始化时指定，范围为1-4个像素。这是用于灰度图像，它扩大了明亮的区域。</p>
+</li>
+<li><p><strong>GPUImageRGBDilationFilter</strong>:这与GPUImageDilationFilter相同，不同之处是它作用于所有颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageErosionFilter</strong>:执行图像侵蚀操作，其中矩形邻域内红色通道的最小强度用于该像素的强度。要采样的矩形区域的半径在初始化时指定，范围为1-4个像素。这是打算用于灰度图像，它扩大黑暗区域。</p>
+</li>
+<li><p><strong>GPUImageRGBErosionFilter</strong>:这与GPUImageErosionFilter是一样的，除了它作用于所有的颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageOpeningFilter</strong>:对图像的红色通道进行侵蚀，然后进行相同半径的膨胀。半径在初始化时设置，范围为1-4像素。这就过滤掉了较小的明亮区域。</p>
+</li>
+<li><p><strong>GPUImageRGBOpeningFilter</strong>:这与GPUImageOpeningFilter相同，不同之处是它作用于所有颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageClosingFilter</strong>:它对图像的红色通道进行扩展，然后进行相同半径的侵蚀。半径在初始化时设置，范围为1-4像素。这就过滤掉了较小的黑暗区域。</p>
+</li>
+<li><p><strong>GPUImageRGBClosingFilter</strong>:这与GPUImageClosingFilter相同，不同之处是它作用于所有颜色通道，而不仅仅是红色通道。</p>
+</li>
+<li><p><strong>GPUImageLocalBinaryPatternFilter</strong>:执行8个周围像素和中心像素的红色通道强度的比较，将比较结果编码为一个比特串，该比特串成为该像素强度。最不重要的位是右上比较，逆时针方向，以最重要的位右比较结束。</p>
+</li>
+<li><p><strong>GPUImageLowPassFilter</strong>:这适用于传入的视频帧的低通滤波器。这基本上是前一帧与当前帧的加权滚动平均值的累加。这可以用来去噪视频，添加运动模糊，或用于创建一个高通滤波器。</p>
+</li>
+<li><p><em>filterStrength</em>:控制先前积累的帧与当前帧混合的程度。该值的范围从0.0到1.0，缺省值为0.5。</p>
+</li>
+<li><p><strong>GPUImageHighPassFilter</strong>:这适用于传入的视频帧的高通滤波器。这是低通滤波器的倒数，显示了当前帧与前一帧的加权滚动平均值之间的差异。这是最有用的运动检测。</p>
+</li>
+<li><p><em>filterStrength</em>:控制先前累积帧的混合程度，然后从当前帧中减去。该值的范围从0.0到1.0，缺省值为0.5。</p>
+</li>
+<li><p><strong>GPUImageMotionDetector</strong>:这是一个基于高通滤波器的运动检测器。设置motionDetectionBlock后，在每一帧输入的帧上，它都会给出场景中所有检测到的运动的质心(在标准的X、Y坐标中)以及场景的运动强度。</p>
+</li>
+<li><p><em>lowPassFilterStrength</em>:控制后台使用的低通过滤器的强度，以建立传入帧与之比较的基线。该值的范围从0.0到1.0，缺省值为0.5。</p>
+</li>
+<li><p><strong>GPUImageHoughTransformLineDetector</strong>:使用到平行坐标空间的霍夫变换检测图像中的线条。这种方法完全基于由Brno技术大学的Graph@FIT研究小组开发的PC线流程，并在他们的出版物:M. Dubska、J. Havel和A. Herout中进行了描述。使用并行坐标和OpenGL实时检测直线。《SCCG 2011会议记录》，布拉迪斯拉发，SK, p. 7 (<a href="http://medusa.fit.vutbr.cz/public/data/papers/2011-sccg" target="_blank" rel="noopener">http://medusa.fit.vutbr.cz/public/data/papers/2011-sccg</a> - dubska-datausing-pcandopengl.pdf)， M. Dubska, J. Havel, and A. Herout。PClines -使用平行坐标的线检测。2011年IEEE计算机视觉和模式识别会议(CVPR)， p. 1489- 1494 (<a href="http://medusa.fit.vutbr.cz/public/data/papers/2011-CVPR-Dubska-PClines.pdf)。" target="_blank" rel="noopener">http://medusa.fit.vutbr.cz/public/data/papers/2011-CVPR-Dubska-PClines.pdf)。</a></p>
+</li>
+<li><p><em>边缘阈值</em>:一个阈值，其中一个点被检测为属于确定线的边缘。默认是0.9。</p>
+</li>
+<li><p><em>lineDetectionThreshold</em>:检测到的局部最大值属于平行坐标空间中的一条线的阈值。默认是0.20。</p>
+</li>
+<li><p><em>linesDetectedBlock</em>:这个块在行检测时调用，通常在每个处理过的帧上调用。传入一个C数组，其中包含以m、b对(y=mx+b)为单位的标准化斜率和截距，以及检测到的行数和视频帧的当前时间戳。</p>
+</li>
+<li><p><strong>GPUImageLineGenerator</strong>:一个助手类，生成可以覆盖场景的线条。这些线的颜色可以使用-setLineColorRed:green:blue:</p>
+</li>
+<li><p><em>lineWidth</em>:线条的宽度，以像素为单位，默认为1.0。</p>
+</li>
+<li><p><strong>GPUImageMotionBlurFilter</strong>:对图像应用方向运动模糊</p>
+</li>
+<li><p><em>blurSize</em>:模糊大小的倍增器，范围从0.0到1.0，默认值为0.0</p>
+</li>
+<li><p><em>模糊角</em>:蓝光的角度方向</p>
+<h3 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h3></li>
+</ul>
+<ul>
+<li><p><strong>GPUImageChromaKeyBlendFilter</strong>:有选择地将第一个图像中的颜色替换为第二个图像中的颜色</p>
+</li>
+<li><p><em>阈值灵敏度</em>:颜色匹配需要与要替换的目标颜色的距离(默认值为0.4)</p>
+</li>
+<li><p><em>平滑</em>:如何平滑混合的颜色匹配(默认值为0.1)</p>
+</li>
+<li><p><strong>GPUImageDissolveBlendFilter</strong>:应用两个图像的溶解混合</p>
+</li>
+<li><p><em>mix</em>:第二个图像覆盖第一个图像的程度(0.0 - 1.0，默认为0.5)</p>
+</li>
+<li><p><strong>GPUImageMultiplyBlendFilter</strong>:应用两个图像的多重混合</p>
+</li>
+<li><p><strong>GPUImageAddBlendFilter</strong>:应用两个图像的相加混合</p>
+</li>
+<li><p><strong>GPUImageSubtractBlendFilter</strong>:应用两个图像的减法混合</p>
+</li>
+<li><p><strong>GPUImageDivideBlendFilter</strong>:应用两个图像的分割混合</p>
+</li>
+</ul>
+<p><strong>GPUImageOverlayBlendFilter</strong>:应用两个图像的叠加混合</p>
+<ul>
+<li><p><strong>GPUImageDarkenBlendFilter</strong>:混合两张图像，取图像之间每个颜色分量的最小值</p>
+</li>
+<li><p><strong>GPUImageLightenBlendFilter</strong>:混合两张图像，取图像之间每个颜色分量的最大值</p>
+</li>
+<li><p><strong>GPUImageColorBurnBlendFilter</strong>:应用两个图像的颜色烧伤混合</p>
+</li>
+<li><p><strong>GPUImageColorDodgeBlendFilter</strong>:应用两个图像的颜色减淡混合</p>
+</li>
+<li><p><strong>GPUImageScreenBlendFilter</strong>:应用两个图像的屏幕混合</p>
+</li>
+<li><p>** gpuimageexclusive blendfilter **:应用两个图像的排除混合</p>
+</li>
+<li><p><strong>GPUImageDifferenceBlendFilter</strong>:应用两个图像的差异混合</p>
+</li>
+<li><p><strong>GPUImageHardLightBlendFilter</strong>:应用两个图像的硬光混合</p>
+</li>
+<li><p><strong>GPUImageSoftLightBlendFilter</strong>:应用两个图像的柔光混合</p>
+</li>
+<li><p><strong>GPUImageAlphaBlendFilter</strong>:基于第二个alpha通道，在第一个图像上混合第二个图像</p>
+</li>
+<li><p><em>mix</em>:第二个映像覆盖第一个映像的程度(0.0 - 1.0，默认为1.0)</p>
+</li>
+<li><p><strong>GPUImageSourceOverBlendFilter</strong>:应用两个图像的混合源</p>
+</li>
+<li><p><strong>GPUImageColorBurnBlendFilter</strong>:应用两个图像的颜色烧伤混合</p>
+</li>
+<li><p><strong>GPUImageColorDodgeBlendFilter</strong>:应用两个图像的颜色减淡混合</p>
+</li>
+<li><p><strong>GPUImageNormalBlendFilter</strong>:应用两个图像的正常混合</p>
+</li>
+<li><p><strong>GPUImageColorBlendFilter</strong>:应用两个图像的颜色混合</p>
+</li>
+<li><p><strong>GPUImageHueBlendFilter</strong>:应用两个图像的色调混合</p>
+</li>
+<li><p><strong>GPUImageSaturationBlendFilter</strong>:应用两个图像的饱和混合</p>
+</li>
+<li><p>** gpuimagelosityblendfilter **:应用两个图像的亮度混合</p>
+</li>
+<li><p><strong>GPUImageLinearBurnBlendFilter</strong>:应用两个图像的线性烧伤混合</p>
+</li>
+<li><p><strong>GPUImagePoissonBlendFilter</strong>:应用两个图像的泊松混合</p>
+</li>
+<li><p><em>mix</em>: mix的范围从0.0(只有图像1)到1.0(只有图像2的梯度)，正常水平为1.0</p>
+</li>
+<li><ul>
+<li>num迭代*:传播梯度的次数。如果你想接近收敛，可以把这个值调到100甚至1000。是的，这将是缓慢的。</li>
+</ul>
+</li>
+<li><p><strong>GPUImageMaskFilter</strong>:掩码一个图像使用另一个</p>
+</li>
+</ul>
+<h3 id="视觉效果"><a href="#视觉效果" class="headerlink" title="视觉效果"></a>视觉效果</h3><ul>
+<li><p><strong>GPUImagePixellateFilter</strong>:在图像或视频上应用像素效果</p>
+</li>
+<li><p><em>fractionalWidthOfAPixel</em>:像素的大小，作为图像的宽度和高度的一部分(0.0 - 1.0，默认值为0.05)</p>
+</li>
+<li><p><strong>GPUImagePolarPixellateFilter</strong>:对图像或视频应用像素化效果，基于极坐标而不是笛卡尔坐标</p>
+</li>
+<li><p><em>center</em>:应用像素的中心，默认为(0.5,0.5)</p>
+</li>
+<li><p><em>pixelSize</em>:分数像素大小，分为宽度和高度组件。默认值是(0.05,0.05)</p>
+</li>
+<li><p><strong>GPUImagePolkaDotFilter</strong>:将图像分割成规则网格中的彩色点</p>
+</li>
+<li><p><em>fractionalWidthOfAPixel</em>:点的大小，作为图像的宽度和高度的一部分(0.0 - 1.0，默认值0.05)</p>
+</li>
+<li><p><em>点标度</em>:每个网格空间被点所占的比例，从0.0到1.0，默认值为0.9。</p>
+</li>
+<li><p><strong>GPUImageHalftoneFilter</strong>:将半色调效果应用于图像，例如新闻打印</p>
+</li>
+<li><p><em>fractionalWidthOfAPixel</em>:半色调点的大小，作为图像的宽度和高度的一部分(0.0 - 1.0，默认值为0.05)</p>
+</li>
+<li><p><strong>GPUImageCrosshatchFilter</strong>:将图像转换为黑白交叉图案</p>
+</li>
+<li><p><em>交叉点间距</em>:图像的分数宽度，用作交叉点的间距。默认值是0.03。</p>
+</li>
+<li><p><em>lineWidth</em>:交叉线的相对宽度。默认值是0.003。</p>
+</li>
+<li><p><strong>GPUImageSketchFilter</strong>:转换视频看起来像一个草图。这只是倒色的Sobel边缘检测滤镜</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p>** gpuimage阈值ketchfilter **:与素描过滤器一样，只有边缘是阈值，而不是灰度</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>edgeStrength</em>:调整滤波器的动态范围。较高的值导致更强的边缘，但可以饱和的强度色彩空间。默认是1.0。</p>
+</li>
+<li><p><em>threshold</em>:该阈值之上的任何边都是黑色的，而该阈值之下的任何边都是白色的。范围从0.0到1.0，默认为0.8</p>
+</li>
+<li><p><strong>GPUImageToonFilter</strong>:它使用Sobel边缘检测在对象周围放置一个黑色边框，然后量化图像中出现的颜色，使图像具有卡通效果。</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>阈值</em>:边缘检测的灵敏度，越低的值越敏感。范围从0.0到1.0，默认为0.2</p>
+</li>
+<li><p><em>quantizationLevels</em>:最终图像中表示的颜色级别的数量。默认是10.0</p>
+</li>
+<li><p><strong>GPUImageSmoothToonFilter</strong>:这使用了与GPUImageToonFilter类似的过程，只是它之前的toon效果与高斯模糊，以消除噪声。</p>
+</li>
+<li><ul>
+<li>texelWidth *:</li>
+</ul>
+</li>
+<li><p><em>texelHeight</em>:这些参数会影响检测到的边缘的可见性</p>
+</li>
+<li><p><em>blurRadiusInPixels</em>:基础高斯模糊的半径。默认值是2.0。</p>
+</li>
+<li><p><em>阈值</em>:边缘检测的灵敏度，越低的值越敏感。范围从0.0到1.0，默认为0.2</p>
+</li>
+<li><p><em>quantizationLevels</em>:最终图像中表示的颜色级别的数量。默认是10.0</p>
+</li>
+<li><p><strong>GPUImageEmbossFilter</strong>:在图像上应用浮雕效果</p>
+</li>
+</ul>
+<p><em>强度</em>:压纹的强度，从0.0到4.0,1.0为正常水平</p>
+<ul>
+<li><p><strong>GPUImagePosterizeFilter</strong>:这将颜色动态范围缩减为指定的步骤数，从而生成类似于卡通的简单图像阴影。</p>
+</li>
+<li><p><em>色阶</em>:将图像空间缩小到的色阶数。该值的范围从1到256，默认值为10。</p>
+</li>
+<li><p><strong>GPUImageSwirlFilter</strong>:在图像上创建一个漩涡畸变</p>
+</li>
+<li><p><em>radius</em>:从中心开始应用扭曲的半径，默认值为0.5</p>
+</li>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>角度</em>:应用于图像的扭曲量，默认为1.0</p>
+</li>
+<li><p>** gpuimagebulge畸变过滤器**:创建一个胀形失真的图像</p>
+</li>
+<li><p><em>半径</em>:从中心到施加扭曲的半径，默认为0.25</p>
+</li>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>scale</em>:应用的失真量，从-1.0到1.0，默认值为0.5</p>
+</li>
+<li><p>** gpuimagepinch畸变过滤器**:创建一个缩放失真的图像</p>
+</li>
+<li><p><em>半径</em>:从中心到应用扭曲的半径，默认为1.0</p>
+</li>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>scale</em>:应用的失真量，从-2.0到2.0，默认为1.0</p>
+</li>
+</ul>
+<p>** gpuimagestretchtionfilter **:创建图像的拉伸失真</p>
+<ul>
+<li><p><em>center</em>:图像的中心(以0 - 1.0为标准坐标)，默认值为(0.5,0.5)</p>
+</li>
+<li><p><strong>GPUImageSphereRefractionFilter</strong>:模拟通过玻璃球的折射</p>
+</li>
+<li><p><em>center</em>:应用失真的中心，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>radius</em>:失真的半径，范围从0.0到1.0，默认值为0.25</p>
+</li>
+<li><p><em>折射指数</em>:球面的折射率，默认值为0.71</p>
+</li>
+<li><p><strong>GPUImageGlassSphereFilter</strong>:与GPUImageSphereRefractionFilter相同，只是图像没有倒转，并且在玻璃边缘有一些糖霜</p>
+</li>
+<li><p><em>center</em>:应用失真的中心，默认值为(0.5,0.5)</p>
+</li>
+<li><p><em>radius</em>:失真的半径，范围从0.0到1.0，默认值为0.25</p>
+</li>
+<li><p><em>折射指数</em>:球面的折射率，默认值为0.71</p>
+</li>
+<li><p><strong>GPUImageVignetteFilter</strong>:执行渐晕效果，淡出图像的边缘</p>
+</li>
+<li><p><em>vignetteCenter</em>: tex coords (CGPoint)中vignette的中心，默认值为0.5,0.5</p>
+</li>
+<li><p><em>vignetteColor</em>:用于vignette的颜色(GPUVector3)，默认为黑色</p>
+</li>
+<li><p><em>vignetteStart</em>:从vignette效果开始的中心开始的规范化距离，默认值为0.5</p>
+</li>
+<li><p><em>vignetteEnd</em>:到vignette效果结束的中心的规范化距离，默认值为0.75</p>
+</li>
+<li><p><strong>GPUImageKuwaharaFilter</strong>: Kuwahara图像抽象，摘自Kyprianidis等人发表的《GPU上的Kuwahara滤波的各向异性》中的GPU Pro集合。这就产生了一幅类似油画的图像，但它的计算成本非常高，因此在iPad 2上渲染一个帧可能需要几秒钟的时间。这可能最适合用于静态图像。</p>
+</li>
+<li><p><em>radius</em>:整数，指定应用过滤器时要测试的中心像素点以外的像素点的个数，默认值为4。更高的值会创建更抽象的图像，但会以更长的处理时间为代价。</p>
+</li>
+<li><p><strong>GPUImageKuwaharaRadius3Filter</strong>:一个修改版的Kuwahara过滤器，优化工作半径只有3个像素</p>
+</li>
+<li><p>** gpuimageperlinnoise efilter **:生成一个充满Perlin噪声的图像</p>
+</li>
+<li><ul>
+<li>colorStart *:</li>
+</ul>
+</li>
+<li><p><em>colorFinish</em>:产生噪音的颜色范围</p>
+</li>
+<li><p><em>scale</em>:正在生成的噪声的比例</p>
+</li>
+<li><p><strong>GPUImageCGAColorspaceFilter</strong>:模拟CGA监视器的颜色空间</p>
+</li>
+<li><p><strong>GPUImageMosaicFilter</strong>:该过滤器接受一个输入tileset，瓷砖必须在亮度提升。它查看输入图像，并根据每个显示块的亮度将其替换为一个输入块。这个想法是复制在其他应用程序中看到的ASCII视频过滤器，但tileset可以是任何东西。</p>
+</li>
+<li><ul>
+<li>inputTileSize *:</li>
+</ul>
+</li>
+<li><ul>
+<li>numTiles *:</li>
+</ul>
+</li>
+<li><ul>
+<li>displayTileSize *:</li>
+</ul>
+</li>
+<li><ul>
+<li>colorOn *:</li>
+</ul>
+</li>
+<li><p><strong>GPUImageJFAVoronoiFilter</strong>:生成一个Voronoi映射，供以后使用。</p>
+</li>
+<li><p><em>sizeInPixels</em>:单个元素的大小</p>
+</li>
+<li><p><strong>GPUImageVoronoiConsumerFilter</strong>:接受Voronoi映射，并使用它来过滤传入的图像。</p>
+</li>
+<li><p><em>sizeInPixels</em>:单个元素的大小</p>
+</li>
+</ul>
+<p>您还可以使用类似于c的OpenGL着色语言轻松地编写自己的自定义过滤器，如上所述。</p>
+<h3 id="示例应用程序"><a href="#示例应用程序" class="headerlink" title="示例应用程序"></a>示例应用程序</h3><p>几个示例应用程序与框架源代码绑定在一起。大多数都能同时兼容iPhone和ipad。它们试图展示框架的各个方面，并且应该在开发框架时作为API的最佳示例使用。这些包括:</p>
+<h3 id="SimpleImageFilter"><a href="#SimpleImageFilter" class="headerlink" title="SimpleImageFilter"></a>SimpleImageFilter</h3><p>在启动时将绑定的JPEG图像加载到应用程序中，对其应用过滤器，并将结果呈现到屏幕上。此外，本示例展示了获取图像、过滤图像和将其保存到磁盘的两种方法。</p>
+<h3 id="SimpleVideoFilter"><a href="#SimpleVideoFilter" class="headerlink" title="SimpleVideoFilter"></a>SimpleVideoFilter</h3><p>pixellate过滤器应用于一个实时视频流，与UISlider控件，让你调整像素大小的实时视频。</p>
+<h3 id="SimpleVideoFileFilter"><a href="#SimpleVideoFileFilter" class="headerlink" title="SimpleVideoFileFilter"></a>SimpleVideoFileFilter</h3><p>从磁盘加载电影文件，对其应用非锐化掩码过滤器，并将过滤后的结果重新编码为另一个电影。</p>
+<h3 id="MultiViewFilterExample"><a href="#MultiViewFilterExample" class="headerlink" title="MultiViewFilterExample"></a>MultiViewFilterExample</h3><p>从单个摄像机提要中，四个视图使用应用于摄像机的实时过滤器填充。一个是简单的摄像机视频，一个是预先编程的深褐色调，两个是基于着色程序的自定义过滤器。</p>
+<h3 id="FilterShowcase"><a href="#FilterShowcase" class="headerlink" title="FilterShowcase"></a>FilterShowcase</h3><p>这演示了GPUImage提供的每个过滤器。</p>
+<h3 id="BenchmarkSuite"><a href="#BenchmarkSuite" class="headerlink" title="BenchmarkSuite"></a>BenchmarkSuite</h3><p>这是用来测试整个框架的性能，方法是针对cpu绑定的例程和核心映像进行测试。涉及静态图像和视频的基准测试在这三种情况下运行，结果显示在应用程序中。</p>
+<h3 id="CubeExample"><a href="#CubeExample" class="headerlink" title="CubeExample"></a>CubeExample</h3><p>这展示了GPUImage与OpenGL ES渲染交互的能力。帧从相机上捕捉下来，用一个深褐色的滤光片过滤它们，然后将它们输入一个纹理，应用到一个你可以用手指旋转的立方体的表面上。然后，这个多维数据集被呈现到一个纹理支持的framebuffer对象中，这个纹理被反馈回GPUImage，以便在呈现到屏幕之前应用一个像素筛选器。</p>
+<p>换句话说，这个应用程序的路径是camera -&gt; sepia tone filter -&gt; cube -&gt; pixfilter -&gt; display。</p>
+<h3 id="ColorObjectTracking"><a href="#ColorObjectTracking" class="headerlink" title="ColorObjectTracking"></a>ColorObjectTracking</h3><p>从<a href="http://www.sunsetlakesoftware.com/2010/10/22/gpu-acceleratvideo" target="_blank" rel="noopener">http://www.sunsetlakesoftware.com/2010/10/22/gpu-acceleratvideo</a> -processing-mac-and-ios移植过来使用GPUImage，这个应用程序使用场景中的颜色来跟踪来自实时摄像机feed的对象。四个视图之间切换可以包括原始相机饲料,相机饲料白色像素匹配颜色阈值,处理视频编码的位置在哪里的颜色在像素通过阈值测试,最后点的视频实时跟踪选定的颜色。轻击屏幕可以改变跟踪的颜色，以匹配您的手指下像素的颜色。在屏幕上轻击和拖动使颜色阈值或多或少可以接受。这是最明显的第二，颜色阈值的看法。</p>
+<p>目前，在最后一步中对颜色平均的所有处理都是在CPU上完成的，所以这一部分非常慢。</p>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        Reward
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>Copyright： </strong>
+              Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/12/Learn%20GPUImage/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/04/12/Learn%20GPUImage%20-%20GPUImageVideoCamera%20/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Learn GPUImage - GPUImageVideoCamera 
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AD%97%E7%AC%A6/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Learn Swift - 字符串和字符</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        John Doe
+      </li>
+      <li>
+        
+        Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['面朝大海，春暖花开', '', ''],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>

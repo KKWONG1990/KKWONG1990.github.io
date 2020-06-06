@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Learn Swift - 集合类型 |  Hexo
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="post-Learn Swift - 集合类型" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Learn Swift - 集合类型
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2020-04-12T07:37:52.772Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">4.9k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">18 min</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <hr>
+<hr>
+<p>Swift提供了三种主要的集合类型，分别是数组，集合和字典，用于存储值的集合。数组是值的有序集合，集是唯一值的无序集合。字典是键值关联的无序集合。<br>Swift中的数组，集合和字典始终清楚他们可以存储的值和键的类型。者意味着你不能将错误的类型的值错误地插入到集合中。同时也意味着你可以确定从集合中检索的值的类型。</p>
+<h3 id="集合的可变性"><a href="#集合的可变性" class="headerlink" title="集合的可变性"></a>集合的可变性</h3><p>如果创建数组，集合或字典，并将其分配给变量，则创建的集合将是可变的。这意味着你可以在创建集合后通过添加、删除或更改集合中的项目来更改集合。如果将数组，集合或字典分配给常量，则该集合是不可变的，并且其大小和内容也是无法改变的。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组将相同类型的值存储在有序的列表中，同一值可以在数组中的不同位置多次出现。</p>
+<h3 id="数组类型简写语法"><a href="#数组类型简写语法" class="headerlink" title="数组类型简写语法"></a>数组类型简写语法</h3><p>Swift数组的类型完整写法为Array<Element>，其中Element是允许存储到数组的值的类型。你还可以简写数组类型为速记形式[Element]。尽管这两种形式在功能上是相同的，但速记形式是首选，在指代数组类型是，本指南通篇使用速记形式。</p>
+<h3 id="创建一个空数组"><a href="#创建一个空数组" class="headerlink" title="创建一个空数组"></a>创建一个空数组</h3><p>你可以使用初始化语法创建某种类型的空数组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var someInts = [Int]()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"someInts is of type [Int] with \(someInts.count) items."</span>)</span><br><span class="line">// Prints <span class="string">"someInts is of type [Int] with 0 items."</span></span><br></pre></td></tr></table></figure>
+<p>注意，someInts变量的类型从初始化程序的的类型推断为[Int]</p>
+<p>或者，如果上下文已经提供了类型信息，例如函数参数后已经键入的变量或常量，则可以一个空数组，其中包含一个空数组文字，该文字表示为[]：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">someInts.append(3) //追加一个3的元素到数组中</span><br><span class="line">someInts = []      //把数组置空</span><br></pre></td></tr></table></figure>
+<h3 id="创建具有默认值的数组"><a href="#创建具有默认值的数组" class="headerlink" title="创建具有默认值的数组"></a>创建具有默认值的数组</h3><p>Swift的Array类型还提供了一个初始化程序，用于创建一个特定大小的数组，并将其所有值设置为相同的默认值。您想初始化程序传递适当类型的默认值(repeating参数)以及该值在新数组中重复的次数(count参数)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var threeDoubles = Array(repeating: 0.0, count:3) //创建一个有3个0.0默认值元素的数组</span><br></pre></td></tr></table></figure>
+<h3 id="通过将两个数组相加创建数组"><a href="#通过将两个数组相加创建数组" class="headerlink" title="通过将两个数组相加创建数组"></a>通过将两个数组相加创建数组</h3><p>你可以使用加法运算符+将两个具有兼容类型的现有数组加在一起，从而得到一个新的数组。新数组的类型是根据你添加在一起得两个数组的类型推断出来的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var anotherThreeDoubles = Array(repeating: 2.5, count: 3) </span><br><span class="line">// anotherThreeDoubles is of <span class="built_in">type</span> [Double], and equals [2.5, 2.5, 2.5]</span><br><span class="line"></span><br><span class="line">var sixDoubles = threeDoubles + anotherThreeDoubles</span><br><span class="line">//sixDoubles = [0.0, 0.0, 0.0, 2.5, 2.5, 2.5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用数组字面值创建一个数组"><a href="#使用数组字面值创建一个数组" class="headerlink" title="使用数组字面值创建一个数组"></a>使用数组字面值创建一个数组</h3><p>你可以使用数组字面值来初始化一个数组，就是将一个或多个值写为数组集合的一种简便方法。数组文字被写为值列表，以逗号分隔，并用一对方括号包围:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var shoppinglist: [String] = [<span class="string">"Eggs"</span>, <span class="string">"Milk"</span>]</span><br><span class="line">//创建一个字符串类型且包含两个元素的数组</span><br></pre></td></tr></table></figure>
+<p>shoppingList变量被声明为“字符串值的数组”，写为[String]。 因为此特定数组指定了String的值类型，所以只允许存储String值。 在这里，shoppingList数组是用两个String值（“ Eggs”和“ Milk”）初始化的，这些值写在数组文字中。</p>
+<p>借助Swift的类型推断，如果使用包含相同类型值的数组字面值进行初始化，则不必编写数组的类型。 shoppingList的初始化本来可以写成较短的形式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var shoppingList = [<span class="string">"Eggs"</span>, <span class="string">"Mils"</span>]</span><br><span class="line">//因为数组元素都是String类型，所以swift该数组类型为[String]</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问和修改数组"><a href="#访问和修改数组" class="headerlink" title="访问和修改数组"></a>访问和修改数组</h3><p>你可以通过数组的方法和属性或使用下标来访问和修改数组。要想知道数组中的项目个数，可以使用count属性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var shoppingList = [<span class="string">"Eggs"</span>, <span class="string">"Mils"</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"The shopping list contains \(shoppingList.count) items."</span>)</span><br></pre></td></tr></table></figure>
+<p>使用布尔值isEmpty布尔值作为检查count属性是否等于0的快捷方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> shoppingList.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The shopping list is empty."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The shopping list is not empty."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"The shopping list is not empty."</span></span><br></pre></td></tr></table></figure>
+<p>您可以通过调用数组的append（_ :)方法将新项目添加到数组的末尾：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shoppingList.append(<span class="string">"Flour"</span>)</span><br><span class="line">// shoppingList now contains 3 items, and someone is making pancakes</span><br></pre></td></tr></table></figure>
+<p>或者，使用附加赋值运算符（+ =）附加一个或多个兼容项的数组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">shoppingList += [<span class="string">"Baking Powder"</span>]</span><br><span class="line">// shoppingList now contains 4 items</span><br><span class="line">shoppingList += [<span class="string">"Chocolate Spread"</span>, <span class="string">"Cheese"</span>, <span class="string">"Butter"</span>]</span><br><span class="line">// shoppingList now contains 7 items</span><br></pre></td></tr></table></figure>
+<p>通过使用下标语法从数组中检索一个值，在数组名称后紧接着在方括号内传递要检索的值的索引：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var firstItem = shoppingList[0]</span><br><span class="line">// firstItem is equal to <span class="string">"Eggs"</span></span><br></pre></td></tr></table></figure>
+<p>您可以使用下标语法来更改给定索引处的现有值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shoppingList[0] = <span class="string">"Six eggs"</span></span><br><span class="line">// the first item <span class="keyword">in</span> the list is now equal to <span class="string">"Six eggs"</span> rather than <span class="string">"Eggs"</span></span><br></pre></td></tr></table></figure>
+<p>您也可以使用下标语法立即更改值的范围，即使替换值集的长度与要替换的范围的长度不同。 以下示例将“Chocolate Spread”，“CHeese”和“Butter”替换为“bananas”和“Apple”：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shoppingList[4...6] = [<span class="string">"Bananas"</span>, <span class="string">"Apple"</span>]</span><br><span class="line">//将数组下标是4-6范围的元素赋值为[<span class="string">"Bananas"</span>, <span class="string">"Apple"</span>]</span><br></pre></td></tr></table></figure>
+<p>要将项目按指定的索引插入数组，请调用数组的insert（_：at :)方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shoppingList.insert(<span class="string">"Maple Syrup"</span>, at: 0)</span><br><span class="line">// shoppingList now contains 7 items</span><br><span class="line">// <span class="string">"Maple Syrup"</span> is now the first item <span class="keyword">in</span> the list</span><br></pre></td></tr></table></figure>
+<p>同样，您可以使用remove（at :)方法从数组中删除一项。 此方法将删除指定索引处的项目并返回已删除的项目（尽管如果不需要，您可以忽略返回的值）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleSyrup = shoppingList.remove(at: 0)</span><br><span class="line">// the item that was at index 0 has just been removed</span><br><span class="line">// shoppingList now contains 6 items, and no Maple Syrup</span><br><span class="line">// the mapleSyrup constant is now equal to the removed <span class="string">"Maple Syrup"</span> string</span><br></pre></td></tr></table></figure>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p>您可以使用for-in循环遍历数组中的整个值集：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoppingList &#123;</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line">&#125;</span><br><span class="line">// Six eggs</span><br><span class="line">// Milk</span><br><span class="line">// Flour</span><br><span class="line">// Baking Powder</span><br><span class="line">// Bananas</span><br></pre></td></tr></table></figure>
+<p>如果您需要每个项目的整数索引及其值，请使用enumerated（）方法遍历数组。 对于数组中的每个项目，enumerated（）方法都返回一个由整数和项目组成的元组。 整数从零开始，每一项加一。 如果您对整个数组进行枚举，则这些整数与项的索引匹配。 您可以在迭代过程中将元组分解为临时常量或变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (index, value) <span class="keyword">in</span> shoppingList.<span class="function"><span class="title">enumerated</span></span>() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Item \(index + 1): \(value)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Item 1: Six eggs</span><br><span class="line">// Item 2: Milk</span><br><span class="line">// Item 3: Flour</span><br><span class="line">// Item 4: Baking Powder</span><br><span class="line">// Item 5: Bananas</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>字典在没有定义顺序的集合中存储相同类型的键和相同类型的值之间的关联。每个值都与一个惟一的键相关联，该键在字典中充当该值的标识符。与数组中的项不同，字典中的项没有指定的顺序。当需要根据标识符查找值时，可以使用字典，这与使用实际字典查找特定单词的定义非常类似。</p>
+<h4 id="字典类型简写语法"><a href="#字典类型简写语法" class="headerlink" title="字典类型简写语法"></a>字典类型简写语法</h4><p>Swift字典的类型被完整地写成dictionary ，其中Key是用作字典键的值的类型，Value是字典为这些键存储的值的类型。您还可以将字典的类型以简写形式编写为[Key: Value]。虽然这两种形式在功能上是相同的，但是在本指南中引用字典的类型时，首选使用简写形式。</p>
+<h4 id="创建一个空字典"><a href="#创建一个空字典" class="headerlink" title="创建一个空字典"></a>创建一个空字典</h4><p>和数组一样，你可以通过使用初始化语法来创建一个特定类型的空字典:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var namesOfIntegers = [Int : String]()</span><br></pre></td></tr></table></figure>
+<p>这个例子创建了一个类型为[Int: String]的空字典来存储人类可读的整数值名。它的键是Int类型的，它的值是String类型的。</p>
+<p>如果上下文已经提供了类型信息，你可以用一个空字典的字面量来创建一个空字典，它被写成<a href="一对方括号中的冒号">:</a>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">namesOfIntegers[16] = <span class="string">"sixteen"</span> </span><br><span class="line">namesOfIntegers[:]</span><br></pre></td></tr></table></figure>
+<h3 id="使用字典字面量创建字典"><a href="#使用字典字面量创建字典" class="headerlink" title="使用字典字面量创建字典"></a>使用字典字面量创建字典</h3><p>您还可以使用字典字面量初始化字典，字典字面量的语法与前面看到的数组字面量类似。字典字面量是将一个或多个键-值对编写为字典集合的一种简写方式。键-值对是键和值的组合。在字典文本中，每个键-值对中的键和值用冒号分隔。键-值对以列表形式编写，以逗号分隔，用一对方括号括起来:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[key1 : value1, key2 : value2, key3 : value3]</span><br></pre></td></tr></table></figure>
+<p>下面的示例创建一个字典来存储国际机场的名称。在本词典中，键为三个字母的国际航空运输协会代码，值为机场名称:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var airports: [Stirng : String] = [<span class="string">"YYZ"</span> : <span class="string">"Toronto Pearson"</span>, <span class="string">"DUB"</span> : <span class="string">"Dublin"</span>]</span><br></pre></td></tr></table></figure>
+<p>机场字典被声明为具有[String: String]类型，这意味着“一个字典，它的键是String类型的，它的值也是String类型的”。</p>
+<p>机场字典由一个包含两个键-值对的字典文本初始化。第一对的键是“YYZ”，值是“Toronto Pearson”。第二组的键值为“DUB”，值为“Dublin”。</p>
+<p>这个字典文本包含两个字符串:字符串对。这个键-值类型与机场变量声明的类型(只有字符串键和字符串值的字典)相匹配，因此允许对字典字面值进行赋值，以便使用两个初始项初始化机场字典。</p>
+<p>与数组一样，如果使用一个字典字面值初始化字典，而字典字面值的键和值具有一致的类型，则不必编写字典的类型。机场的初始化可以写成更短的形式:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var airports = [<span class="string">"YYZ"</span> : <span class="string">"Toronto Pearson"</span>, <span class="string">"DUB"</span> : <span class="string">"Dublin"</span>]</span><br></pre></td></tr></table></figure>
+<p>因为字面量中的所有键都是彼此相同的类型，同样，所有值都是彼此相同的类型，所以Swift可以推断[String: String]是机场字典使用的正确类型。</p>
+<h4 id="访问和修改字典"><a href="#访问和修改字典" class="headerlink" title="访问和修改字典"></a>访问和修改字典</h4><p>您可以通过字典的方法和属性，或者使用下标语法来访问和修改字典。和数组一样，你可以通过检查它的只读计数属性来查找字典中的条目数:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"The airpots dictionary contains \(airports.count) items"</span>)</span><br><span class="line">// The airpots dictionary contains 2 items</span><br></pre></td></tr></table></figure>
+<p>使用布尔isEmpty属性作为快捷方式，检查计数属性是否等于0:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> airports.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The airports dictionary is empty"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The airports dictionary is not empty"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以使用下标语法将新项添加到字典中。使用适当类型的新键作为下标索引，并分配适当类型的新值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airports[<span class="string">"LHR"</span>] = <span class="string">"London"</span></span><br></pre></td></tr></table></figure>
+<p>您还可以使用下标语法来更改与特定键关联的值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airports[<span class="string">"LHR"</span>] = <span class="string">"London Heathrow"</span></span><br></pre></td></tr></table></figure>
+<p>作为下标的替代方法，可以使用字典的updateValue(<em>:forKey:)方法来设置或更新特定键的值。像上面的下标示例一样，updateValue(</em>:forKey:)方法为一个键设置一个值(如果该键不存在)，或者更新该值(如果该键已经存在)。但是，与下标不同，updateValue(_:forKey:)方法在执行更新后返回旧值。这使您能够检查是否发生了更新。</p>
+<p>updateValue(_:forKey:)方法返回一个字典值类型的可选值。例如，对于存储字符串值的字典，该方法返回一个String类型的值?，或“可选字符串”。这个可选值包含该键的旧值(如果在更新之前存在)，或者空值(如果不存在值):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> oldValue = airports.updateValue(<span class="string">"Dublin Airport"</span>, forKey:<span class="string">"DUB"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The old value for DUB was \(oldValue)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以使用下标语法从字典中检索特定键的值。因为可以请求不存在值的键，所以字典的下标返回字典值类型的可选值。如果字典包含所请求键的值，下标返回一个可选值，该值包含该键的现有值。否则，下标返回nil:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> airportName = airports[<span class="string">"DUB"</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The name of the airport is \(airportName)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"That airport is not in the airports dictionary"</span>)</span><br><span class="line">&#125;</span><br><span class="line">//prints <span class="string">"The name of the airport is Dublin Airport"</span></span><br></pre></td></tr></table></figure>
+<p>你可以使用下标语法从字典中删除一个键值对，为该键赋一个nil值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">airports[<span class="string">"APL"</span>] = <span class="string">"Apple International"</span></span><br><span class="line">airports[<span class="string">"APL"</span>] = nil</span><br></pre></td></tr></table></figure>
+<p>或者，使用removeValue(forKey:)方法从字典中删除键-值对。该方法删除键值对(如果存在)并返回删除的值，或者返回nil(如果不存在值):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> removedValue = airports.removeValue(forKey:<span class="string">"DUB"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The removed airports name is \(removedValue)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The airports dictionary does not contain a value for DUB."</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"The airports dictionary does not contain a value for DUB."</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h4><p>可以使用for-in循环遍历字典中的键-值对。字典中的每一项都作为元组(key, value)返回，你可以将元组的成员分解为临时常量或变量，作为迭代的一部分:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (airportCode, airportName) <span class="keyword">in</span> airports &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(airportCode): \(airportName)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// LHR: London Heathrow</span><br><span class="line">// YYZ: Toronto Pearson</span><br></pre></td></tr></table></figure>
+<p>你也可以通过访问字典的键和值属性来检索字典的键或值的可迭代集合:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> airportCode <span class="keyword">in</span> airports.keys &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Airport code: \(airportCode)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Airport code: LHR</span><br><span class="line">// Airport code: YYZ</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> airportName <span class="keyword">in</span> airports.values &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Airport name: \(airportName)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Airport name: London Heathrow</span><br><span class="line">// Airport name: Toronto Pearson</span><br></pre></td></tr></table></figure>
+<p>如果你需要使用字典的键或值与一个API的数组实例，初始化一个新的数组与键或值的属性:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> airportCodes = [String](airports.keys)</span><br><span class="line">// airportCodes is [<span class="string">"LHR"</span>, <span class="string">"YYZ"</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> airportNames = [String](airports.values)</span><br><span class="line">// airportNames is [<span class="string">"London Heathrow"</span>, <span class="string">"Toronto Pearson"</span>]</span><br></pre></td></tr></table></figure>
+<p>Swift的字典类型没有定义顺序。若要按特定顺序迭代字典的键或值，请在其键或值属性上使用sort()方法。</p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合在集合中存储相同类型的不同值，没有定义的顺序。当项目的顺序不重要时，或者需要确保某个项目仅出现一次时，可以使用集合而不是数组。</p>
+<h4 id="集合类型的哈希值"><a href="#集合类型的哈希值" class="headerlink" title="集合类型的哈希值"></a>集合类型的哈希值</h4><p>类型必须是可哈希的才能存储在集合中，也就是说，该类型必须提供一种为其自身计算哈希值的方法。哈希值是Int对于相等比较的所有对象都相同的值，例如，如果，则跟随在后面。a == ba.hashValue == b.hashValue</p>
+<p>所有swift的基本类型（例如String，Int，Double，和Bool）默认情况下可哈希，并可以作为设定值类型或字典密钥类型。默认情况下，没有关联值的枚举案例值（如Enumerations中所述）也是可哈希的。</p>
+<h4 id="集合类型语法"><a href="#集合类型语法" class="headerlink" title="集合类型语法"></a>集合类型语法</h4><p>Swift集的类型写为Set<Element>，其中Element是允许存储集的类型。与数组不同，集合没有等效的速记形式。</p>
+<h4 id="创建和初始化一个空集合"><a href="#创建和初始化一个空集合" class="headerlink" title="创建和初始化一个空集合"></a>创建和初始化一个空集合</h4><p>您可以使用初始化语法创建一个特定类型的空集：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var letters = Set&lt;Character&gt;()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"letters is of type Set&lt;Character&gt; with \(letters.count) items."</span>)</span><br><span class="line">// Prints <span class="string">"letters is of type Set&lt;Character&gt; with 0 items."</span></span><br></pre></td></tr></table></figure>
+<p>或者，如果上下文已经提供了类型信息，例如函数参数或已经键入的变量或常量，则可以使用空数组文字创建一个空集：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">letters.insert(<span class="string">"a"</span>)</span><br><span class="line">// letters now contains 1 value of <span class="built_in">type</span> Character</span><br><span class="line">letters = []</span><br><span class="line">// letters is now an empty <span class="built_in">set</span>, but is still of <span class="built_in">type</span> Set&lt;Character&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="使用数组文字创建集合"><a href="#使用数组文字创建集合" class="headerlink" title="使用数组文字创建集合"></a>使用数组文字创建集合</h4><p>您还可以使用数组文字初始化集合，这是将一个或多个值写为集合的快捷方式。</p>
+<p>下面的示例创建一个名为favoriteGenres存储String值的集合：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var favoriteGenres: Set&lt;String&gt; = [<span class="string">"Rock"</span>, <span class="string">"Classical"</span>, <span class="string">"Hip hop"</span>]</span><br><span class="line">// favoriteGenres has been initialized with three initial items</span><br></pre></td></tr></table></figure>
+<p>将该favoriteGenres变量声明为“一组String值”，写为Set<String>。由于此特定集合将值类型指定为String，因此仅允许存储String值。在此，favoriteGenres集合被初始化具有三个String值（”Rock”，”Classical”，和），阵列字面内写入。”Hip hop”</p>
+<p>不能仅从数组文字中推断出集合类型，因此Set必须显式声明该类型。但是，由于Swift的类型推断，如果使用仅包含一种类型值的数组文字进行初始化，则无需编写集合元素的类型。的初始化favoriteGenres本来可以写成较短的形式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var favoriteGenres: Set = [<span class="string">"Rock"</span>, <span class="string">"Classical"</span>, <span class="string">"Hip hop"</span>]</span><br></pre></td></tr></table></figure>
+<p>因为数组文字中的所有值都是同一类型，所以Swift可以推断出Set<String>该favoriteGenres变量是正确的类型。</p>
+<h4 id="访问和修改集合"><a href="#访问和修改集合" class="headerlink" title="访问和修改集合"></a>访问和修改集合</h4><p>您可以通过其方法和属性访问和修改集合。</p>
+<p>要找出集合中的项目数，请检查其只读count属性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"I have \(favoriteGenres.count) favorite music genres."</span>)</span><br><span class="line">// Prints <span class="string">"I have 3 favorite music genres."</span></span><br></pre></td></tr></table></figure>
+<p>使用Boolean isEmpty属性作为检查该count属性是否等于的快捷方式0：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> favoriteGenres.isEmpty &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"As far as music goes, I'm not picky."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I have particular music preferences."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"I have particular music preferences."</span></span><br></pre></td></tr></table></figure>
+<p>您可以通过调用集合的insert(_:)方法将新项目添加到集合中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">favoriteGenres.insert(<span class="string">"Jazz"</span>)</span><br><span class="line">// favoriteGenres now contains 4 items</span><br></pre></td></tr></table></figure>
+<p>您可以通过调用集合的remove(_:)方法从集合中删除项目，该方法将删除该项目（如果它是集合的成员），并返回删除的值，或者nil如果集合中不包含该值，则返回该值。或者，可以使用其removeAll()方法删除集合中的所有项目。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> removedGenre = favoriteGenres.remove(<span class="string">"Rock"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(removedGenre)? I'm over it."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I never much cared for that."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"Rock? I'm over it."</span></span><br></pre></td></tr></table></figure>
+<p>若要检查集合是否包含特定项目，请使用contains(_:)方法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> favoriteGenres.contains(<span class="string">"Funk"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I get up on the good foot."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"It's too funky in here."</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Prints <span class="string">"It's too funky in here."</span></span><br></pre></td></tr></table></figure>
+<p>Swift的Set类型没有定义的顺序。要按特定顺序迭代集合的值，请使用sorted()方法，该方法将集合的元素作为使用&lt;操作符排序的数组返回。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> genre <span class="keyword">in</span> favoriteGenres.<span class="function"><span class="title">sorted</span></span>() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(genre)"</span>)</span><br><span class="line">&#125;</span><br><span class="line">// Classical</span><br><span class="line">// Hip hop</span><br><span class="line">// Jazz</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行集合操作"><a href="#执行集合操作" class="headerlink" title="执行集合操作"></a>执行集合操作</h4><p>您可以有效地执行基本的集合操作，例如将两个集合组合在一起，确定两个集合具有哪些共同值，或者确定两个集合是否包含全部，部分或不包含相同的值。<br>使用该intersection(<em>:)方法创建仅具有两个集合共有的值的新集合。<br>使用该symmetricDifference(</em>:)方法创建一个新集合，其中两个集合中都有一个值，但不能同时包含两个集合中的值。<br>使用该union(<em>:)方法创建一个包含两个集合中所有值的新集合。<br>使用该subtracting(</em>:)方法创建一个新集合，其值不在指定集合中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> oddDigits: Set = [1, 3, 5, 7, 9]</span><br><span class="line"><span class="built_in">let</span> evenDigits: Set = [0, 2, 4, 6, 8]</span><br><span class="line"><span class="built_in">let</span> singleDigitPrimeNumbers: Set = [2, 3, 5, 7]</span><br><span class="line"></span><br><span class="line">oddDigits.union(evenDigits).sorted()</span><br><span class="line">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">oddDigits.intersection(evenDigits).sorted()</span><br><span class="line">// []</span><br><span class="line">oddDigits.subtracting(singleDigitPrimeNumbers).sorted()</span><br><span class="line">// [1, 9]</span><br><span class="line">oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()</span><br><span class="line">// [1, 2, 9]</span><br></pre></td></tr></table></figure>
+<p>使用“等于”运算符（==）确定两组是否包含所有相同的值。<br>使用该isSubset(of:)方法确定集合中的所有值是否都包含在指定集合中。<br>使用该isSuperset(of:)方法确定集合是否包含指定集合中的所有值。<br>使用isStrictSubset(of:)或isStrictSuperset(of:)方法确定集合是子集还是超集，但不等于指定集合。<br>使用该isDisjoint(with:)方法确定两个集合是否没有共同的值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> houseAnimals: Set = [<span class="string">"🐶"</span>, <span class="string">"🐱"</span>]</span><br><span class="line"><span class="built_in">let</span> farmAnimals: Set = [<span class="string">"🐮"</span>, <span class="string">"🐔"</span>, <span class="string">"🐑"</span>, <span class="string">"🐶"</span>, <span class="string">"🐱"</span>]</span><br><span class="line"><span class="built_in">let</span> cityAnimals: Set = [<span class="string">"🐦"</span>, <span class="string">"🐭"</span>]</span><br><span class="line"></span><br><span class="line">houseAnimals.isSubset(of: farmAnimals)</span><br><span class="line">// <span class="literal">true</span></span><br><span class="line">farmAnimals.isSuperset(of: houseAnimals)</span><br><span class="line">// <span class="literal">true</span></span><br><span class="line">farmAnimals.isDisjoint(with: cityAnimals)</span><br><span class="line">// <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        Reward
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>Copyright： </strong>
+              Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/12/Learn%20Swift%20-%20%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/04/12/Learn%20Swift%20-%20%E6%8E%A7%E5%88%B6%E6%B5%81/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Learn Swift - 控制流
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/04/12/Mac%E4%B8%8B%E5%AE%89%E8%A3%85Flutter%E7%8E%AF%E5%A2%83/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Mac下安装Flutter环境</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        John Doe
+      </li>
+      <li>
+        
+        Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['面朝大海，春暖花开', '', ''],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>
